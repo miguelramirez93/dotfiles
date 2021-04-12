@@ -1,0 +1,12 @@
+[submodule "vim/plugins/coc"]
+	path = vim/plugins/coc
+	url = https://github.com/neoclide/coc.nvim
+[submodule "vim/plugins/fugitive"]
+	path = vim/plugins/fugitive
+	url = https://tpope.io/vim/fugitive
+[submodule "vim/plugins/vim-gitgutter"]
+	path = vim/plugins/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule "vim/plugins/vim-airline"]
+	path = vim/plugins/vim-airline
+	url = https://github.com/vim-airline/vim-airline
