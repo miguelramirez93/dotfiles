@@ -10,3 +10,9 @@
 [submodule "vim/plugins/vim-airline"]
 	path = vim/plugins/vim-airline
 	url = https://github.com/vim-airline/vim-airline
+[submodule "vim/plugins/typescript-vim"]
+	path = vim/plugins/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "vim/color-schemes/onedark.vim"]
+	path = vim/color-schemes/onedark.vim
+	url = https://github.com/joshdick/onedark.vim
