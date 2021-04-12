@@ -4,6 +4,10 @@ syntax on
 colorscheme onedark
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint' ]
 
+set number
+
+
+
 nnoremap <silent> K :call CocAction('doHover')<CR>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
