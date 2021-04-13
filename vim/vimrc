@@ -3,10 +3,11 @@ packadd! onedark.vim
 syntax on
 colorscheme onedark
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint' ]
+set sts=4
 
 set number
 
-
+let g:go_def_mapping_enabled = 0
 
 nnoremap <silent> K :call CocAction('doHover')<CR>
 nmap <silent> gd <Plug>(coc-definition)
