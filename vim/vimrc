@@ -9,6 +9,24 @@ set number
 
 let g:go_def_mapping_enabled = 0
 
+let g:airline_theme='onedark'
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+nnoremap <A-Down> :m .+1<CR>==
+nnoremap <A-Up> :m .-2<CR>==
+
+noremap <A-f> :set hlsearch! hlsearch?<CR>
+
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-t> :tabnew<CR>
+nnoremap <silent> <A-Left> :tabm -1<CR>
+nnoremap <silent> <A-Right> :tabm +1<CR>
+
+
+
+
 nnoremap <silent> K :call CocAction('doHover')<CR>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)

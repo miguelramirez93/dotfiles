@@ -13,3 +13,12 @@ install_vim_package(){
   echo "plug installed!!"
 }
 
+command_exist(){
+  local command_input=$1
+  if ! command -v $command_input &> /dev/null
+  then
+    echo "$command_input could not be found"
+    exit
+  fi
+}
+
