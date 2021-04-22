@@ -3,7 +3,7 @@ source ./utils.sh
 
 
 # Init plugins for vim initial set-up
-
+echo "installing plugins"
 install_vim_package ../plugins/coc ~/.vim/pack/coc/start
 install_vim_package ../plugins/fugitive ~/.vim/pack/tpope/start
 install_vim_package ../plugins/vim-airline ~/.vim/pack/dist/start

@@ -2,7 +2,7 @@ packadd! onedark.vim
 
 syntax on
 colorscheme onedark
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint' ]
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals' ]
 set sts=4
 
 set number
