@@ -6,6 +6,8 @@ let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'c
 set sts=4
 
 set number
+set splitright
+set autoindent
 
 let g:go_def_mapping_enabled = 0
 
