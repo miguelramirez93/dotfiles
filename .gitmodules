@@ -22,3 +22,6 @@
 [submodule "vim/plugins/ack.vim"]
 	path = vim/plugins/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "vim/color-schemes/dracula"]
+	path = vim/color-schemes/dracula
+	url = https://github.com/dracula/vim.git

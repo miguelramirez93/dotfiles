@@ -1,13 +1,15 @@
 packadd! onedark.vim
+packadd! dracula
 
 syntax on
-colorscheme onedark
+colorscheme dracula 
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals' ]
 set sts=4
 
 set number
 set splitright
 set autoindent
+set expandtab
 
 let g:go_def_mapping_enabled = 0
 
