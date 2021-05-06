@@ -1,8 +1,9 @@
 packadd! onedark.vim
 packadd! dracula
-
+set termguicolors
 syntax on
-colorscheme dracula 
+colorscheme dracula
+
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals' ]
 set sts=4
 
