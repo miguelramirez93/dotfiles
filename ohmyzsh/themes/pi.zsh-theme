@@ -1,5 +1,5 @@
-#PROMPT=' ${return_status} %{$fg[blue]%}$(get_pwd)%{$reset_color%}${prompt_suffix}'
-PROMPT=' ${return_status} %{$fg[blue]%}%{$reset_color%}${prompt_suffix}'
+PROMPT=' ${return_status} %{$fg[blue]%}$(get_pwd)%{$reset_color%}${prompt_suffix}'
+#PROMPT=' ${return_status} %{$fg[blue]%}%{$reset_color%}${prompt_suffix}'
 
 local return_status="%(?:%{$fg_bold[green]%}π:%{$fg_bold[red]%}π)"
 
@@ -7,17 +7,17 @@ local prompt_suffix="%{$fg[magenta]%}❯%{$reset_color%} "
 #$(git_prompt_info)${prompt_suffix}
 # by shashankmehta (https://github.com/shashankmehta)
 function get_pwd(){
-  git_root=$PWD
-  while [[ $git_root != / && ! -e $git_root/.git ]]; do
-    git_root=$git_root:h
-  done
-  if [[ $git_root = / ]]; then
-    unset git_root
-    prompt_short_dir=%~
-  else
-    parent=${git_root%\/*}
-    prompt_short_dir=${PWD#$parent/}
-  fi
+  #git_root=$PWD
+  #while [[ $git_root != / && ! -e $git_root/.git ]]; do
+  #  git_root=$git_root:h
+  #done
+  #if [[ $git_root = / ]]; then
+  #  unset git_root
+    prompt_short_dir=%c
+  #else
+  #  parent=${git_root%\/*}
+  #  prompt_short_dir=${PWD#$parent/}
+  #fi
   echo $prompt_short_dir
 }
 
