@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+#TODO: this utils package is redundand!! move all dependencies to scrpts/utils.sh
 install_vim_package(){
   local package_source_dir=$1
   local package_install_dir=$2
