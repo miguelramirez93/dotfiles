@@ -11,10 +11,8 @@ set number
 set splitright
 set autoindent
 set expandtab
-
+set nowrap
 let g:go_def_mapping_enabled = 0
-
-let g:airline_theme='onedark'
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
