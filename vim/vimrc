@@ -16,6 +16,12 @@ let g:go_def_mapping_enabled = 0
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 nnoremap <A-Down> :m .+1<CR>==
 nnoremap <A-Up> :m .-2<CR>==
 
@@ -27,7 +33,7 @@ nnoremap <C-t> :tabnew<CR>
 nnoremap <silent> <A-Left> :tabm -1<CR>
 nnoremap <silent> <A-Right> :tabm +1<CR>
 
-
+let g:ctrlp_map = '<c-p>'
 
 
 nnoremap <silent> K :call CocAction('doHover')<CR>
