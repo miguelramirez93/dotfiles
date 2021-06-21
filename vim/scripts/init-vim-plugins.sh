@@ -12,4 +12,5 @@ install_vim_package ../plugins/typescript-vim ~/.vim/pack/typescript/start
 install_vim_package ../plugins/vim-go ~/.vim/pack/plugins/start
 install_vim_package ../plugins/ack.vim ~/.vim/pack/ack/start
 install_vim_package ../plugins/ctrlp ~/.vim/pack/ctrlp/start
+install_vim_package ../plugins/vim-jsx-pretty ~/.vim/pack/vim-jsx-pretty/start
 
