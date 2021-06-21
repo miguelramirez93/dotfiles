@@ -4,7 +4,7 @@ set termguicolors
 syntax on
 colorscheme dracula
 
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals' ]
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go' ]
 set sts=4
 
 set number
