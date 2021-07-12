@@ -1,8 +1,8 @@
-packadd! onedark.vim
+packadd! vim-colors-xcode
 packadd! dracula
 set termguicolors
 syntax on
-colorscheme dracula
+colorscheme xcodedark
 
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go' ]
 set sts=4

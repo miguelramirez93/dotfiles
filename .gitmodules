@@ -28,3 +28,6 @@
 [submodule "vim/plugins/vim-jsx-pretty"]
 	path = vim/plugins/vim-jsx-pretty
 	url = https://github.com/MaxMEllon/vim-jsx-pretty.git
+[submodule "vim/color-schemes/vim-colors-xcode"]
+	path = vim/color-schemes/vim-colors-xcode
+	url = https://github.com/arzg/vim-colors-xcode.git
