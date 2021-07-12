@@ -45,11 +45,11 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <leader>do <Plug>(coc-codeaction)
+nmap <silent>ca <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
 
 " Netrw
-set autochdir
+" set autochdir
 " Toggle Vexplore with Ctrl-E
 function! ToggleVExplorer()
   if exists("t:expl_buf_num")
