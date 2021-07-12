@@ -33,6 +33,9 @@ nnoremap <C-t> :tabnew<CR>
 nnoremap <silent> <A-Left> :tabm -1<CR>
 nnoremap <silent> <A-Right> :tabm +1<CR>
 
+
+nnoremap <C-s> :w<CR>
+
 let g:ctrlp_map = '<c-p>'
 
 " coc-actions

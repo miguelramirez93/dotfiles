@@ -31,3 +31,6 @@
 [submodule "vim/color-schemes/vim-colors-xcode"]
 	path = vim/color-schemes/vim-colors-xcode
 	url = https://github.com/arzg/vim-colors-xcode.git
+[submodule "vim/plugins/vim-visual-multi"]
+	path = vim/plugins/vim-visual-multi
+	url = https://github.com/mg979/vim-visual-multi.git
