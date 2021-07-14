@@ -4,7 +4,7 @@ set termguicolors
 syntax on
 colorscheme xcodedark
 
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go' ]
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go', 'coc-python' ]
 set sts=4
 
 set number
