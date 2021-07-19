@@ -34,3 +34,6 @@
 [submodule "vim/plugins/vim-visual-multi"]
 	path = vim/plugins/vim-visual-multi
 	url = https://github.com/mg979/vim-visual-multi.git
+[submodule "vim/plugins/jedi-vim"]
+	path = vim/plugins/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git

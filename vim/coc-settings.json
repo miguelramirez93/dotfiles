@@ -6,7 +6,8 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "go"
+    "go",
+    "py"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
