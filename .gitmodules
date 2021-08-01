@@ -37,3 +37,6 @@
 [submodule "vim/plugins/jedi-vim"]
 	path = vim/plugins/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "vim/color-schemes/gruvbox"]
+	path = vim/color-schemes/gruvbox
+	url = https://github.com/morhetz/gruvbox.git

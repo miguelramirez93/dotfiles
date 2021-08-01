@@ -1,8 +1,12 @@
 packadd! vim-colors-xcode
 packadd! dracula
+packadd! gruvbox
 set termguicolors
 syntax on
-colorscheme xcodedark
+let g:gruvbox_contrast_dark = 'soft'
+colorscheme gruvbox
+
+set bg=dark
 
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go', 'coc-python' ]
 set sts=2
