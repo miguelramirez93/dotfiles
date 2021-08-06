@@ -1,0 +1,7 @@
+#C:\Users\<yourUserName>\.wslconfig
+[wsl2]
+memory=16GB   # How much memory to assign to the WSL 2 VM.
+# processors=4 # How many processors to assign to the WSL 2 VM.
+# swap=0GB     # Howw much swap space to add to the WSL 2 VM, 0 for no swap file.
+# swapFile=D:\\wsl2-swap.vhdx   # Swap file path
+localhostForwarding=true # ports bound to wildcard or localhost in the WSL 2 VM should be connectable from the host via localhost:port.
