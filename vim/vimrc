@@ -26,12 +26,12 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <A-k> :m .+1<CR>==
+nnoremap <A-j> :m .-2<CR>==
+inoremap <A-k> <Esc>:m .+1<CR>==gi
+inoremap <A-j> <Esc>:m .-2<CR>==gi
+vnoremap <A-k> :m '>+1<CR>gv=gv
+vnoremap <A-j> :m '<-2<CR>gv=gv
 
 noremap <A-f> :set hlsearch! hlsearch?<CR>
 
