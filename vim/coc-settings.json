@@ -17,5 +17,6 @@
         "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
         "filetypes": ["go"]
         }
-    }
+    },
+  "diagnostic.checkCurrentLine": true
 }

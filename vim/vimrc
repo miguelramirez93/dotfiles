@@ -50,4 +50,3 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent>ca <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
-
