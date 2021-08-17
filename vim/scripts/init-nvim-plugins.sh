@@ -14,5 +14,4 @@ install_vim_package ../plugins/ack.vim ~/.local/share/nvim/site/pack/ack/start
 install_vim_package ../plugins/ctrlp ~/.local/share/nvim/site/pack/ctrlp/start
 install_vim_package ../plugins/vim-jsx-pretty ~/.local/share/nvim/site/pack/vim-jsx-pretty/start
 install_vim_package ../plugins/vim-visual-multi ~/.local/share/nvim/site/pack/vim-visual-multi/start
-install_vim_package ../plugins/jedi-vim ~/.local/share/nvim/site/pack/jedi-vim/start
 
