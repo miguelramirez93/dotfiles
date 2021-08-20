@@ -3,18 +3,18 @@ inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 
 " Use alt + yuio to resize windows
-nnoremap <M-y>    :resize -2<CR>
-nnoremap <M-u>    :resize +2<CR>
-nnoremap <M-i>    :vertical resize -2<CR>
-nnoremap <M-o>    :vertical resize +2<CR>
+nnoremap <M-q>    :resize -2<CR>
+nnoremap <M-w>    :resize +2<CR>
+nnoremap <M-e>    :vertical resize -2<CR>
+nnoremap <M-r>    :vertical resize +2<CR>
 
 " I hate escape more than anything else
 inoremap jk <Esc>
 inoremap kj <Esc>
 
 " Easy CAPS
-inoremap <c-u> <ESC>viwUi
-nnoremap <c-u> viwU<Esc>
+" inoremap <c-u> <ESC>viwUi
+" nnoremap <c-u> viwU<Esc>
 
 " TAB in general mode will move to text buffer
 nnoremap <TAB> :bnext<CR>
@@ -35,10 +35,10 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Better window navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-u> <C-w>k
-nnoremap <C-k> <C-w>l
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-u> <C-w>k
+" nnoremap <C-k> <C-w>l
 
 nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da
