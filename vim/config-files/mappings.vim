@@ -40,6 +40,10 @@ vnoremap > >gv
 " nnoremap <C-u> <C-w>k
 " nnoremap <C-k> <C-w>l
 
+" Better tab management
+nnoremap <C-t> :tabnew<CR>
+
+
 nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da
 
