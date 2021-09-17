@@ -1,7 +1,7 @@
 PROMPT=' ${return_status} %{$fg[blue]%}$(get_pwd)%{$reset_color%}${prompt_suffix}'
 #PROMPT=' ${return_status} %{$fg[blue]%}%{$reset_color%}${prompt_suffix}'
 
-local return_status="%(?:%{$fg_bold[green]%}π:%{$fg_bold[red]%}π)"
+local return_status="%(?:%{$fg_bold[green]%}🥑 π:%{$fg_bold[red]%}💩 π)"
 
 local prompt_suffix="%{$fg[magenta]%}❯%{$reset_color%} "
 #$(git_prompt_info)${prompt_suffix}

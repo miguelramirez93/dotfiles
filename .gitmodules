@@ -40,3 +40,6 @@
 [submodule "vim/color-schemes/gruvbox"]
 	path = vim/color-schemes/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
+[submodule "vim/plugins/vim-devicons"]
+	path = vim/plugins/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
