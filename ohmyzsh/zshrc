@@ -1,0 +1,15 @@
+# ALIAS
+alias vim=nvim
+
+
+#GO
+export PATH=$PATH:/usr/local/go/bin
+#Python
+export PATH=$PATH:~/.local/bin
+
+#WSL windows conn
+export winhost=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
+if [ ! -n "$(grep -P "[[:space:]]winhost" /etc/hosts)" ]; then
+        printf "%s\t%s\n" "$winhost" "winhost" | sudo tee -a "/etc/hosts"
+fi
+
