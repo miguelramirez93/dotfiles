@@ -1,11 +1,6 @@
 " set leader key
 " let g:mapleader = "\<Space>" maybe latter
 
-"color-schemas packages
-packadd! vim-colors-xcode
-packadd! dracula
-packadd! gruvbox
-packadd! gruvbox-material
 set termguicolors
 syntax enable                           " Enables syntax highlighing
 
