@@ -1,6 +1,11 @@
 {
   "eslint.autoFixOnSave": true,
-  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "javascriptreact",
@@ -12,12 +17,19 @@
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
   "languageserver": {
-        "golang": {
-        "command": "gopls",
-        "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-        "filetypes": ["go"]
-        }
-    },
-  "diagnostic.checkCurrentLine": true
-  
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
+      ]
+    }
+  },
+  "diagnostic.checkCurrentLine": true,
+  "python.formatting.autopep8Path": "/usr/bin/autopep8"
 }

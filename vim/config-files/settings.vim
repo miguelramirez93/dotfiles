@@ -10,7 +10,7 @@ let g:gruvbox_material_background = 'soft'
 colorscheme gruvbox-material 
 
 " coc init config
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go', 'coc-python' ]
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go', 'coc-pyright' ]
 
 " go config
 let g:go_def_mapping_enabled = 0
