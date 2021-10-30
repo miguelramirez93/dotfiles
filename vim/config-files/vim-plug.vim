@@ -30,11 +30,14 @@ Plug 'https://github.com/MaxMEllon/vim-jsx-pretty.git', {'branch': 'master'}
 
 Plug 'https://github.com/mg979/vim-visual-multi.git', {'branch': 'master'}
 
+Plug 'https://github.com/vifm/vifm.vim', {'branch': 'master'}
+
 " themes
 
 Plug 'https://github.com/sainnhe/gruvbox-material.git', {'branch': 'master', 'as': 'gruvbox-material'}
 
 Plug 'dracula/vim', {'branch': 'master', 'as': 'dracula' }
+
 
 
 call plug#end()

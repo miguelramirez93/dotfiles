@@ -5,8 +5,8 @@ set termguicolors
 syntax enable                           " Enables syntax highlighing
 
 " gruvbox theme config
-let g:gruvbox_contrast_dark = 'soft'
-let g:gruvbox_material_background = 'soft'
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_material_background = 'hard'
 colorscheme gruvbox-material 
 
 " coc init config
@@ -22,6 +22,14 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 " ctrlP config
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" vifm
+if executable('vifm')
+  let g:loaded_netrw       = 1
+  let g:loaded_netrwPlugin = 1
+
+  let g:vifm_replace_netrw = 1
 endif
 
 
