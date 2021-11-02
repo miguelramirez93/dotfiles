@@ -1,21 +1,16 @@
 " set leader key
 " let g:mapleader = "\<Space>" maybe latter
 
-"color-schemas packages
-packadd! vim-colors-xcode
-packadd! dracula
-packadd! gruvbox
-packadd! gruvbox-material
 set termguicolors
 syntax enable                           " Enables syntax highlighing
 
 " gruvbox theme config
-let g:gruvbox_contrast_dark = 'soft'
-let g:gruvbox_material_background = 'soft'
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_material_background = 'hard'
 colorscheme gruvbox-material 
 
 " coc init config
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go', 'coc-python' ]
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go', 'coc-pyright' ]
 
 " go config
 let g:go_def_mapping_enabled = 0
@@ -27,6 +22,14 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 " ctrlP config
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" vifm
+if executable('vifm')
+  let g:loaded_netrw       = 1
+  let g:loaded_netrwPlugin = 1
+
+  let g:vifm_replace_netrw = 1
 endif
 
 

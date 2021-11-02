@@ -5,7 +5,7 @@ alias vim=nvim
 #GO
 export PATH=$PATH:/usr/local/go/bin
 #Python
-export PATH=$PATH:~/.local/bin
+export PATH=$PATH:/usr/local/bin/python3
 
 #WSL windows conn
 export winhost=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')

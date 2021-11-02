@@ -70,3 +70,8 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent>ca <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" telescope maps
+nnoremap <C-p> :Telescope find_files<CR>
+nnoremap <C-f> :Telescope live_grep<CR>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
