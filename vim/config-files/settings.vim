@@ -5,9 +5,9 @@ set termguicolors
 syntax enable                           " Enables syntax highlighing
 
 " gruvbox theme config
-let g:gruvbox_contrast_dark = 'medium'
-let g:gruvbox_material_background = 'medium'
-colorscheme gruvbox-material 
+let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_material_background = 'soft'
+colorscheme gruvbox
 
 " coc init config
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go', 'coc-pyright' ]
@@ -61,7 +61,7 @@ set showtabline=2                       " Always show tabs
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
-set updatetime=100                      " Faster completion
+set updatetime=150                      " Faster completion
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else

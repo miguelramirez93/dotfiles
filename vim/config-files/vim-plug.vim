@@ -38,6 +38,7 @@ Plug 'https://github.com/sainnhe/gruvbox-material.git', {'branch': 'master', 'as
 
 Plug 'dracula/vim', {'branch': 'master', 'as': 'dracula' }
 
+Plug 'https://github.com/morhetz/gruvbox.git', {'branch': 'master', 'as': 'gruvbox'}
 
 
 call plug#end()
