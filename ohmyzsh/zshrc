@@ -1,6 +1,8 @@
 # ALIAS
 alias vim=nvim
-
+alias gs=git status
+alias gm=git commit
+alias gp=git push
 
 #GO
 export PATH=$PATH:/usr/local/go/bin
