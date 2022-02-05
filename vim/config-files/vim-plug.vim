@@ -28,9 +28,19 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'https://github.com/MaxMEllon/vim-jsx-pretty.git', {'branch': 'master'}
 
-Plug 'https://github.com/mg979/vim-visual-multi.git', {'branch': 'master'}
+" Plug 'https://github.com/mg979/vim-visual-multi.git', {'branch': 'master'}
 
 Plug 'https://github.com/vifm/vifm.vim', {'branch': 'master'}
+
+Plug 'https://github.com/rafi/awesome-vim-colorschemes'
+
+Plug 'https://github.com/terryma/vim-multiple-cursors'
+
+Plug 'https://github.com/tc50cal/vim-terminal'
+
+Plug 'ryanoasis/vim-devicons'
+
+Plug 'jiangmiao/auto-pairs'
 
 " themes
 
@@ -40,5 +50,6 @@ Plug 'dracula/vim', {'branch': 'master', 'as': 'dracula' }
 
 Plug 'https://github.com/morhetz/gruvbox.git', {'branch': 'master', 'as': 'gruvbox'}
 
+Plug 'chriskempson/base16-vim'      
 
 call plug#end()

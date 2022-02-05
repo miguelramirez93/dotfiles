@@ -7,8 +7,7 @@ syntax enable                           " Enables syntax highlighing
 " gruvbox theme config
 let g:gruvbox_contrast_dark = 'soft'
 let g:gruvbox_material_background = 'soft'
-colorscheme gruvbox
-
+colorscheme base16-default-dark
 " coc init config
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go', 'coc-pyright', 'coc-vetur' ]
 
@@ -66,9 +65,13 @@ set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set shell=/bin/bash                     " Set bash as default shell always
+set encoding=utf-8
 "set autochdir                           " Your working directory will always be the same as your working directory
 
 
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
