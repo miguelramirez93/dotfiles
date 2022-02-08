@@ -31,6 +31,15 @@ if executable('vifm')
   let g:vifm_replace_netrw = 1
 endif
 
+" Lua plugins config
+
+lua << END
+require('gitsigns').setup()
+require("toggleterm").setup{
+  open_mapping = [[<c-j>]],
+}
+END
+
 
 " nvim settings
 " set hidden                              " Required to keep multiple buffers open multiple buffers
