@@ -22,8 +22,6 @@ Plug 'https://github.com/leafgarland/typescript-vim.git', {'branch': 'master'}
 
 Plug 'https://github.com/vim-airline/vim-airline.git', {'branch': 'master'}
 
-Plug 'https://github.com/airblade/vim-gitgutter.git', {'branch': 'master'}
-
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'https://github.com/MaxMEllon/vim-jsx-pretty.git', {'branch': 'master'}
@@ -36,12 +34,15 @@ Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 
 Plug 'https://github.com/terryma/vim-multiple-cursors'
 
-Plug 'https://github.com/tc50cal/vim-terminal'
-
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'nvim-lua/plenary.nvim'
+
+Plug 'lewis6991/gitsigns.nvim'
+
+Plug 'akinsho/toggleterm.nvim'
 " themes
 
 Plug 'https://github.com/sainnhe/gruvbox-material.git', {'branch': 'master', 'as': 'gruvbox-material'}
