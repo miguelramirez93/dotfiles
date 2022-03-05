@@ -56,4 +56,6 @@ Plug 'https://github.com/morhetz/gruvbox.git', {'branch': 'master', 'as': 'gruvb
 
 Plug 'chriskempson/base16-vim'      
 
+Plug 'sainnhe/everforest'
+
 call plug#end()

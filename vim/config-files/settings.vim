@@ -7,7 +7,7 @@ syntax enable                           " Enables syntax highlighing
 " gruvbox theme config
 let g:gruvbox_contrast_dark = 'soft'
 let g:gruvbox_material_background = 'soft'
-colorscheme sonokai
+colorscheme onedark
 " coc init config
 let g:coc_global_extensions = [ 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go', 'coc-pyright', 'coc-vetur' ]
 
