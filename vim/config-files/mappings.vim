@@ -76,3 +76,6 @@ inoremap <silent><expr> <c-space> coc#refresh()
 nnoremap <C-p> :Telescope find_files<CR>
 nnoremap <C-f> :Telescope live_grep<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
+
+" NERDTree
+map <silent> <C-b> :NERDTreeToggle<CR>
