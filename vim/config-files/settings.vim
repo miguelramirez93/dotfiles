@@ -24,7 +24,7 @@ if executable('ag')
 endif
 
 " vifm
-"if executable('vifm')
+" if executable('vifm')
 "  let g:loaded_netrw       = 1
 "  let g:loaded_netrwPlugin = 1
 "
@@ -32,7 +32,8 @@ endif
 "endif
 
 " Lua plugins config
-
+" autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+let g:go_doc_keywordprg_enabled = 0
 lua << END
 require('gitsigns').setup()
 require("toggleterm").setup{
@@ -86,3 +87,23 @@ au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm al
 
 " You can't stop me
 cmap w!! w !sudo tee %
+
+
+" NERDTree
+
+" Check if NERDTree is open or active
+function! IsNERDTreeOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+" Highlight currently open buffer in NERDTree
+autocmd BufRead * call SyncTree()
