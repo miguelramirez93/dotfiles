@@ -90,7 +90,8 @@ cmap w!! w !sudo tee %
 
 
 " NERDTree
-
+" Close NERDTree when opening a file
+let g:NERDTreeQuitOnOpen = 1
 " Check if NERDTree is open or active
 function! IsNERDTreeOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
