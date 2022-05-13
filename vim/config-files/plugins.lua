@@ -6,11 +6,12 @@ vim.g.NERDTreeQuitOnOpen = 1
 
 vim.cmd [[
   function! NERDTreeToggleInCurDir()
-    " If NERDTree is open in the current buffer
-    if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
-      exe ":NERDTreeClose"
+    if exists("g:NERDTree") && g:NERDTree.IsOpen()
+        NERDTreeClose
+    elseif filereadable(expand('%'))
+        NERDTreeFind
     else
-      exe ":NERDTreeFind"
+        NERDTree
     endif
   endfunction
 ]]
