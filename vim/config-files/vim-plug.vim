@@ -8,8 +8,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'https://github.com/tpope/vim-fugitive.git', {'branch': 'master'}
 
-Plug 'davidhalter/jedi-vim', {'branch': 'master'}
-
 Plug 'nvim-lua/plenary.nvim'
 
 Plug 'nvim-telescope/telescope.nvim'
@@ -38,8 +36,6 @@ Plug 'ryanoasis/vim-devicons'
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'nvim-lua/plenary.nvim'
-
 Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'akinsho/toggleterm.nvim'
@@ -55,7 +51,5 @@ Plug 'dracula/vim', {'branch': 'master', 'as': 'dracula' }
 Plug 'https://github.com/morhetz/gruvbox.git', {'branch': 'master', 'as': 'gruvbox'}
 
 Plug 'chriskempson/base16-vim'      
-
-Plug 'sainnhe/everforest'
 
 call plug#end()
