@@ -21,6 +21,10 @@ cmd[[
 
     set nobackup                            
     set nowritebackup
+
+    " autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
+    autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 ]]
 
 
@@ -34,3 +38,33 @@ o.splitright = true
 
 
 require('gitsigns').setup()
+
+require'nvim-tree'.setup {
+	update_focused_file = {
+	    enable = true,
+	    update_cwd = false,
+	    ignore_list = {},
+	},
+	actions = {
+	    use_system_clipboard = true,
+	    change_dir = {
+	      enable = true,
+	      global = false,
+	      restrict_above_cwd = false,
+	    },
+	    open_file = {
+	      quit_on_open = true,
+	      resize_window = false,
+	      window_picker = {
+		enable = true,
+		chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+		exclude = {
+		  filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+		  buftype = { "nofile", "terminal", "help" },
+		},
+	      },
+	    },
+	  },
+  }
+
+

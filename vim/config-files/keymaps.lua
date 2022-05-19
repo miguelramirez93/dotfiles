@@ -27,6 +27,5 @@ mapper("v", ">", ">gv")
 mapper("n", "<C-p>", ":Telescope find_files<CR>")
 mapper("n", "<C-f>", ":Telescope live_grep<CR>")
 
--- nerdtree
-mapper("n", "<C-b>", ":call NERDTreeToggleInCurDir()<CR>")
-
+-- Nvimtree
+mapper("n", "<C-b>", ":NvimTreeToggle<CR>")
