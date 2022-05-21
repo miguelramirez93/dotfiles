@@ -41,6 +41,7 @@ local options = {
 }
 
 vim.opt.shortmess:append "c"
+vim.g.material_style = "darker"
 
 for k, v in pairs(options) do
   vim.opt[k] = v
