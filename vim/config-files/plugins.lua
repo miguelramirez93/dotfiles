@@ -1,27 +1,27 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
--- vim.cmd [[packadd packer.nvim]]
-vim.g.NERDTreeQuitOnOpen = 1
-
-vim.cmd [[
-  function! NERDTreeToggleInCurDir()
-    if exists("g:NERDTree") && g:NERDTree.IsOpen()
-        NERDTreeClose
-    elseif filereadable(expand('%'))
-        NERDTreeFind
-    else
-        NERDTree
-    endif
-  endfunction
-]]
 return require('packer').startup(function()
-   -- Packer can manage itself
+  -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use {
-    'neoclide/coc.nvim', branch = 'release'
-  }
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
+
+  -- snippets
+  use "L3MON4D3/LuaSnip" --snippet engine
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+
+  -- use {
+  --  'neoclide/coc.nvim', branch = 'release'
+  -- }
 
   use {
     'tpope/vim-fugitive', branch = 'master'
@@ -76,7 +76,9 @@ return require('packer').startup(function()
   use { 'morhetz/gruvbox', as = 'gruvbox' }
 
   use 'chriskempson/base16-vim'
- 
+
+  use "lunarvim/colorschemes"
+
   use {
      'kyazdani42/nvim-tree.lua',
      requires = {
@@ -84,6 +86,13 @@ return require('packer').startup(function()
      },
      tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
+
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  
+  if PACKER_BOOTSTRAP then
+    require("packer").sync()
+  end
 
 end)
 

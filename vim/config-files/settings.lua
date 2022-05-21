@@ -9,11 +9,11 @@ g.go_doc_keywordprg_enabled = 0
 g.airline_powerline_fonts = 1
 opt.termguicolors = true
 o.mouse = 'a'
-o.updatetime = 50
+o.updatetime = 1000
 g.coc_global_extensions = { 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go', 'coc-pyright', 'coc-vetur', 'coc-json' }
 cmd[[
     syntax enable
-    colorscheme PaperColor
+    colorscheme system76
     set cursorline
     
 
@@ -33,8 +33,9 @@ wo.number = true
 wo.wrap = false
 
 o.clipboard = "unnamedplus"
-o.lazyredraw = true
+o.lazyredraw = false
 o.splitright = true
+o.splitbelow = true
 
 
 require('gitsigns').setup()
