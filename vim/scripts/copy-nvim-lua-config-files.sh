@@ -1,7 +1,8 @@
 #!/bin/bash
 echo "Copiyng config files"
-mkdir -p ~/.config/nvim/lua
-cp -r ../lua/ ~/.config/nvim/lua/
+rm -rf ~/.config/nvim
+mkdir -p ~/.config/nvim
+cp -r ../lua/ ~/.config/nvim/lua
 cp ../config-files/init-n.lua ~/.config/nvim/init.lua
 #cp ../config-files/init.lua ~/.config/nvim/init.lua
 #cp ../config-files/settings.lua ~/.config/nvim/lua/settings.lua
