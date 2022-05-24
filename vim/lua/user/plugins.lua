@@ -59,7 +59,7 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use 'mg979/vim-visual-multi'
-
+  use 'https://github.com/tpope/vim-fugitive.git'
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use 'marko-cerovac/material.nvim'

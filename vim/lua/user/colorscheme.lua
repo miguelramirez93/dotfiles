@@ -1,3 +1,5 @@
+vim.g.material_style = "palenight"
+
 vim.cmd [[
 try
   colorscheme material
