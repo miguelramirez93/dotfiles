@@ -1,10 +1,10 @@
-vim.g.material_style = "palenight"
+vim.g.material_style = "oceanic"
 
 require("themer").setup({})
 
 vim.cmd [[
 try
-  colorscheme themer_onedark
+  colorscheme catppuccin
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark

@@ -63,6 +63,10 @@ return packer.startup(function(use)
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use 'marko-cerovac/material.nvim'
+  use({
+    "catppuccin/nvim",
+    as = "catppuccin"
+  })
   use 'themercorp/themer.lua'
   -- use "lunarvim/darkplus.nvim"
 
