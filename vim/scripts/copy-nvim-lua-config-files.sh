@@ -4,6 +4,7 @@ rm -rf ~/.config/nvim
 mkdir -p ~/.config/nvim
 cp -r ../lua/ ~/.config/nvim/lua
 cp ../config-files/init-n.lua ~/.config/nvim/init.lua
+cp ../coc-settings.json ~/.config/nvim/coc-settings.json
 #cp ../config-files/init.lua ~/.config/nvim/init.lua
 #cp ../config-files/settings.lua ~/.config/nvim/lua/settings.lua
 #cp ../config-files/plugins.lua ~/.config/nvim/lua/plugins.lua
