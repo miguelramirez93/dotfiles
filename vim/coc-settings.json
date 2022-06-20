@@ -16,7 +16,8 @@
     "typescript",
     "typescriptreact",
     "go",
-    "python"
+    "python",
+    "json"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,

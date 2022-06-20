@@ -4,7 +4,7 @@ require("themer").setup({})
 
 vim.cmd [[
 try
-  colorscheme catppuccin
+  colorscheme darkplus
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark

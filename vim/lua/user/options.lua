@@ -1,7 +1,7 @@
 local globals = {
   go_def_mapping_enabled = 0,
   go_doc_keywordprg_enabled = 0,
-  coc_global_extensions = { 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go', 'coc-pyright', 'coc-vetur', 'coc-json', 'coc-jest' }
+  coc_global_extensions = { 'coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-metals', 'coc-go', 'coc-pyright', 'coc-vetur', 'coc-json', 'coc-jest' , 'coc-lua'}
 }
 
 local options = {
