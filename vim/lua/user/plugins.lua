@@ -76,7 +76,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  --use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lsp"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -99,6 +99,14 @@ return packer.startup(function(use)
     end
   }
 
+  use {
+    "ray-x/lsp_signature.nvim",
+    config = function()
+      require("lsp_signature").setup({})
+    end
+  }
+
+
   use 'dominikduda/vim_current_word'
 
   -- Telescope
@@ -115,10 +123,10 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   --GO
-  use {
-    'fatih/vim-go',
-    run = ':GoUpdateBinaries'
-  }
+  --use {
+  --  'fatih/vim-go',
+  --  run = ':GoUpdateBinaries'
+  --}
 
   use {'neoclide/coc.nvim', branch = 'release'}
 

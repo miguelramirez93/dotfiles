@@ -17,13 +17,44 @@
     "typescriptreact",
     "go",
     "python",
-    "json"
+    "json",
+    "lua"
   ],
+  "coc.preferences.triggerSignatureHelp": true,
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
   "go.goplsOptions": {
-    "staticcheck": true
+    "gofumpt": true
   },
-  "diagnostic.checkCurrentLine": false,
-  "python.formatting.autopep8Path": "/usr/bin/autopep8"
+  "go.goplsArgs": [
+    "--remote=auto"
+  ],
+  "suggest.completionItemKindLabels": {
+    "method": "  ",
+    "function": "  ",
+    "variable": "[]",
+    "field": "  ",
+    "typeParameter": "<>",
+    "constant": "  ",
+    "class": " פּ ",
+    "interface": " 蘒",
+    "struct": "  ",
+    "event": "  ",
+    "operator": "  ",
+    "module": "  ",
+    "property": "  ",
+    "enum": " 練",
+    "reference": "  ",
+    "keyword": "  ",
+    "file": "  ",
+    "folder": " ﱮ ",
+    "color": "  ",
+    "unit": " 塞 ",
+    "snippet": "  ",
+    "text": "  ",
+    "constructor": "  ",
+    "value": "  ",
+    "enumMember": "  "
+  },
+  "diagnostic.checkCurrentLine": true
 }
