@@ -1,8 +1,9 @@
 {
   "suggest.noselect": true,
-  "diagnostic.errorSign": "✘",
-  "diagnostic.warningSign": "!",
-  "diagnostic.infoSign": "?",
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": "",
   "eslint.autoFixOnSave": true,
   "eslint.filetypes": [
     "javascript",
@@ -23,12 +24,6 @@
   "coc.preferences.triggerSignatureHelp": true,
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
-  "go.goplsOptions": {
-    "gofumpt": true
-  },
-  "go.goplsArgs": [
-    "--remote=auto"
-  ],
   "suggest.completionItemKindLabels": {
     "method": "  ",
     "function": "  ",
