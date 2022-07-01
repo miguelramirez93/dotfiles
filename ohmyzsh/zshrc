@@ -1,8 +1,12 @@
-# ALIAS
-alias vim=nvim
-alias gs=git status
-alias gm=git commit
-alias gp=git push
+# GIT   
+alias gs='git status'
+alias gc='git commit'
+alias gl='git log --stat'
+alias gri='git rebase -i'
+alias tmx='tmux new -s $(basename $(pwd))'
+alias tmxs='tmux new -s'
+# MY ALIASES
+alias vim="tmx 'nvim'"
 
 #GO
 export PATH=$PATH:/usr/local/go/bin
@@ -10,8 +14,8 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/local/bin/python3
 
 #WSL windows conn
-export winhost=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
-if [ ! -n "$(grep -P "[[:space:]]winhost" /etc/hosts)" ]; then
-        printf "%s\t%s\n" "$winhost" "winhost" | sudo tee -a "/etc/hosts"
-fi
+#export winhost=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')
+#if [ ! -n "$(grep -P "[[:space:]]winhost" /etc/hosts)" ]; then
+#        printf "%s\t%s\n" "$winhost" "winhost" | sudo tee -a "/etc/hosts"
+#fi
 
