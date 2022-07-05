@@ -107,7 +107,8 @@ return packer.startup(function(use)
   }
 
 
-  use 'dominikduda/vim_current_word'
+  -- use 'dominikduda/vim_current_word'
+  use 'RRethy/vim-illuminate'
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
