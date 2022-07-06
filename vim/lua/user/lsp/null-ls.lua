@@ -34,10 +34,11 @@ null_ls.setup({
     formatting.autopep8,
     --formatting.golines,
     --diagnostics.golangci_lint,
-    diagnostics.staticcheck,
+    --diagnostics.staticcheck,
     diagnostics.misspell,
     diagnostics.pylint,
     code_actions.eslint_d,
     -- diagnostics.flake8
 	},
+  update_in_insert = true,
 })

@@ -57,11 +57,17 @@ vim.opt.listchars:append "space:⋅"
 -- vim.opt.listchars:append "space:"
 vim.opt.listchars:append "eol:↴"
 
+if require("user.colorscheme") == "darkplus" then
+  vim.cmd [[ hi NonText ctermfg=7 guifg=gray ]]
+  vim.cmd [[ hi SpecialKey ctermfg=7 guifg=gray ]]
+  vim.cmd [[ hi Whitespace ctermfg=7 guifg=gray ]]
+end
+
 indent_blankline.setup({
 	-- show_end_of_line = true,
 	space_char_blankline = " ",
-	show_current_context = true,
-	show_current_context_start = true,
+	--show_current_context = true,
+	--show_current_context_start = true,
 	-- char_highlight_list = {
 	--   "IndentBlanklineIndent1",
 	--   "IndentBlanklineIndent2",

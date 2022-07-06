@@ -11,23 +11,19 @@ local servers = {
   "gopls", 
   "dockerls",
   "tsserver",
-  "pyright"
+  "pyright",
+  "jdtls",
 }
 
 lsp_installer.setup {
 	ensure_installed = servers
 }
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false
-    }
-)
-
 for _, server in pairs(servers) do
 	local opts = {
 		on_attach = require("user.lsp.handlers").on_attach,
 		capabilities = require("user.lsp.handlers").server_capabilities,
+    flags = require("user.lsp.handlers").flags,
 	}
 	local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings." .. server)
 	if has_custom_opts then

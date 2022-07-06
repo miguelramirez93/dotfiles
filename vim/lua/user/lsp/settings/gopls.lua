@@ -1,8 +1,10 @@
 return {
   settings = {
-    analyses = {
-      unusedparams = true,
-    },
-    completeUnimported = true,
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = false,
+    }
   }
 }

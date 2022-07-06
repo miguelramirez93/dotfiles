@@ -68,6 +68,7 @@ return packer.startup(function(use)
     as = "catppuccin"
   })
   use 'themercorp/themer.lua'
+  use 'sainnhe/edge'
   -- use "lunarvim/darkplus.nvim"
 
   -- cmp plugins
@@ -128,8 +129,17 @@ return packer.startup(function(use)
     'fatih/vim-go',
     run = ':GoUpdateBinaries'
   }
+  
+  use{ 'anuvyklack/pretty-fold.nvim',
+   requires = 'anuvyklack/nvim-keymap-amend', -- only for preview
+   config = function()
+      require('pretty-fold').setup()
+      require('pretty-fold.preview').setup()
+   end
+  }
 
-  use {'neoclide/coc.nvim', branch = 'release'}
+
+  --use {'neoclide/coc.nvim', branch = 'release'}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
