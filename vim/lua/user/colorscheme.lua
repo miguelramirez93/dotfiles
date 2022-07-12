@@ -1,8 +1,10 @@
+local globals = require("user.globals")
+
 vim.g.material_style = "oceanic"
 
 require("themer").setup({})
 
-local selected_color_scheme = "darkplus"
+local selected_color_scheme = globals.colorscheme
 
 local set_theme_cmd = [[
 try
@@ -16,5 +18,3 @@ endtry
 set_theme_cmd = set_theme_cmd:gsub("$selected", selected_color_scheme)
 
 vim.cmd(set_theme_cmd)
-
-return selected_color_scheme

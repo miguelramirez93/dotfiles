@@ -1,3 +1,5 @@
+local globals = require("user.globals")
+
 local status_ok, indent_blankline = pcall(require, "indent_blankline")
 if not status_ok then
 	return
@@ -57,7 +59,7 @@ vim.opt.listchars:append "space:⋅"
 -- vim.opt.listchars:append "space:"
 vim.opt.listchars:append "eol:↴"
 
-if require("user.colorscheme") == "darkplus" then
+if globals.colorscheme == "darkplus" then
   vim.cmd [[ hi NonText ctermfg=7 guifg=gray ]]
   vim.cmd [[ hi SpecialKey ctermfg=7 guifg=gray ]]
   vim.cmd [[ hi Whitespace ctermfg=7 guifg=gray ]]

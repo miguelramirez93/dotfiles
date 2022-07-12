@@ -1,18 +1,16 @@
-local mapper = function(mode, key, result)
-    vim.api.nvim_set_keymap(mode, key, result, { noremap = true, silent = true } )
-end
+local keymaps = require("user.utils.keymaps")
 
 
-mapper("n", "<C-t>", ":tabnew<CR>")
-mapper("n", "<C-s>", ":w<CR>")
+keymaps.map("n", "<C-t>", ":tabnew<CR>")
+keymaps.map("n", "<C-s>", ":w<CR>")
 
 
-mapper("v", "<", "<gv")
-mapper("v", ">", ">gv")
+keymaps.map("v", "<", "<gv")
+keymaps.map("v", ">", ">gv")
 
 
-mapper("n", "<C-p>", ":Telescope find_files<CR>")
-mapper("n", "<C-f>", ":Telescope live_grep<CR>")
+keymaps.map("n", "<C-p>", ":Telescope find_files<CR>")
+keymaps.map("n", "<C-f>", ":Telescope live_grep<CR>")
 
 -- Nvimtree
-mapper("n", "<C-b>", ":NvimTreeToggle<CR>")
+keymaps.map("n", "<C-b>", ":NvimTreeToggle<CR>")

@@ -1,3 +1,4 @@
+local glob = require("user.globals")
 -- TODO make split plugins specific config in folders for each one
 local globals = {
   go_def_mapping_enabled = 0,
@@ -5,22 +6,6 @@ local globals = {
   go_code_completion_enabled = 0,
   go_diagnostics_enabled = 0,
   go_gopls_enabled = 0,
-
-  coc_global_extensions = {
-    'coc-tsserver',
-    'coc-prettier',
-    'coc-eslint',
-    'coc-metals',
-    'coc-go',
-    'coc-pyright',
-    'coc-vetur',
-    'coc-json',
-    'coc-jest',
-    'coc-lua',
-    'coc-snippets',
-    'coc-pairs',
-    'coc-spell-checker'
-  }
 }
 
 local options = {
@@ -42,9 +27,9 @@ local options = {
   splitright = true,                       -- force all vertical splits to go to the right of current window
   swapfile = false,                        -- creates a swapfile
   -- termguicolors = true,                    -- set term gui colors (most terminals support this)
-  timeoutlen = 150,                        -- time to wait for a mapped sequence to complete (in milliseconds)
+  timeoutlen = glob.buffer_upd_time ,                        -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
-  updatetime = 150,                        -- faster completion (4000ms default)
+  updatetime = glob.buffer_upd_time,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true,                        -- convert tabs to spaces
   shiftwidth = 2,                          -- the number of spaces inserted for each indentation

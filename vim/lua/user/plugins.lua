@@ -1,3 +1,5 @@
+local globals = require("user.globals")
+
 local fn = vim.fn
 
 -- Automatically install packer
@@ -107,10 +109,6 @@ return packer.startup(function(use)
     end
   }
 
-
-  -- use 'dominikduda/vim_current_word'
-  use 'RRethy/vim-illuminate'
-
   -- Telescope
   use "nvim-telescope/telescope.nvim"
 
@@ -130,16 +128,14 @@ return packer.startup(function(use)
     run = ':GoUpdateBinaries'
   }
   
-  use{ 'anuvyklack/pretty-fold.nvim',
-   requires = 'anuvyklack/nvim-keymap-amend', -- only for preview
-   config = function()
-      require('pretty-fold').setup()
-      require('pretty-fold.preview').setup()
-   end
-  }
+  if globals.lsp_client ~= globals.native then
+    use {
+      'neoclide/coc.nvim', 
+      branch = 'release',
+    }
 
-
-  --use {'neoclide/coc.nvim', branch = 'release'}
+  end
+  
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

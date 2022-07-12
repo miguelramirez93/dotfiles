@@ -1,16 +1,20 @@
-local status_ok, _ = pcall(require, "lspconfig")
-if not status_ok then
+local requ = require('user.utils.requirement')
+
+local lsp_conf_installed = requ.installed("lspconfig")
+
+if not lsp_conf_installed then
   return
 end
 
-local signature_status_ok, _ = pcall(require, "lsp_signature")
-if not signature_status_ok then
+local lsp_signature_installed = requ.installed("lsp_signature")
+
+if not lsp_signature_installed then
   return
 end
 
-require "lsp_signature".setup({})
 
-require "user.lsp.configs"
-require("user.lsp.handlers").setup()
-require "user.lsp.null-ls"
-require "user.lsp.keymaps"
+require("user.lsp.keymaps").setup()
+
+require("user.lsp.settings").setup()
+
+require("user.lsp.null-ls")

@@ -1,1 +1,2 @@
-require "user.coc.keymaps"
+require("user.coc.keymaps").setup()
+require("user.coc.settings").setup()
