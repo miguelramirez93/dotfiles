@@ -6,6 +6,7 @@ local function use_native()
     require "user.lsp"
     require "user.autopairs"
     require "user.trouble"
+    require "user.lsp_signature"
 end
 
 local function use_coc()
@@ -13,6 +14,16 @@ local function use_coc()
 end
 
 local M = {}
+
+function M.setup()
+  if globals.lsp_client == globals.native then
+    use_native()
+  else 
+    use_coc()
+  end
+
+  M.sync_packager()
+end
 
 function M.get_config_file_path()
   return os.getenv("HOME").."/.nvim_config"
@@ -31,17 +42,6 @@ function M.sync_packager()
       config_file:write(globals.lsp_client)
       config_file:close()
   end
-end
-
-
-function M.setup()
-  if globals.lsp_client == globals.native then
-    use_native()
-  else 
-      use_coc()
-  end
-
-  M.sync_packager()
 end
 
 return M
