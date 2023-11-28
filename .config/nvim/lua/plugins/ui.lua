@@ -7,8 +7,8 @@ return {
       require("incline").setup({
         highlight = {
           groups = {
-            InclineNormal = { guibg = "#BD93F9", guifg = "#F8F8F2" },
-            InclineNormalNC = { guifg = "#BD93F9", guibg = "#F8F8F2" },
+            InclineNormal = { guibg = "#6272A4", guifg = "#F8F8F2" },
+            InclineNormalNC = { guifg = "#6272A4", guibg = "#F8F8F2" },
           },
         },
         window = { margin = { vertical = 0, horizontal = 1 } },
@@ -19,7 +19,7 @@ return {
           local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
           local modified = { " " }
           if vim.bo[props.buf].modified then
-            modified = { " ● ", guifg = "#FFB86C" }
+            modified = { " ● ", guifg = "#FF5555" }
           end
 
           local icon, color = require("nvim-web-devicons").get_icon_color(filename)
