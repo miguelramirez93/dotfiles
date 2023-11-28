@@ -4,4 +4,4 @@
 local opt = vim.opt
 
 opt.relativenumber = false
-opt.timeoutlen = 300
+opt.timeoutlen = 500

@@ -45,6 +45,7 @@ return {
             },
           },
         },
+        jdtls = {},
       },
       setup = {
         gopls = function(_, _)
@@ -79,6 +80,17 @@ return {
         "gowork",
         "gosum",
         "markdown_inline",
+        "java",
+      })
+    end,
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, {
+        "gomodifytags",
+        "impl",
       })
     end,
   },
