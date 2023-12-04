@@ -40,5 +40,6 @@ return {
     tag = "*",
     config = true,
     lazy = false,
+    enabled = false,
   },
 }
