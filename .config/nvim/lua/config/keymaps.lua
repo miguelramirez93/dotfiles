@@ -8,17 +8,32 @@ vim.keymap.set("n", "rn", vim.lsp.buf.rename, { silent = true })
 
 -- Terminal
 function _G.set_terminal_keymaps()
-    local opts = { noremap = true }
-    vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+  local opts = { noremap = true }
+  vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
 end
 
-vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
-vim.keymap.set("n", "<C-j>v", function ()
-    vim.cmd [[ ToggleTerm size=12 direction=horizontal ]]
+vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
+vim.keymap.set("n", "<C-j>v", function()
+  vim.cmd([[ ToggleTerm size=12 direction=horizontal ]])
 end, { silent = false })
-vim.keymap.set("n", "<C-j>", function ()
-    vim.cmd [[ ToggleTerm size=80 direction=vertical ]]
+vim.keymap.set("n", "<C-j>", function()
+  vim.cmd([[ ToggleTerm size=80 direction=vertical ]])
 end, { silent = false })
-vim.keymap.set("n", "<C-j>f", function ()
-    vim.cmd [[ ToggleTerm direction=float ]]
+vim.keymap.set("n", "<C-j>f", function()
+  vim.cmd([[ ToggleTerm direction=float ]])
+end, { silent = false })
+
+-- file explorer
+vim.keymap.set("n", "<C-e>", function()
+  vim.cmd([[ Telescope file_browser ]])
+end, { silent = false })
+
+-- Git
+vim.keymap.set("n", "<C-g>d", function()
+  vim.cmd([[ Telescope git_status ]])
+end, { silent = false })
+
+--buffers
+vim.keymap.set("n", "<C-e>b", function()
+  vim.cmd([[ Telescope buffers ]])
 end, { silent = false })
