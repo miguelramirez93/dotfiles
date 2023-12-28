@@ -1,7 +1,7 @@
 -- Commands
 vim.api.nvim_create_user_command("TestCurrentFile", function()
-  require("neotest").summary.toggle()
   require("neotest").run.run(vim.fn.expand("%"))
+  require("neotest").summary.toggle()
 end, {})
 
 vim.api.nvim_create_user_command("TestFunc", function()
@@ -9,8 +9,8 @@ vim.api.nvim_create_user_command("TestFunc", function()
 end, {})
 
 vim.api.nvim_create_user_command("TestAll", function()
-  require("neotest").summary.toggle()
   require("neotest").run.run(vim.fn.getcwd())
+  require("neotest").summary.toggle()
 end, {})
 
 vim.api.nvim_create_user_command("TestCurrResult", function()

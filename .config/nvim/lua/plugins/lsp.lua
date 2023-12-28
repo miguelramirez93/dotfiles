@@ -1,7 +1,12 @@
+vim.cmd([[ autocmd CursorHold * lua vim.diagnostic.open_float() ]])
+
 return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      diagnostics = {
+        virtual_text = false,
+      },
       servers = {
         gopls = {
           keys = {

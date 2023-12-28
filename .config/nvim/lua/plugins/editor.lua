@@ -24,20 +24,15 @@ return {
     },
     enabled = false,
   },
+  -- add symbols-outline
   {
-    -- add symbols-outline
-    {
-      "simrat39/symbols-outline.nvim",
-      keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-      opts = {
-        position = "right",
-        auto_close = true,
-      },
+    "simrat39/symbols-outline.nvim",
+    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
+    opts = {
+      position = "right",
+      auto_close = true,
     },
-  },
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    enabled = false,
   },
   {
     "tpope/vim-fugitive",
