@@ -1,0 +1,21 @@
+local opts = {
+    sync_install = false,
+    highlight = { enable = true },
+    indent = { enable = true },
+    ensure_installed = {},
+}
+
+return {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter-context",
+    },
+    version = false, -- last release is way too old and doesn't work on Windows
+    event = { "BufEnter", "VeryLazy" },
+    build = ":TSUpdate",
+    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+    install_lang_syntax = function(langs)
+        opts.ensure_installed = vim.tbl_extend("force", opts.ensure_installed, langs )
+        require('nvim-treesitter.configs').setup(opts)
+    end
+}
