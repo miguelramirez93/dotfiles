@@ -25,6 +25,8 @@ local friendlysnipperts = require "plugins.lsp.friendlysnipperts"
 local neotest           = require "plugins.testhandlers.neotest"
 local testrunners       = require "plugins.testhandlers.testrunners"
 local persistence       = require "plugins.editor.persistence"
+local java              = require "plugins.lsp.langs_cfg.java"
+local markdown          = require "plugins.lsp.langs_cfg.markdown"
 
 
 local m = {
@@ -64,6 +66,7 @@ local m = {
             persistence,
             { "blazkowolf/gruber-darker.nvim", lazy = false, priority = 1000, },
             { "folke/tokyonight.nvim",         lazy = true,  opts = { style = "moon" }, },
+            markdown,
         },
     },
     lsp = {
@@ -75,6 +78,7 @@ local m = {
         },
         servers = {
             go,
+            java,
         },
     },
     tests = {

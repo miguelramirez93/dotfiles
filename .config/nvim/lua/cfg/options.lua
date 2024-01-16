@@ -8,6 +8,7 @@ opt.shiftwidth = 2
 opt.splitright = true
 opt.cursorline = true
 opt.updatetime=500
+opt.clipboard="unnamedplus"
 
 vim.diagnostic.config({
     virtual_text = false,
