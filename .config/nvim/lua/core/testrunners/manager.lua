@@ -11,7 +11,6 @@ function m.setup_tests_runners(servers_list)
             runners = vim.tbl_extend("force", runners, server.test_runners)
         end
     end
-    print("HERE")
     m.tests_service.install_runners(runners)
 end
 

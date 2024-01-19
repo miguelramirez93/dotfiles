@@ -1,5 +1,6 @@
 require "cfg.options"
 require "cfg.keymaps"
+require "cfg.lsp"
 
 
 local dependences = require "cfg.dependences"
