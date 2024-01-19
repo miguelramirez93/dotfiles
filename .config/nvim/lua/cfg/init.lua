@@ -26,6 +26,6 @@ tests_manager.setup_tests_runners(dependences.lsp.servers)
 
 server_manager.setup_servers(dependences.lsp.servers)
 
-vim.cmd [[ colorscheme gruber-darker ]]
+vim.cmd [[ colorscheme solarized-osaka ]]
 
 
