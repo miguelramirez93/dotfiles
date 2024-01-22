@@ -70,4 +70,7 @@ return {
         end
         require("cmp").setup(opts)
     end,
+    get_lsp_capabilities = function ()
+        return require('cmp_nvim_lsp').default_capabilities()
+    end
 }

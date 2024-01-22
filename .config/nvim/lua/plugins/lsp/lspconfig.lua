@@ -6,9 +6,10 @@ return {
         { "folke/neodev.nvim",  opts = {} },
         "mason.nvim",
     },
-    setup_servers = function(servers_list)
+    setup_servers = function(servers_list, capabilities)
         for name, cfg in pairs(servers_list) do
-            require('lspconfig')[name].setup(cfg)
+            local extended_cfg = vim.tbl_extend("keep", cfg, {capabilities = capabilities})
+            require('lspconfig')[name].setup(extended_cfg)
         end
     end,
 }

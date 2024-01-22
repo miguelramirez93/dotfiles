@@ -19,6 +19,8 @@ server_manager.syntax_tree_client = dependences.lsp.manager.syntax_tree_client
 
 server_manager.format_client = dependences.lsp.manager.formater_client
 
+server_manager.capabilities_enhancer_client = dependences.lsp.manager.capabilities_enhancer_client
+
 tests_manager.tests_service = dependences.tests.manager.service
 
 plugins_manager.sync(dependences.plugins.list)

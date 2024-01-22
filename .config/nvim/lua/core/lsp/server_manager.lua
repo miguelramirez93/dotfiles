@@ -1,15 +1,18 @@
 local m = {
     ls_client = {
-        setup_servers = function(servers_list) end,
+        setup_servers = function(servers_list, capabilities) end,
     },
     lang_deps_client = {
         install_deps = function(deps) end
     },
     syntax_tree_client = {
-        install_lang_syntax = function (langs) end
+        install_lang_syntax = function(langs) end
     },
     format_client = {
-        install_formaters = function (formaters) end
+        install_formaters = function(formaters) end
+    },
+    capabilities_enhancer_client = {
+        get_lsp_capabilities = function() return {} end
     },
 }
 
@@ -20,15 +23,13 @@ function m.setup_servers(servers_list)
             servers = vim.tbl_extend("keep", servers, server_cfg.ls)
         end
     end
-
-    m.ls_client.setup_servers(servers)
+    m.ls_client.setup_servers(servers, m.capabilities_enhancer_client.get_lsp_capabilities())
 
     m.install_lang_deps(servers_list)
 
     m.install_lang_syntax(servers_list)
 
     m.install_formaters(servers_list)
-
 end
 
 function m.install_lang_deps(servers_list)

@@ -81,6 +81,7 @@ local m = {
             lang_deps_client = mason,
             syntax_tree_client = treesitter,
             formater_client = conform,
+            capabilities_enhancer_client = cmp,
         },
         servers = {
             go,
