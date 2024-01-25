@@ -1,13 +1,11 @@
-require "cfg.options"
-require "cfg.keymaps"
-require "cfg.lsp"
+require("cfg.options")
+require("cfg.keymaps")
+require("cfg.lsp")
 
-
-local dependences = require "cfg.dependences"
-local plugins_manager = require "core.plugins.manager"
-local server_manager = require "core.lsp.server_manager"
-local tests_manager = require "core.testrunners.manager"
-
+local dependences = require("cfg.dependences")
+local plugins_manager = require("core.plugins.manager")
+local server_manager = require("core.lsp.server_manager")
+local tests_manager = require("core.testrunners.manager")
 
 plugins_manager.client = dependences.plugins.manager.client
 
@@ -29,6 +27,4 @@ tests_manager.setup_tests_runners(dependences.lsp.servers)
 
 server_manager.setup_servers(dependences.lsp.servers)
 
-vim.cmd [[ colorscheme solarized-osaka ]]
-
-
+vim.cmd([[ colorscheme gruber-darker ]])
