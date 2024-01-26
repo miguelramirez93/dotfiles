@@ -89,6 +89,7 @@ local m = {
 			go,
 			java,
 			lua_ls,
+			markdown,
 		},
 	},
 	tests = {
