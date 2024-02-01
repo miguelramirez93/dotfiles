@@ -44,7 +44,22 @@ return {
 			return require("trouble.providers.telescope").open_selected_with_trouble(...)
 		end
 
+		local fb_actions = require("telescope").extensions.file_browser.actions
+
 		local l_opts = {
+			extensions = {
+				file_browser = {
+					mappings = {
+						["n"] = {
+							["<leader>c"] = fb_actions.create,
+							["<leader>r"] = fb_actions.rename,
+							["<leader>mv"] = fb_actions.move,
+							["<leader>cp"] = fb_actions.copy,
+							["<leader>d"] = fb_actions.remove,
+						},
+					},
+				},
+			},
 			defaults = {
 				layout_strategy = "horizontal",
 				layout_config = {

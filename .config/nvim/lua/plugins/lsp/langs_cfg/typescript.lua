@@ -1,7 +1,6 @@
 return {
 	ls = {
 		tsserver = {
-			---@diagnostic disable-next-line: missing-fields
 			settings = {
 				completions = {
 					completeFunctionCalls = true,
@@ -11,9 +10,13 @@ return {
 	},
 	deps = {
 		"typescript-language-server",
+		"prettierd",
 	},
 	langs = {
 		"typescript",
 		"tsx",
+	},
+	formaters = {
+		typescript = { { "prettierd", "prettier" } },
 	},
 }
