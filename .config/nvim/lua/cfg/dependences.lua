@@ -78,7 +78,10 @@ local m = {
 				{
 					"oxfist/night-owl.nvim",
 					lazy = false,
-					priority = 1000,
+					-- priority = 1000,
+					pts = {
+						transparent_background = true,
+					},
 				},
 			},
 			markdown,

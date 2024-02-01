@@ -27,4 +27,4 @@ tests_manager.setup_tests_runners(dependences.lsp.servers)
 
 server_manager.setup_servers(dependences.lsp.servers)
 
-vim.cmd.colorscheme("night-owl")
+vim.cmd.colorscheme("gruber-darker")
