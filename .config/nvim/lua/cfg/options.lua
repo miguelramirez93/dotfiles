@@ -15,3 +15,6 @@ opt.updatetime = 750
 opt.clipboard = "unnamedplus"
 opt.termguicolors = true
 
+-- enable spelling
+opt.spelllang = "en_us,es_mx"
+opt.spell = true

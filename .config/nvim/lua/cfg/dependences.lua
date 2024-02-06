@@ -29,6 +29,7 @@ local java = require("plugins.lsp.langs_cfg.java")
 local markdown = require("plugins.lsp.langs_cfg.markdown")
 local lua_ls = require("plugins.lsp.langs_cfg.lua_ls")
 local typescript = require("plugins.lsp.langs_cfg.typescript")
+local zenmode = require("plugins.ui.zenmode")
 
 local m = {
 	plugins = {
@@ -85,6 +86,7 @@ local m = {
 				},
 			},
 			markdown,
+			zenmode,
 		},
 	},
 	lsp = {
