@@ -30,6 +30,7 @@ local markdown = require("plugins.lsp.langs_cfg.markdown")
 local lua_ls = require("plugins.lsp.langs_cfg.lua_ls")
 local typescript = require("plugins.lsp.langs_cfg.typescript")
 local zenmode = require("plugins.ui.zenmode")
+local modes = require("plugins.ui.modes")
 
 local m = {
 	plugins = {
@@ -50,7 +51,6 @@ local m = {
 			trouble,
 			todocomments,
 			vimilluminate,
-			telescope,
 			identblackline,
 			dressing,
 			nui,
@@ -67,26 +67,64 @@ local m = {
 			neotest,
 			testrunners,
 			persistence,
-			{ "blazkowolf/gruber-darker.nvim", lazy = true, priority = 1000 },
-			{ "folke/tokyonight.nvim", lazy = true, opts = { style = "moon" } },
+			{
+				"folke/tokyonight.nvim",
+				lazy = false,
+				priority = 1000,
+				opts = {
+					transparent = true,
+				},
+			},
+			{
+				"oxfist/night-owl.nvim",
+				lazy = true,
+				-- priority = 1000,
+				opts = {
+					transparent_background = true,
+				},
+			},
+			-- below themes have issues with bordered cmp compoetions
+			{
+				"blazkowolf/gruber-darker.nvim",
+				-- priority = 1000,
+				lazy = true,
+			},
 			{
 				"craftzdog/solarized-osaka.nvim",
-				lazy = false,
+				lazy = true,
 				--priority = 1000,
 				opts = {
 					transparent = true,
 				},
-				{
-					"oxfist/night-owl.nvim",
-					lazy = false,
-					-- priority = 1000,
-					pts = {
-						transparent_background = true,
+			},
+			{
+				"rose-pine/neovim",
+				priority = 1000,
+				--enabled = false,
+				opts = {
+					variant = "moon",
+					dark_variant = "moon",
+					extend_background_behind_borders = true,
+					styles = {
+						transparency = true,
+					},
+					enable = {
+						terminal = true,
+						legacy_highlights = false, -- Improve compatibility for previous versions of Neovim
+						migrations = false, -- Handle deprecated options automatically
 					},
 				},
+				setup = function(opts)
+					require("rose-pine").setup(opts)
+					vim.api.nvim_create_autocmd("ColorScheme", {
+						command = [[highlight CursorLine guibg=#403d52 cterm=underline]],
+					})
+				end,
+				name = "rose-pine",
 			},
 			markdown,
 			zenmode,
+			modes,
 		},
 	},
 	lsp = {
@@ -111,6 +149,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
+	theme = "rose-pine-main",
 }
 
 return m
