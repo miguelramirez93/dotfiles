@@ -70,37 +70,15 @@ local m = {
 			{
 				"folke/tokyonight.nvim",
 				lazy = false,
-				priority = 1000,
-				opts = {
-					transparent = true,
-				},
-			},
-			{
-				"oxfist/night-owl.nvim",
-				lazy = true,
 				-- priority = 1000,
 				opts = {
-					transparent_background = true,
-				},
-			},
-			-- below themes have issues with bordered cmp compoetions
-			{
-				"blazkowolf/gruber-darker.nvim",
-				-- priority = 1000,
-				lazy = true,
-			},
-			{
-				"craftzdog/solarized-osaka.nvim",
-				lazy = true,
-				--priority = 1000,
-				opts = {
-					transparent = true,
+					transparent = false,
 				},
 			},
 			{
 				"rose-pine/neovim",
 				priority = 1000,
-				--enabled = false,
+				enabled = true,
 				opts = {
 					variant = "moon",
 					dark_variant = "moon",
@@ -121,6 +99,20 @@ local m = {
 					})
 				end,
 				name = "rose-pine",
+			},
+			-- below themes have issues with bordered cmp completions
+			{
+				"blazkowolf/gruber-darker.nvim",
+				-- priority = 1000,
+				lazy = true,
+			},
+			{
+				"craftzdog/solarized-osaka.nvim",
+				lazy = true,
+				--priority = 1000,
+				opts = {
+					transparent = true,
+				},
 			},
 			markdown,
 			zenmode,
@@ -149,7 +141,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "rose-pine-main",
+	theme = "rose-pine",
 }
 
 return m
