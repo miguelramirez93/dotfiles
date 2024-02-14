@@ -91,7 +91,7 @@ local m = {
 			},
 			markdown,
 			zenmode,
-			modes,
+			--modes,
 		},
 	},
 	lsp = {
