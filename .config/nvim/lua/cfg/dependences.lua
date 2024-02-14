@@ -68,57 +68,12 @@ local m = {
 			testrunners,
 			persistence,
 			{
-				"folke/tokyonight.nvim",
-				lazy = false,
-				-- priority = 1000,
-				opts = {
-					transparent = false,
-				},
-			},
-			{
-				"rose-pine/neovim",
-				-- priority = 1000,
-				enabled = false,
-				opts = {
-					variant = "moon",
-					dark_variant = "moon",
-					extend_background_behind_borders = true,
-					styles = {
-						transparency = true,
-					},
-					enable = {
-						terminal = true,
-						legacy_highlights = false, -- Improve compatibility for previous versions of Neovim
-						migrations = false, -- Handle deprecated options automatically
-					},
-				},
-				setup = function(opts)
-					require("rose-pine").setup(opts)
-					vim.api.nvim_create_autocmd("ColorScheme", {
-						command = [[highlight CursorLine guibg=#403d52 cterm=underline]],
-					})
-				end,
-				name = "rose-pine",
-			},
-			{
-				"lewpoly/sherbet.nvim",
-				-- priority = 1000,
-				name = "sherbet",
-			},
-			{
-				"bluz71/vim-moonfly-colors",
-				name = "moonfly",
+				"navarasu/onedark.nvim",
 				lazy = false,
 				priority = 1000,
-				setup = function()
-					vim.g.moonflyTransparent = true
-				end,
-			},
-			-- below themes have issues with bordered cmp completions
-			{
-				"blazkowolf/gruber-darker.nvim",
-				-- priority = 1000,
-				lazy = true,
+				opts = {
+					style = "warmer",
+				},
 			},
 			{
 				"craftzdog/solarized-osaka.nvim",
@@ -127,6 +82,12 @@ local m = {
 				opts = {
 					transparent = true,
 				},
+			},
+			-- below themes have issues with bordered cmp completions
+			{
+				"blazkowolf/gruber-darker.nvim",
+				-- priority = 1000,
+				lazy = true,
 			},
 			markdown,
 			zenmode,
@@ -155,7 +116,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "moonfly",
+	theme = "onedark",
 }
 
 return m
