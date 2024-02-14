@@ -77,8 +77,8 @@ local m = {
 			},
 			{
 				"rose-pine/neovim",
-				priority = 1000,
-				enabled = true,
+				-- priority = 1000,
+				enabled = false,
 				opts = {
 					variant = "moon",
 					dark_variant = "moon",
@@ -99,6 +99,20 @@ local m = {
 					})
 				end,
 				name = "rose-pine",
+			},
+			{
+				"lewpoly/sherbet.nvim",
+				-- priority = 1000,
+				name = "sherbet",
+			},
+			{
+				"bluz71/vim-moonfly-colors",
+				name = "moonfly",
+				lazy = false,
+				priority = 1000,
+				setup = function()
+					vim.g.moonflyTransparent = true
+				end,
 			},
 			-- below themes have issues with bordered cmp completions
 			{
@@ -141,7 +155,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "rose-pine",
+	theme = "moonfly",
 }
 
 return m
