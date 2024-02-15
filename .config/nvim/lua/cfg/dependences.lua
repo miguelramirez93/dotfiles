@@ -30,7 +30,6 @@ local markdown = require("plugins.lsp.langs_cfg.markdown")
 local lua_ls = require("plugins.lsp.langs_cfg.lua_ls")
 local typescript = require("plugins.lsp.langs_cfg.typescript")
 local zenmode = require("plugins.ui.zenmode")
-local modes = require("plugins.ui.modes")
 
 local m = {
 	plugins = {
@@ -52,9 +51,9 @@ local m = {
 			todocomments,
 			vimilluminate,
 			identblackline,
-			dressing,
-			nui,
-			noice,
+			-- dressing,
+			-- nui,
+			-- noice,
 			conform,
 			lualine,
 			gitsigns,
@@ -91,7 +90,6 @@ local m = {
 			},
 			markdown,
 			zenmode,
-			--modes,
 		},
 	},
 	lsp = {
