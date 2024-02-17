@@ -30,6 +30,7 @@ local markdown = require("plugins.lsp.langs_cfg.markdown")
 local lua_ls = require("plugins.lsp.langs_cfg.lua_ls")
 local typescript = require("plugins.lsp.langs_cfg.typescript")
 local zenmode = require("plugins.ui.zenmode")
+local undotree = require("plugins.editor.undotree")
 
 local m = {
 	plugins = {
@@ -60,7 +61,7 @@ local m = {
 			{
 				"tpope/vim-fugitive",
 			},
-			incline,
+			--incline,
 			luasnip,
 			friendlysnipperts,
 			neotest,
@@ -90,6 +91,7 @@ local m = {
 			},
 			markdown,
 			zenmode,
+			undotree,
 		},
 	},
 	lsp = {

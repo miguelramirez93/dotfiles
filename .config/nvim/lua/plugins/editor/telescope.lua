@@ -28,7 +28,7 @@ return {
 		{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files (root dir)" },
 		-- git
 		{ "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
-		{ "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "status" },
+		-- { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "status" },
 		{ "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
 		{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Buffer" },
 		{ "<leader>ss", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Symbols" },
@@ -36,14 +36,6 @@ return {
 	},
 	setup = function(opts)
 		local actions = require("telescope.actions")
-
-		local open_with_trouble = function(...)
-			return require("trouble.providers.telescope").open_with_trouble(...)
-		end
-		local open_selected_with_trouble = function(...)
-			return require("trouble.providers.telescope").open_selected_with_trouble(...)
-		end
-
 		local fb_actions = require("telescope").extensions.file_browser.actions
 
 		local l_opts = {
@@ -85,8 +77,6 @@ return {
 				end,
 				mappings = {
 					i = {
-						["<c-t>"] = open_with_trouble,
-						["<a-t>"] = open_selected_with_trouble,
 						["<C-Down>"] = actions.cycle_history_next,
 						["<C-Up>"] = actions.cycle_history_prev,
 						["<C-f>"] = actions.preview_scrolling_down,
