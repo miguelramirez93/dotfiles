@@ -5,10 +5,6 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 --
 
--- lsp
-vim.keymap.set("n", "gv", ":vsplit | lua vim.lsp.buf.definition()<CR>", { silent = true })
-vim.keymap.set("n", "rn", vim.lsp.buf.rename, { silent = true })
-
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
@@ -51,6 +47,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.lsp.buf.format({ async = true })
 		end, opts)
 		vim.keymap.set("n", "dg", vim.diagnostic.open_float)
+		-- lsp
+		vim.keymap.set("n", "gv", ":vsplit | lua vim.lsp.buf.definition()<CR>", { silent = true })
+		vim.keymap.set("n", "rn", vim.lsp.buf.rename, { silent = true })
 	end,
 })
-

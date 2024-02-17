@@ -31,6 +31,7 @@ local lua_ls = require("plugins.lsp.langs_cfg.lua_ls")
 local typescript = require("plugins.lsp.langs_cfg.typescript")
 local zenmode = require("plugins.ui.zenmode")
 local undotree = require("plugins.editor.undotree")
+local lspzero = require("plugins.lsp.lspzero")
 
 local m = {
 	plugins = {
@@ -40,6 +41,7 @@ local m = {
 		list = {
 			{ "nvim-lua/plenary.nvim" },
 			{ "nvim-tree/nvim-web-devicons" },
+			lspzero,
 			lspconfig,
 			mason,
 			treesitter,
