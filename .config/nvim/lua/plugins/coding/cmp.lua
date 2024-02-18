@@ -12,8 +12,24 @@ return {
 	setup = function()
 		local cmp = require("cmp")
 		local cmp_action = require("lsp-zero").cmp_action()
+		local luasnip = require("luasnip")
 
 		cmp.setup({
+			completion = {
+				completeopt = "menu,menuone,noinsert",
+			},
+			snippet = {
+				expand = function(args)
+					luasnip.lsp_expand(args.body)
+				end,
+			},
+			sources = cmp.config.sources({
+				{ name = "nvim_lsp" },
+				{ name = "luasnip" },
+				{ name = "path" },
+			}, {
+				{ name = "buffer" },
+			}),
 			window = {
 				completion = cmp.config.window.bordered(),
 				documentation = cmp.config.window.bordered(),
