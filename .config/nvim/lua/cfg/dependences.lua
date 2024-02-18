@@ -63,7 +63,7 @@ local m = {
 			{
 				"tpope/vim-fugitive",
 			},
-			--incline,
+			incline,
 			luasnip,
 			friendlysnipperts,
 			neotest,
