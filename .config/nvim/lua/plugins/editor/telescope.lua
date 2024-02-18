@@ -4,20 +4,20 @@ return {
 	version = false, -- telescope did only one release, so use HEAD for now
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		{
-			"nvim-telescope/telescope-fzf-native.nvim",
-			build = "make",
-			enabled = vim.fn.executable("make") == 1,
-			config = function()
-				require("telescope").load_extension("fzf")
-			end,
-		},
-		{
-			"nvim-telescope/telescope-file-browser.nvim",
-			config = function()
-				require("telescope").load_extension("file_browser")
-			end,
-		},
+		-- {
+		-- 	"nvim-telescope/telescope-fzf-native.nvim",
+		-- 	build = "make",
+		-- 	enabled = vim.fn.executable("make") == 1,
+		-- 	config = function()
+		-- 		require("telescope").load_extension("fzf")
+		-- 	end,
+		-- },
+		-- {
+		-- 	"nvim-telescope/telescope-file-browser.nvim",
+		-- 	config = function()
+		-- 		require("telescope").load_extension("file_browser")
+		-- 	end,
+		-- },
 	},
 	keys = {
 		{
@@ -36,18 +36,18 @@ return {
 	},
 	setup = function(opts)
 		local actions = require("telescope.actions")
-		local fb_actions = require("telescope").extensions.file_browser.actions
+		-- local fb_actions = require("telescope").extensions.file_browser.actions
 
 		local l_opts = {
 			extensions = {
 				file_browser = {
 					mappings = {
 						["n"] = {
-							["<leader>c"] = fb_actions.create,
-							["<leader>r"] = fb_actions.rename,
-							["<leader>mv"] = fb_actions.move,
-							["<leader>cp"] = fb_actions.copy,
-							["<leader>d"] = fb_actions.remove,
+							-- ["<leader>c"] = fb_actions.create,
+							-- ["<leader>r"] = fb_actions.rename,
+							-- ["<leader>mv"] = fb_actions.move,
+							-- ["<leader>cp"] = fb_actions.copy,
+							-- ["<leader>d"] = fb_actions.remove,
 						},
 					},
 				},

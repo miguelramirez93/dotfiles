@@ -55,7 +55,7 @@ local m = {
 			vimilluminate,
 			identblackline,
 			dressing,
-			nui,
+			-- nui,
 			-- noice,
 			conform,
 			lualine,
@@ -72,18 +72,16 @@ local m = {
 			{
 				"navarasu/onedark.nvim",
 				lazy = false,
-				priority = 1000,
+				-- priority = 1000,
 				opts = {
 					style = "warmer",
 				},
 			},
 			{
-				"craftzdog/solarized-osaka.nvim",
-				lazy = true,
-				--priority = 1000,
-				opts = {
-					transparent = true,
-				},
+				"briones-gabriel/darcula-solid.nvim",
+				dependencies = { "rktjmp/lush.nvim" },
+				lazy = false,
+				priority = 1000,
 			},
 			-- below themes have issues with bordered cmp completions
 			{
@@ -118,7 +116,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "onedark",
+	theme = "darcula-solid",
 }
 
 return m
