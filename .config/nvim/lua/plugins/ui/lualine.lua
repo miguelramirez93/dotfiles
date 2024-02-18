@@ -3,8 +3,16 @@ return {
 	event = "VeryLazy",
 	lazy = false,
 	enabled = true,
-	dependencies = { "nvim-tree/nvim-web-devicons" },
-	setup = function(opts)
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+		{
+			"linrongbin16/lsp-progress.nvim",
+			config = function()
+				require("lsp-progress").setup()
+			end,
+		},
+	},
+	setup = function(_)
 		require("lualine").setup({
 			options = {
 				theme = "auto",
@@ -16,8 +24,8 @@ return {
 					{ "mode", separator = { left = "" }, right_padding = 2 },
 				},
 				lualine_b = { "branch" },
-				lualine_c = {},
-				lualine_x = { "diff", "diagnostics" },
+				lualine_c = { "filename", "diff", "diagnostics" },
+				lualine_x = { require("lsp-progress").progress },
 				lualine_y = { "filetype", "encoding", "progress" },
 				lualine_z = {
 					{ "location", separator = { right = "" }, left_padding = 2 },

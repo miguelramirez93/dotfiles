@@ -29,6 +29,9 @@ local java = require("plugins.lsp.langs_cfg.java")
 local markdown = require("plugins.lsp.langs_cfg.markdown")
 local lua_ls = require("plugins.lsp.langs_cfg.lua_ls")
 local typescript = require("plugins.lsp.langs_cfg.typescript")
+local zenmode = require("plugins.ui.zenmode")
+local undotree = require("plugins.editor.undotree")
+local lspzero = require("plugins.lsp.lspzero")
 
 local m = {
 	plugins = {
@@ -38,6 +41,7 @@ local m = {
 		list = {
 			{ "nvim-lua/plenary.nvim" },
 			{ "nvim-tree/nvim-web-devicons" },
+			lspzero,
 			lspconfig,
 			mason,
 			treesitter,
@@ -49,34 +53,45 @@ local m = {
 			trouble,
 			todocomments,
 			vimilluminate,
-			telescope,
 			identblackline,
 			dressing,
-			nui,
-			noice,
+			-- nui,
+			-- noice,
 			conform,
 			lualine,
 			gitsigns,
 			{
 				"tpope/vim-fugitive",
 			},
-			incline,
+			--incline,
 			luasnip,
 			friendlysnipperts,
 			neotest,
 			testrunners,
 			persistence,
-			{ "blazkowolf/gruber-darker.nvim", lazy = true, priority = 1000 },
-			{ "folke/tokyonight.nvim", lazy = true, opts = { style = "moon" } },
 			{
-				"craftzdog/solarized-osaka.nvim",
+				"navarasu/onedark.nvim",
 				lazy = false,
-				--priority = 1000,
+				-- priority = 1000,
 				opts = {
-					transparent = true,
+					style = "warmer",
 				},
 			},
+			{
+				"briones-gabriel/darcula-solid.nvim",
+				dependencies = { "rktjmp/lush.nvim" },
+				lazy = false,
+				priority = 1000,
+			},
+			-- below themes have issues with bordered cmp completions
+			{
+				"blazkowolf/gruber-darker.nvim",
+				-- priority = 1000,
+				lazy = true,
+			},
 			markdown,
+			zenmode,
+			undotree,
 		},
 	},
 	lsp = {
@@ -101,6 +116,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
+	theme = "darcula-solid",
 }
 
 return m
