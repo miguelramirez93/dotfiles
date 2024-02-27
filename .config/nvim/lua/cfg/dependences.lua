@@ -63,7 +63,7 @@ local m = {
 			{
 				"tpope/vim-fugitive",
 			},
-			--incline,
+			incline,
 			luasnip,
 			friendlysnipperts,
 			neotest,
@@ -78,8 +78,7 @@ local m = {
 				},
 			},
 			{
-				"briones-gabriel/darcula-solid.nvim",
-				dependencies = { "rktjmp/lush.nvim" },
+				"xiantang/darcula-dark.nvim",
 				lazy = false,
 				priority = 1000,
 			},
@@ -116,7 +115,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "darcula-solid",
+	theme = "darcula-dark",
 }
 
 return m
