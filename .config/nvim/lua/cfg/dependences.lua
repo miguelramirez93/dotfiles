@@ -32,6 +32,7 @@ local typescript = require("plugins.lsp.langs_cfg.typescript")
 local zenmode = require("plugins.ui.zenmode")
 local undotree = require("plugins.editor.undotree")
 local lspzero = require("plugins.lsp.lspzero")
+local lspsignature = require("plugins.lsp.lspsignature")
 
 local m = {
 	plugins = {
@@ -91,6 +92,7 @@ local m = {
 			markdown,
 			zenmode,
 			undotree,
+			lspsignature,
 		},
 	},
 	lsp = {
