@@ -33,6 +33,7 @@ local zenmode = require("plugins.ui.zenmode")
 local undotree = require("plugins.editor.undotree")
 local lspzero = require("plugins.lsp.lspzero")
 local lspsignature = require("plugins.lsp.lspsignature")
+local idbl         = require("plugins.ui.idbl")
 
 local m = {
 	plugins = {
@@ -93,6 +94,7 @@ local m = {
 			zenmode,
 			undotree,
 			lspsignature,
+			idbl,
 		},
 	},
 	lsp = {
