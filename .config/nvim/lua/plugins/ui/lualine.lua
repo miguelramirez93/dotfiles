@@ -13,6 +13,9 @@ return {
 		},
 	},
 	setup = function(_)
+		local my_filename = require('lualine.components.filename'):extend()
+		my_filename.apply_icon = require('lualine.components.filetype').apply_icon
+		my_filename.icon_hl_cache = {}
 		require("lualine").setup({
 			options = {
 				theme = "auto",
@@ -23,10 +26,10 @@ return {
 				lualine_a = {
 					{ "mode", separator = { left = "" }, right_padding = 2 },
 				},
-				lualine_b = { "branch" },
+				lualine_b = { "branch", {my_filename, colored = true}, "encoding" },
 				lualine_c = { "diff", "diagnostics" },
 				lualine_x = { require("lsp-progress").progress },
-				lualine_y = { "filetype", "encoding", "progress" },
+				lualine_y = { "progress" },
 				lualine_z = {
 					{ "location", separator = { right = "" }, left_padding = 2 },
 				},

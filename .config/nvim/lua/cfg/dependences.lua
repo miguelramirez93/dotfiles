@@ -33,7 +33,6 @@ local zenmode = require("plugins.ui.zenmode")
 local undotree = require("plugins.editor.undotree")
 local lspzero = require("plugins.lsp.lspzero")
 local lspsignature = require("plugins.lsp.lspsignature")
-local idbl         = require("plugins.ui.idbl")
 
 local m = {
 	plugins = {
@@ -82,19 +81,18 @@ local m = {
 			{
 				"xiantang/darcula-dark.nvim",
 				lazy = false,
-				priority = 1000,
+				--priority = 1000,
 			},
 			-- below themes have issues with bordered cmp completions
 			{
 				"blazkowolf/gruber-darker.nvim",
-				-- priority = 1000,
+				priority = 1000,
 				lazy = true,
 			},
 			markdown,
 			zenmode,
 			undotree,
 			lspsignature,
-			idbl,
 		},
 	},
 	lsp = {
@@ -119,7 +117,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "darcula-dark",
+	theme = "gruber-darker",
 }
 
 return m

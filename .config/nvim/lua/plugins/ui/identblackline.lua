@@ -6,7 +6,7 @@ return {
             char = "│",
             tab_char = "│",
         },
-        scope = { enabled = false },
+        scope = { enabled = true },
         exclude = {
             filetypes = {
                 "help",
@@ -24,4 +24,7 @@ return {
         },
     },
     main = "ibl",
+    setup = function (opts)
+        require("ibl").setup(opts)
+    end
 }
