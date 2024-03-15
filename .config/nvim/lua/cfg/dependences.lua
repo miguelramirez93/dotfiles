@@ -13,8 +13,6 @@ local vimilluminate = require("plugins.editor.vim-illuminate")
 local telescope = require("plugins.editor.telescope")
 local identblackline = require("plugins.ui.identblackline")
 local dressing = require("plugins.ui.dressing")
-local noice = require("plugins.ui.noice")
-local nui = require("plugins.ui.nui")
 local conform = require("plugins.coding.conform")
 local iconsSrc = require("cfg.icons")
 local lualine = require("plugins.ui.lualine")
@@ -29,10 +27,10 @@ local java = require("plugins.lsp.langs_cfg.java")
 local markdown = require("plugins.lsp.langs_cfg.markdown")
 local lua_ls = require("plugins.lsp.langs_cfg.lua_ls")
 local typescript = require("plugins.lsp.langs_cfg.typescript")
-local zenmode = require("plugins.ui.zenmode")
 local undotree = require("plugins.editor.undotree")
 local lspzero = require("plugins.lsp.lspzero")
 local lspsignature = require("plugins.lsp.lspsignature")
+local indentscope  = require("plugins.ui.indentscope")
 
 local m = {
 	plugins = {
@@ -90,9 +88,9 @@ local m = {
 				lazy = true,
 			},
 			markdown,
-			zenmode,
 			undotree,
 			lspsignature,
+			indentscope,
 		},
 	},
 	lsp = {

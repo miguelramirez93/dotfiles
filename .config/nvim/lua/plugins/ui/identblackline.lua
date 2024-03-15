@@ -6,7 +6,7 @@ return {
             char = "│",
             tab_char = "│",
         },
-        scope = { enabled = true },
+        scope = { enabled = false },
         exclude = {
             filetypes = {
                 "help",
