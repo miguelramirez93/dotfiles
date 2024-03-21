@@ -61,6 +61,7 @@ return {
             experimental = {
                 test_table = false,
             },
+            recursive_run = true,
             args = { "-count=1", "-timeout=30s" },
         },
     },
