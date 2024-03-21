@@ -2,6 +2,7 @@ return {
     'echasnovski/mini.indentscope',
     version = '*',
     event = "BufEnter",
+    enabled = false,
     opts = {
         symbol = '|',
         draw = {

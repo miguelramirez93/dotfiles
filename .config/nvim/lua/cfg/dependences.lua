@@ -77,20 +77,21 @@ local m = {
 				},
 			},
 			{
-				"xiantang/darcula-dark.nvim",
+				"rebelot/kanagawa.nvim",
 				lazy = false,
-				--priority = 1000,
+				priority = 1000,
 			},
 			-- below themes have issues with bordered cmp completions
 			{
 				"blazkowolf/gruber-darker.nvim",
-				priority = 1000,
+				--priority = 1000,
 				lazy = true,
 			},
 			markdown,
 			undotree,
 			lspsignature,
 			indentscope,
+			incline,
 		},
 	},
 	lsp = {
@@ -115,7 +116,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "gruber-darker",
+	theme = "kanagawa-dragon",
 }
 
 return m

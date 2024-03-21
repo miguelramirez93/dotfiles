@@ -26,9 +26,9 @@ return {
 				lualine_a = {
 					{ "mode", separator = { left = "" }, right_padding = 2 },
 				},
-				lualine_b = { {my_filename, colored = true}, "encoding" },
+				lualine_b = { "branch" },
 				lualine_c = { "diff", "diagnostics" },
-				lualine_x = { require("lsp-progress").progress, "branch", },
+				lualine_x = { require("lsp-progress").progress, "encoding", },
 				lualine_y = { "progress" },
 				lualine_z = {
 					{ "location", separator = { right = "" }, left_padding = 2 },

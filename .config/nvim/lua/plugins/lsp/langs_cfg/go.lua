@@ -59,7 +59,7 @@ return {
     test_runners = {
         ["neotest-go"] = {
             experimental = {
-                test_table = true,
+                test_table = false,
             },
             args = { "-count=1", "-timeout=30s" },
         },

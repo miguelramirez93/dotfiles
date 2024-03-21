@@ -51,10 +51,11 @@ end, {})
 
 vim.api.nvim_create_user_command("TestFunc", function()
 	require("neotest").run.run()
+	require("neotest").summary.toggle()
 end, {})
 
 vim.api.nvim_create_user_command("TestAll", function()
-	require("neotest").run.run(vim.fn.getcwd())
+	require("neotest").run.run(vim.loop.cwd())
 	require("neotest").summary.toggle()
 end, {})
 
@@ -62,11 +63,17 @@ vim.api.nvim_create_user_command("TestCurrResult", function()
 	require("neotest").output.open({ enter = true })
 end, {})
 
+vim.api.nvim_create_user_command("TestLast", function()
+	require("neotest").run.run_last()
+end, {})
+
 return {
 	"nvim-neotest/neotest",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-treesitter/nvim-treesitter",
+		"nvim-neotest/nvim-nio",
+		"antoinemadec/FixCursorHold.nvim",
 	},
 	lazy = false,
 	install_runners = function(runners)
