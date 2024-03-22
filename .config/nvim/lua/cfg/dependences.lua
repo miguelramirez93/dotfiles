@@ -31,6 +31,7 @@ local undotree = require("plugins.editor.undotree")
 local lspzero = require("plugins.lsp.lspzero")
 local lspsignature = require("plugins.lsp.lspsignature")
 local indentscope  = require("plugins.ui.indentscope")
+local python       = require("plugins.lsp.langs_cfg.python")
 
 local m = {
 	plugins = {
@@ -108,6 +109,7 @@ local m = {
 			lua_ls,
 			markdown,
 			typescript,
+			python,
 		},
 	},
 	tests = {
