@@ -18,6 +18,7 @@ vim.keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle)
 -- GIT
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
+-- better copy/paste flow
 vim.keymap.set("x", "<leader>p", '"_dp')
 
 -- Use LspAttach autocommand to only map the following keys

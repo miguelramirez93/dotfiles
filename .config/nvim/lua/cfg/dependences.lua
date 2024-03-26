@@ -30,8 +30,10 @@ local typescript = require("plugins.lsp.langs_cfg.typescript")
 local undotree = require("plugins.editor.undotree")
 local lspzero = require("plugins.lsp.lspzero")
 local lspsignature = require("plugins.lsp.lspsignature")
-local indentscope  = require("plugins.ui.indentscope")
-local python       = require("plugins.lsp.langs_cfg.python")
+local indentscope = require("plugins.ui.indentscope")
+local python = require("plugins.lsp.langs_cfg.python")
+local minifiles = require("plugins.ui.minifiles")
+local toggleterm = require("plugins.editor.toggleterm")
 
 local m = {
 	plugins = {
@@ -93,6 +95,8 @@ local m = {
 			lspsignature,
 			indentscope,
 			incline,
+			minifiles,
+			toggleterm,
 		},
 	},
 	lsp = {
