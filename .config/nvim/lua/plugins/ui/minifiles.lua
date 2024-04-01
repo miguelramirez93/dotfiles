@@ -3,14 +3,14 @@ return {
 	version = "*",
 	keys = {
 		{
-			"<leader>B",
+			"<leader>b",
 			function()
 				require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
 			end,
 			desc = "Open mini.files (directory of current file)",
 		},
 		{
-			"<leader>b",
+			"<leader>B",
 			function()
 				require("mini.files").open(vim.uv.cwd(), true)
 			end,
@@ -33,7 +33,7 @@ return {
 		},
 		windows = {
 			max_number = 4,
-			preview = true,
+			preview = false,
 			width_preview = 100,
 		},
 	},
