@@ -34,6 +34,7 @@ local indentscope = require("plugins.ui.indentscope")
 local python = require("plugins.lsp.langs_cfg.python")
 local minifiles = require("plugins.ui.minifiles")
 local toggleterm = require("plugins.editor.toggleterm")
+local spectre = require("plugins.editor.spectre")
 
 local m = {
 	plugins = {
@@ -72,12 +73,9 @@ local m = {
 			testrunners,
 			persistence,
 			{
-				"navarasu/onedark.nvim",
+				"savq/melange-nvim",
 				lazy = false,
-				-- priority = 1000,
-				opts = {
-					style = "warmer",
-				},
+				priority = 1000,
 			},
 			{
 				"rebelot/kanagawa.nvim",
@@ -97,6 +95,7 @@ local m = {
 			incline,
 			minifiles,
 			toggleterm,
+			spectre,
 		},
 	},
 	lsp = {
@@ -122,7 +121,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "kanagawa-dragon",
+	theme = "melange",
 }
 
 return m
