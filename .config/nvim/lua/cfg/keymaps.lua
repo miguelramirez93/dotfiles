@@ -11,6 +11,8 @@ vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+-- open technotes
+vim.keymap.set("n", "<space>tn", ":vsplit /Users/joser/Dev/tech_notes/ <CR>", { silent = true })
 
 -- unotree
 vim.keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle)
