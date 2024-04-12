@@ -35,6 +35,7 @@ local python = require("plugins.lsp.langs_cfg.python")
 local minifiles = require("plugins.ui.minifiles")
 local toggleterm = require("plugins.editor.toggleterm")
 local spectre = require("plugins.editor.spectre")
+local neotree = require("plugins.ui.neotree")
 
 local m = {
 	plugins = {
@@ -75,7 +76,7 @@ local m = {
 			{
 				"savq/melange-nvim",
 				lazy = false,
-				priority = 1000,
+				-- priority = 1000,
 			},
 			{
 				"rebelot/kanagawa.nvim",
@@ -88,6 +89,28 @@ local m = {
 				--priority = 1000,
 				lazy = true,
 			},
+			{
+				"rose-pine/neovim",
+				name = "rose-pine",
+				priority = 1000,
+				setup = function(_)
+					require("rose-pine").setup({
+						variant = "moon", -- auto, main, moon, or dawn
+						dark_variant = "moon", -- main, moon, or dawn
+						enable = {
+							terminal = true,
+							legacy_highlights = false, -- Improve compatibility for previous versions of Neovim
+							migrations = true, -- Handle deprecated options automatically
+						},
+
+						styles = {
+							bold = true,
+							italic = true,
+							transparency = true,
+						},
+					})
+				end,
+			},
 			markdown,
 			undotree,
 			lspsignature,
@@ -96,6 +119,7 @@ local m = {
 			minifiles,
 			toggleterm,
 			spectre,
+			neotree,
 		},
 	},
 	lsp = {
@@ -121,7 +145,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "melange",
+	theme = "rose-pine",
 }
 
 return m

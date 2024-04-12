@@ -13,7 +13,7 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 -- open technotes
 vim.keymap.set("n", "<space>tn", ":vsplit /Users/joser/Dev/tech_notes/ <CR>", { silent = true })
-
+-- TODO: Put plugin specific key maps inside the plugin specification to keep clean this aspect
 -- unotree
 vim.keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle)
 
@@ -71,3 +71,6 @@ vim.keymap.set("v", "<leader>sw", '<esc><cmd>lua require("spectre").open_visual(
 vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
 	desc = "Search on current file",
 })
+
+--Neotree
+vim.keymap.set("n", "<leader>b", "<Cmd>Neotree toggle<CR>")
