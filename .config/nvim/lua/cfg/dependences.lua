@@ -76,23 +76,24 @@ local m = {
 			{
 				"savq/melange-nvim",
 				lazy = false,
-				-- priority = 1000,
+				priority = 1000,
 			},
 			{
 				"rebelot/kanagawa.nvim",
 				lazy = false,
-				priority = 1000,
+				-- priority = 1000,
 			},
 			-- below themes have issues with bordered cmp completions
 			{
 				"blazkowolf/gruber-darker.nvim",
 				--priority = 1000,
-				lazy = true,
+				lazy = false,
 			},
 			{
 				"rose-pine/neovim",
 				name = "rose-pine",
-				priority = 1000,
+				-- priority = 1000,
+				lazy = false,
 				setup = function(_)
 					require("rose-pine").setup({
 						variant = "moon", -- auto, main, moon, or dawn
@@ -145,7 +146,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "rose-pine",
+	theme = "melange",
 }
 
 return m

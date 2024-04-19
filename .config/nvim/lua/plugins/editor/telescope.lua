@@ -87,6 +87,18 @@ return {
 					},
 				},
 			},
+			pickers = {
+				find_files = {
+					theme = "dropdown",
+					previewer = false,
+				},
+				live_grep = {
+					theme = "dropdown",
+				},
+				lsp_document_symbols = {
+					theme = "dropdown",
+				},
+			},
 		}
 
 		local extended_opts = vim.tbl_extend("force", opts, l_opts)
