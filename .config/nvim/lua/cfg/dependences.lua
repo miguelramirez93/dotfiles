@@ -36,6 +36,8 @@ local minifiles = require("plugins.ui.minifiles")
 local toggleterm = require("plugins.editor.toggleterm")
 local spectre = require("plugins.editor.spectre")
 local neotree = require("plugins.ui.neotree")
+local nui = require("plugins.ui.nui")
+local noice = require("plugins.ui.noice")
 
 local m = {
 	plugins = {
@@ -59,8 +61,8 @@ local m = {
 			vimilluminate,
 			identblackline,
 			dressing,
-			-- nui,
-			-- noice,
+			nui,
+			noice,
 			conform,
 			lualine,
 			gitsigns,
@@ -76,7 +78,7 @@ local m = {
 			{
 				"savq/melange-nvim",
 				lazy = false,
-				priority = 1000,
+				--priority = 1000,
 			},
 			{
 				"rebelot/kanagawa.nvim",
@@ -109,6 +111,46 @@ local m = {
 							italic = true,
 							transparency = true,
 						},
+					})
+				end,
+			},
+			{
+				"scottmckendry/cyberdream.nvim",
+				lazy = false,
+				-- priority = 1000,
+				config = function()
+					local colors = require("cyberdream.colors")
+					require("cyberdream").setup({
+						-- Recommended - see "Configuring" below for more config options
+						transparent = true,
+						italic_comments = true,
+						hide_fillchars = false,
+						borderless_telescope = true,
+						terminal_colors = true,
+						theme = {
+							highlights = {
+								CursorLine = { fg = colors.bg, bg = colors.bgHighlight },
+							},
+						},
+					})
+				end,
+			},
+			{
+				"datsfilipe/min-theme.nvim",
+				lazy = false,
+				setup = function(_)
+					require("min-theme").setup({
+						-- (note: if your configuration sets vim.o.background the following option will do nothing!)
+						theme = "dark", -- String: 'dark' or 'light', determines the colorscheme used
+						transparent = true, -- Boolean: Sets the background to transparent
+						italics = {
+							comments = true, -- Boolean: Italicizes comments
+							keywords = true, -- Boolean: Italicizes keywords
+							functions = true, -- Boolean: Italicizes functions
+							strings = true, -- Boolean: Italicizes strings
+							variables = true, -- Boolean: Italicizes variables
+						},
+						overrides = {}, -- A dictionary of group names, can be a function returning a dictionary or a table.
 					})
 				end,
 			},
@@ -146,7 +188,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "melange",
+	theme = "min-theme",
 }
 
 return m

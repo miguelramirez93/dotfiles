@@ -1,6 +1,10 @@
 local opt = vim.opt
 -- local o = vim.o
 
+-- enable new loader for caching some
+-- internal calls
+vim.loader.enable()
+
 opt.relativenumber = true
 opt.number = true
 opt.timeoutlen = 250
