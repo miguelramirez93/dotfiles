@@ -184,7 +184,7 @@ local m = {
 	},
 	tests = {
 		manager = {
-			service = neotest,
+			client = neotest,
 		},
 	},
 	icons = iconsSrc,
