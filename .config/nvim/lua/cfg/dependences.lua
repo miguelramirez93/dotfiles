@@ -38,6 +38,7 @@ local spectre = require("plugins.editor.spectre")
 local neotree = require("plugins.ui.neotree")
 local nui = require("plugins.ui.nui")
 local noice = require("plugins.ui.noice")
+local oil = require("plugins.ui.oil")
 
 local m = {
 	plugins = {
@@ -142,7 +143,7 @@ local m = {
 					require("min-theme").setup({
 						-- (note: if your configuration sets vim.o.background the following option will do nothing!)
 						theme = "dark", -- String: 'dark' or 'light', determines the colorscheme used
-						transparent = true, -- Boolean: Sets the background to transparent
+						transparent = false, -- Boolean: Sets the background to transparent
 						italics = {
 							comments = true, -- Boolean: Italicizes comments
 							keywords = true, -- Boolean: Italicizes keywords
@@ -163,6 +164,7 @@ local m = {
 			toggleterm,
 			spectre,
 			neotree,
+			oil,
 		},
 	},
 	lsp = {

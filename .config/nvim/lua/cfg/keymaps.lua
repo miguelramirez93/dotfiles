@@ -72,5 +72,5 @@ vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search(
 	desc = "Search on current file",
 })
 
---Neotree
-vim.keymap.set("n", "<leader>b", "<Cmd>Neotree toggle<CR>")
+--Oil
+vim.keymap.set("n", "<leader>b", "<Cmd>Oil<CR>")
