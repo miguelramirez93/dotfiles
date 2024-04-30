@@ -26,6 +26,9 @@ return {
 					{ "name", "asc" },
 				},
 			},
+			win_options = {
+				winbar = "%{v:lua.require('oil').get_current_dir()}",
+			},
 		})
 	end,
 }

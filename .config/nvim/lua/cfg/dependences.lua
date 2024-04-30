@@ -139,6 +139,7 @@ local m = {
 			{
 				"datsfilipe/min-theme.nvim",
 				lazy = false,
+				priority = 1000,
 				setup = function(_)
 					require("min-theme").setup({
 						-- (note: if your configuration sets vim.o.background the following option will do nothing!)
