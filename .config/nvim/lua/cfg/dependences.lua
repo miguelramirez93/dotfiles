@@ -39,6 +39,7 @@ local neotree = require("plugins.ui.neotree")
 local nui = require("plugins.ui.nui")
 local noice = require("plugins.ui.noice")
 local oil = require("plugins.ui.oil")
+local winbar = require("plugins.ui.winbar")
 
 local m = {
 	plugins = {
@@ -78,25 +79,25 @@ local m = {
 			persistence,
 			{
 				"savq/melange-nvim",
-				lazy = false,
+				-- lazy = false,
 				--priority = 1000,
 			},
 			{
 				"rebelot/kanagawa.nvim",
-				lazy = false,
+				-- lazy = false,
 				-- priority = 1000,
 			},
 			-- below themes have issues with bordered cmp completions
 			{
 				"blazkowolf/gruber-darker.nvim",
 				--priority = 1000,
-				lazy = false,
+				-- lazy = false,
 			},
 			{
 				"rose-pine/neovim",
 				name = "rose-pine",
 				-- priority = 1000,
-				lazy = false,
+				-- lazy = false,
 				setup = function(_)
 					require("rose-pine").setup({
 						variant = "moon", -- auto, main, moon, or dawn
@@ -117,7 +118,7 @@ local m = {
 			},
 			{
 				"scottmckendry/cyberdream.nvim",
-				lazy = false,
+				-- lazy = false,
 				-- priority = 1000,
 				config = function()
 					local colors = require("cyberdream.colors")
@@ -138,8 +139,8 @@ local m = {
 			},
 			{
 				"datsfilipe/min-theme.nvim",
-				lazy = false,
-				priority = 1000,
+				-- lazy = false,
+				-- priority = 1000,
 				setup = function(_)
 					require("min-theme").setup({
 						-- (note: if your configuration sets vim.o.background the following option will do nothing!)
@@ -156,6 +157,12 @@ local m = {
 					})
 				end,
 			},
+			{
+				"e-q/okcolors.nvim",
+				name = "okcolors",
+				priority = 1000,
+				lazy = false,
+			},
 			markdown,
 			undotree,
 			lspsignature,
@@ -166,6 +173,7 @@ local m = {
 			spectre,
 			neotree,
 			oil,
+			winbar,
 		},
 	},
 	lsp = {
@@ -191,7 +199,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "min-theme",
+	theme = "okcolors",
 }
 
 return m
