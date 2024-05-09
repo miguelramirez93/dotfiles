@@ -46,17 +46,14 @@ end
 -- Commands
 vim.api.nvim_create_user_command("TestCurrentFile", function()
 	require("neotest").run.run(vim.fn.expand("%"))
-	require("neotest").summary.toggle()
 end, {})
 
 vim.api.nvim_create_user_command("TestFunc", function()
 	require("neotest").run.run()
-	require("neotest").summary.toggle()
 end, {})
 
 vim.api.nvim_create_user_command("TestAll", function()
 	require("neotest").run.run(vim.loop.cwd())
-	require("neotest").summary.toggle()
 end, {})
 
 vim.api.nvim_create_user_command("TestCurrResult", function()
@@ -65,6 +62,10 @@ end, {})
 
 vim.api.nvim_create_user_command("TestLast", function()
 	require("neotest").run.run_last()
+end, {})
+
+vim.api.nvim_create_user_command("TestSummary", function()
+	require("neotest").summary.toggle()
 end, {})
 
 return {
@@ -82,6 +83,17 @@ return {
 		if opts.adapters then
 			opts.adapters = parse_adapters(opts.adapters)
 		end
+		-- get neotest namespace (api call creates or returns namespace)
+		local neotest_ns = vim.api.nvim_create_namespace("neotest")
+		vim.diagnostic.config({
+			virtual_text = {
+				format = function(diagnostic)
+					local message = diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+					return message
+				end,
+			},
+		}, neotest_ns)
+
 		require("neotest").setup(opts)
 	end,
 }

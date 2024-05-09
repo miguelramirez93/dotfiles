@@ -163,6 +163,16 @@ local m = {
 				priority = 1000,
 				lazy = false,
 			},
+			{
+				"projekt0n/github-nvim-theme",
+				lazy = false, -- make sure we load this during startup if it is your main colorscheme
+				priority = 1000, -- make sure to load this before all the other start plugins
+				config = function()
+					require("github-theme").setup({
+						-- ...
+					})
+				end,
+			},
 			markdown,
 			undotree,
 			lspsignature,
@@ -199,7 +209,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "okcolors",
+	theme = "github_dark_default",
 }
 
 return m
