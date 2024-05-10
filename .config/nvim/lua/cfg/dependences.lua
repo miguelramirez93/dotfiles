@@ -79,25 +79,29 @@ local m = {
 			persistence,
 			{
 				"savq/melange-nvim",
-				-- lazy = false,
-				--priority = 1000,
+				lazy = false,
+				priority = 1000,
+				disabled = true,
 			},
 			{
 				"rebelot/kanagawa.nvim",
-				-- lazy = false,
-				-- priority = 1000,
+				lazy = false,
+				priority = 1000,
+				disabled = true,
 			},
 			-- below themes have issues with bordered cmp completions
 			{
 				"blazkowolf/gruber-darker.nvim",
-				--priority = 1000,
-				-- lazy = false,
+				priority = 1000,
+				lazy = false,
+				disabled = false,
 			},
 			{
 				"rose-pine/neovim",
 				name = "rose-pine",
-				-- priority = 1000,
-				-- lazy = false,
+				priority = 1000,
+				lazy = false,
+				disabled = true,
 				setup = function(_)
 					require("rose-pine").setup({
 						variant = "moon", -- auto, main, moon, or dawn
@@ -118,8 +122,9 @@ local m = {
 			},
 			{
 				"scottmckendry/cyberdream.nvim",
-				-- lazy = false,
-				-- priority = 1000,
+				lazy = false,
+				priority = 1000,
+				disabled = true,
 				config = function()
 					local colors = require("cyberdream.colors")
 					require("cyberdream").setup({
@@ -139,8 +144,9 @@ local m = {
 			},
 			{
 				"datsfilipe/min-theme.nvim",
-				-- lazy = false,
-				-- priority = 1000,
+				lazy = false,
+				priority = 1000,
+				disabled = true,
 				setup = function(_)
 					require("min-theme").setup({
 						-- (note: if your configuration sets vim.o.background the following option will do nothing!)
@@ -162,11 +168,13 @@ local m = {
 				name = "okcolors",
 				priority = 1000,
 				lazy = false,
+				disabled = true,
 			},
 			{
 				"projekt0n/github-nvim-theme",
 				lazy = false, -- make sure we load this during startup if it is your main colorscheme
 				priority = 1000, -- make sure to load this before all the other start plugins
+				disabled = true,
 				config = function()
 					require("github-theme").setup({
 						-- ...
@@ -209,7 +217,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "github_dark_default",
+	theme = "gruber-darker",
 }
 
 return m

@@ -10,5 +10,9 @@ return {
 	langs = {
 		"java",
 	},
+	test_runners = {
+		["neotest-java"] = {
+			-- config here
+		},
+	},
 }
-

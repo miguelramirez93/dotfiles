@@ -76,3 +76,10 @@ vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search(
 
 --Oil
 vim.keymap.set("n", "<leader>b", "<Cmd>Oil<CR>")
+
+-- Tests runner
+vim.keymap.set("n", "<leader>t", "<Cmd>TestFunc<CR>")
+vim.keymap.set("n", "<leader>tf", "<Cmd>TestCurrentFile<CR>")
+vim.keymap.set("n", "<leader>tt", "<Cmd>TestAll<CR>")
+vim.keymap.set("n", "<leader>ts", "<Cmd>TestSummary<CR>")
+vim.keymap.set("n", "<leader>tr", "<Cmd>TestCurrResult<CR>")
