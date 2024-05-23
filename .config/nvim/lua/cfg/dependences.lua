@@ -81,27 +81,27 @@ local m = {
 				"savq/melange-nvim",
 				lazy = false,
 				priority = 1000,
-				disabled = true,
+				enabled = false,
 			},
 			{
 				"rebelot/kanagawa.nvim",
 				lazy = false,
 				priority = 1000,
-				disabled = true,
+				enabled = false,
 			},
 			-- below themes have issues with bordered cmp completions
 			{
 				"blazkowolf/gruber-darker.nvim",
 				priority = 1000,
 				lazy = false,
-				disabled = false,
+				enabled = false,
 			},
 			{
 				"rose-pine/neovim",
 				name = "rose-pine",
 				priority = 1000,
 				lazy = false,
-				disabled = true,
+				enabled = false,
 				setup = function(_)
 					require("rose-pine").setup({
 						variant = "moon", -- auto, main, moon, or dawn
@@ -124,7 +124,7 @@ local m = {
 				"scottmckendry/cyberdream.nvim",
 				lazy = false,
 				priority = 1000,
-				disabled = true,
+				enabled = false,
 				config = function()
 					local colors = require("cyberdream.colors")
 					require("cyberdream").setup({
@@ -146,7 +146,7 @@ local m = {
 				"datsfilipe/min-theme.nvim",
 				lazy = false,
 				priority = 1000,
-				disabled = true,
+				enabled = false,
 				setup = function(_)
 					require("min-theme").setup({
 						-- (note: if your configuration sets vim.o.background the following option will do nothing!)
@@ -168,18 +168,34 @@ local m = {
 				name = "okcolors",
 				priority = 1000,
 				lazy = false,
-				disabled = true,
+				enabled = false,
 			},
 			{
 				"projekt0n/github-nvim-theme",
 				lazy = false, -- make sure we load this during startup if it is your main colorscheme
 				priority = 1000, -- make sure to load this before all the other start plugins
-				disabled = true,
+				enabled = false,
 				config = function()
 					require("github-theme").setup({
 						-- ...
 					})
 				end,
+			},
+			{
+				"metalelf0/jellybeans-nvim",
+				priority = 1000,
+				lazy = false,
+				enabled = true,
+				dependencies = {
+					"rktjmp/lush.nvim",
+				},
+			},
+			{
+				"craftzdog/solarized-osaka.nvim",
+				lazy = false,
+				enabled = false,
+				priority = 1000,
+				opts = {},
 			},
 			markdown,
 			undotree,
@@ -192,6 +208,10 @@ local m = {
 			neotree,
 			oil,
 			winbar,
+			-- manual added plugs
+			{
+				"xiyaowong/transparent.nvim",
+			},
 		},
 	},
 	lsp = {
@@ -217,7 +237,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "gruber-darker",
+	theme = "jellybeans-nvim",
 }
 
 return m

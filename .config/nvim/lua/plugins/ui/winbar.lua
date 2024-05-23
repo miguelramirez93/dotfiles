@@ -9,8 +9,9 @@ return {
 	opts = {
 		-- configurations go here
 		attach_navic = false,
-		show_dirname = false,
+		show_dirname = true,
 		show_modified = true,
+		exclude_filetypes = { "netrw", "toggleterm" },
 	},
 	setup = function(opts)
 		require("barbecue").setup(opts)
