@@ -78,90 +78,10 @@ local m = {
 			testrunners,
 			persistence,
 			{
-				"savq/melange-nvim",
-				lazy = false,
-				priority = 1000,
-				enabled = false,
-			},
-			{
-				"rebelot/kanagawa.nvim",
-				lazy = false,
-				priority = 1000,
-				enabled = false,
-			},
-			-- below themes have issues with bordered cmp completions
-			{
 				"blazkowolf/gruber-darker.nvim",
 				priority = 1000,
 				lazy = false,
 				enabled = false,
-			},
-			{
-				"rose-pine/neovim",
-				name = "rose-pine",
-				priority = 1000,
-				lazy = false,
-				enabled = false,
-				setup = function(_)
-					require("rose-pine").setup({
-						variant = "moon", -- auto, main, moon, or dawn
-						dark_variant = "moon", -- main, moon, or dawn
-						enable = {
-							terminal = true,
-							legacy_highlights = false, -- Improve compatibility for previous versions of Neovim
-							migrations = true, -- Handle deprecated options automatically
-						},
-
-						styles = {
-							bold = true,
-							italic = true,
-							transparency = true,
-						},
-					})
-				end,
-			},
-			{
-				"scottmckendry/cyberdream.nvim",
-				lazy = false,
-				priority = 1000,
-				enabled = false,
-				config = function()
-					local colors = require("cyberdream.colors")
-					require("cyberdream").setup({
-						-- Recommended - see "Configuring" below for more config options
-						transparent = true,
-						italic_comments = true,
-						hide_fillchars = false,
-						borderless_telescope = true,
-						terminal_colors = true,
-						theme = {
-							highlights = {
-								CursorLine = { fg = colors.bg, bg = colors.bgHighlight },
-							},
-						},
-					})
-				end,
-			},
-			{
-				"datsfilipe/min-theme.nvim",
-				lazy = false,
-				priority = 1000,
-				enabled = false,
-				setup = function(_)
-					require("min-theme").setup({
-						-- (note: if your configuration sets vim.o.background the following option will do nothing!)
-						theme = "dark", -- String: 'dark' or 'light', determines the colorscheme used
-						transparent = false, -- Boolean: Sets the background to transparent
-						italics = {
-							comments = true, -- Boolean: Italicizes comments
-							keywords = true, -- Boolean: Italicizes keywords
-							functions = true, -- Boolean: Italicizes functions
-							strings = true, -- Boolean: Italicizes strings
-							variables = true, -- Boolean: Italicizes variables
-						},
-						overrides = {}, -- A dictionary of group names, can be a function returning a dictionary or a table.
-					})
-				end,
 			},
 			{
 				"e-q/okcolors.nvim",
@@ -171,31 +91,24 @@ local m = {
 				enabled = false,
 			},
 			{
-				"projekt0n/github-nvim-theme",
-				lazy = false, -- make sure we load this during startup if it is your main colorscheme
-				priority = 1000, -- make sure to load this before all the other start plugins
-				enabled = false,
-				config = function()
-					require("github-theme").setup({
-						-- ...
-					})
-				end,
-			},
-			{
 				"metalelf0/jellybeans-nvim",
 				priority = 1000,
 				lazy = false,
-				enabled = true,
+				enabled = false,
 				dependencies = {
 					"rktjmp/lush.nvim",
 				},
 			},
 			{
-				"craftzdog/solarized-osaka.nvim",
+				"cdmill/neomodern.nvim",
 				lazy = false,
-				enabled = false,
 				priority = 1000,
-				opts = {},
+				enabled = true,
+				config = function()
+					require("neomodern").setup({
+						-- optional configuration here
+					})
+				end,
 			},
 			markdown,
 			undotree,
@@ -237,7 +150,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "jellybeans-nvim",
+	theme = "iceclimber",
 }
 
 return m

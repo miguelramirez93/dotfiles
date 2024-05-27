@@ -38,3 +38,4 @@ opt.incsearch = true
 -- enable spelling
 opt.spelllang = "en_us,es_mx"
 opt.spell = true
+vim.cmd("hi SpellBad ctermfg=red guifg=red cterm=underline")
