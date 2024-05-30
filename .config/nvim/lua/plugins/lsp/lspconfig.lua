@@ -15,7 +15,7 @@ return {
 		for name, cfg in pairs(servers_list) do
 			local extended_cfg = vim.tbl_extend("keep", cfg, {
 				-- currently LSP zero injects this
-				-- capabilities = capabilities,
+				capabilities = capabilities,
 				handlers = handlers,
 			})
 			require("lspconfig")[name].setup(extended_cfg)

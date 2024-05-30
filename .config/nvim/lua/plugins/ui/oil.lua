@@ -6,6 +6,7 @@ return {
 	setup = function(_)
 		require("oil").setup({
 			view_options = {
+				default_file_explorer = false,
 				-- Show files and directories that start with "."
 				show_hidden = true,
 				-- This function defines what is considered a "hidden" file

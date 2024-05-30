@@ -1,5 +1,6 @@
 return {
 	"VonHeikemen/lsp-zero.nvim",
+	enabled = false,
 	setup = function(_)
 		local lsp_zero = require("lsp-zero")
 		lsp_zero.extend_lspconfig()

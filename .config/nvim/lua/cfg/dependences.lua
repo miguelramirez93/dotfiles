@@ -32,7 +32,6 @@ local lspzero = require("plugins.lsp.lspzero")
 local lspsignature = require("plugins.lsp.lspsignature")
 local indentscope = require("plugins.ui.indentscope")
 local python = require("plugins.lsp.langs_cfg.python")
-local minifiles = require("plugins.ui.minifiles")
 local toggleterm = require("plugins.editor.toggleterm")
 local spectre = require("plugins.editor.spectre")
 local neotree = require("plugins.ui.neotree")
@@ -40,6 +39,8 @@ local nui = require("plugins.ui.nui")
 local noice = require("plugins.ui.noice")
 local oil = require("plugins.ui.oil")
 local winbar = require("plugins.ui.winbar")
+local gitconflict = require("plugins.editor.git-conflict")
+local neogit = require("plugins.editor.neogit")
 
 local m = {
 	plugins = {
@@ -103,11 +104,22 @@ local m = {
 				"cdmill/neomodern.nvim",
 				lazy = false,
 				priority = 1000,
-				enabled = true,
+				enabled = false,
 				config = function()
 					require("neomodern").setup({
 						-- optional configuration here
 					})
+				end,
+			},
+			{
+				"sainnhe/gruvbox-material",
+				lazy = false,
+				enabled = true,
+				priority = 1000,
+				opts = {},
+				setup = function()
+					vim.g.gruvbox_material_background = "hard"
+					vim.g.gruvbox_material_better_performance = 1
 				end,
 			},
 			markdown,
@@ -115,15 +127,17 @@ local m = {
 			lspsignature,
 			indentscope,
 			incline,
-			minifiles,
 			toggleterm,
 			spectre,
 			neotree,
 			oil,
 			winbar,
+			gitconflict,
+			neogit,
 			-- manual added plugs
 			{
 				"xiyaowong/transparent.nvim",
+				enabled = false,
 			},
 		},
 	},
@@ -150,7 +164,7 @@ local m = {
 		},
 	},
 	icons = iconsSrc,
-	theme = "iceclimber",
+	theme = "gruvbox-material",
 }
 
 return m

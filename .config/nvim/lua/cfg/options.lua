@@ -17,7 +17,7 @@ opt.incsearch = true
 opt.splitright = true
 opt.splitbelow = true
 opt.cursorline = true
-opt.guioptions = "-r"
+--opt.guioptions = "-r"
 opt.scrolloff = 10
 opt.sidescrolloff = 10
 opt.updatetime = 50
@@ -36,6 +36,8 @@ opt.incsearch = true
 -- opt.guicursor = "n-v-c-i:block"
 
 -- enable spelling
-opt.spelllang = "en_us,es_mx"
+vim.g.loaded_spellfile_plugin = 1
+vim.g.spellfile_URL = "https://ftp.nluug.nl/vim/runtime/spell/"
+opt.spelllang = "en_us"
 opt.spell = true
 vim.cmd("hi SpellBad ctermfg=red guifg=red cterm=underline")

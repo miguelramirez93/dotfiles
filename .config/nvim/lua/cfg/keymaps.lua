@@ -20,7 +20,8 @@ vim.keymap.set("n", "<space>n", ":e /Users/joser/Dev/tech_notes/ <CR>", { silent
 vim.keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle)
 
 -- GIT
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+vim.keymap.set("n", "<leader>gs", vim.cmd.Neogit)
+vim.keymap.set("n", "<leader>gd", "<Cmd>Gitsigns preview_hunk<CR>")
 
 -- better copy/paste flow
 vim.keymap.set("x", "<leader>p", '"_dp')
