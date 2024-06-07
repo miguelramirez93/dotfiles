@@ -10,11 +10,15 @@
 --         vim.cmd.colorscheme("gruvbox-material")
 --     end,
 -- }
+local src = "folke/tokyonight.nvim"
 return {
-	"blazkowolf/gruber-darker.nvim",
+	src,
 	priority = 1000,
 	lazy = false,
 	setup = function()
-		vim.cmd.colorscheme("gruber-darker")
+		require("tokyonight").setup({
+			transparent = true,
+		})
+		vim.cmd.colorscheme("tokyonight-moon")
 	end,
 }

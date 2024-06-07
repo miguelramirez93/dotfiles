@@ -34,13 +34,13 @@ function service.setup_servers()
 
 	service.install_lang_deps(servers_list)
 
+	service.ls_client.setup_servers(servers, service.capabilities_enhancer_client.get_lsp_capabilities())
+
 	service.install_lang_syntax(servers_list)
 
 	service.install_test_runners(servers_list)
 
 	service.install_formaters(servers_list)
-
-	service.ls_client.setup_servers(servers, service.capabilities_enhancer_client.get_lsp_capabilities())
 end
 
 function service.install_lang_deps(servers_list)
