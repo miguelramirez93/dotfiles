@@ -7,7 +7,12 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
-		"saadparwaiz1/cmp_luasnip",
+		{
+			"saadparwaiz1/cmp_luasnip",
+			dependencies = {
+				"rafamadriz/friendly-snippets",
+			},
+		},
 	},
 	setup = function()
 		local cmp = require("cmp")
@@ -43,6 +48,13 @@ return {
 				-- Scroll up and down in the completion documentation
 				["<C-u>"] = cmp.mapping.scroll_docs(-4),
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
+			}),
+
+			cmp.setup.cmdline({ "/", "?" }, {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = "buffer" },
+				},
 			}),
 		})
 	end,
