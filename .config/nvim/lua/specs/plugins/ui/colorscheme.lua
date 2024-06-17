@@ -1,15 +1,3 @@
--- return {
---     "sainnhe/gruvbox-material",
---     lazy = false,
---     enabled = true,
---     priority = 1000,
---     opts = {},
---     setup = function()
---         vim.g.gruvbox_material_background = "hard"
---         vim.g.gruvbox_material_better_performance = 1
---         vim.cmd.colorscheme("gruvbox-material")
---     end,
--- }
 local themes_cfg = {
 	tokyonight = {
 		req_path = "tokyonight",
@@ -28,9 +16,20 @@ local themes_cfg = {
 			transparent_background = true,
 		},
 	},
+	rosepine = {
+		src = "rose-pine/neovim",
+		name = "rose-pine",
+		req_path = "rose-pine",
+		colorscheme_name = "rose-pine-main",
+		opts = {
+			styles = {
+				transparency = true,
+			},
+		},
+	},
 }
 
-local selected = "catppuccin"
+local selected = "rosepine"
 
 return {
 	themes_cfg[selected].src,
