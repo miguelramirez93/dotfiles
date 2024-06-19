@@ -27,9 +27,13 @@ local themes_cfg = {
 			},
 		},
 	},
+	awesome = {
+		src = "rafi/awesome-vim-colorschemes",
+		colorscheme_name = "jellybeans",
+	},
 }
 
-local selected = "rosepine"
+local selected = "awesome"
 
 return {
 	themes_cfg[selected].src,
@@ -41,7 +45,9 @@ return {
 		if themes_cfg[selected].setup then
 			themes_cfg[selected].setup(opts)
 		end
-		require(themes_cfg[selected].req_path).setup(opts)
+		if themes_cfg[selected].req_path then
+			require(themes_cfg[selected].req_path).setup(opts)
+		end
 		vim.cmd.colorscheme(themes_cfg[selected].colorscheme_name)
 	end,
 }
