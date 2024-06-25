@@ -31,9 +31,13 @@ local themes_cfg = {
 		src = "rafi/awesome-vim-colorschemes",
 		colorscheme_name = "jellybeans",
 	},
+	gruver = {
+		src = "blazkowolf/gruber-darker.nvim",
+		colorscheme_name = "gruber-darker",
+	},
 }
 
-local selected = "awesome"
+local selected = "gruver"
 
 return {
 	themes_cfg[selected].src,
