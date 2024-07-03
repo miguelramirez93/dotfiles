@@ -37,7 +37,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "gruver"
+local selected = "awesome"
 
 return {
 	themes_cfg[selected].src,
