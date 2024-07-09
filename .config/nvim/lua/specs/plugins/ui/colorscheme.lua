@@ -29,7 +29,7 @@ local themes_cfg = {
 	},
 	awesome = {
 		src = "rafi/awesome-vim-colorschemes",
-		colorscheme_name = "jellybeans",
+		colorscheme_name = "twilight256",
 	},
 	gruver = {
 		src = "blazkowolf/gruber-darker.nvim",
