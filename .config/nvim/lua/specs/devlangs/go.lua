@@ -46,6 +46,7 @@ return {
 		"gomodifytags",
 		"impl",
 		"delve",
+		"gotests",
 	},
 	langs = {
 		"go",

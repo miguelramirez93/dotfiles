@@ -3,6 +3,17 @@ local handlers = {
 	["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
 }
 
+local merge_on_attach = function(callback)
+	return function(client, bufnr)
+		if client.server_capabilities.inlayHintProvider then
+			vim.lsp.inlay_hint.enable(true)
+		end
+		if callback then
+			callback(clien, bufnr)
+		end
+	end
+end
+
 return {
 	"neovim/nvim-lspconfig",
 	event = "BufEnter",
@@ -13,6 +24,7 @@ return {
 	},
 	setup_servers = function(servers_list, capabilities)
 		for name, cfg in pairs(servers_list) do
+			cfg.on_attach = merge_on_attach(cfg.on_attach)
 			local extended_cfg = vim.tbl_extend("keep", cfg, {
 				capabilities = capabilities,
 				handlers = handlers,

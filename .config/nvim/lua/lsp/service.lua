@@ -27,7 +27,7 @@ function service.setup_servers()
 	local servers_list = module_loader.load_from_folder(service.devlangs_folder)
 	local servers = {}
 	for _, server_cfg in ipairs(servers_list) do
-		if server_cfg.ls then
+		if service.is_server_enabled(server_cfg) and server_cfg.ls then
 			servers = vim.tbl_extend("keep", servers, server_cfg.ls)
 		end
 	end
@@ -46,7 +46,7 @@ end
 function service.install_lang_deps(servers_list)
 	local deps = {}
 	for _, server in pairs(servers_list) do
-		if server.deps then
+		if service.is_server_enabled(server) and server.deps then
 			vim.list_extend(deps, server.deps)
 		end
 	end
@@ -56,7 +56,7 @@ end
 function service.install_lang_syntax(servers_list)
 	local langs = {}
 	for _, server in pairs(servers_list) do
-		if server.langs then
+		if service.is_server_enabled(server) and server.langs then
 			vim.list_extend(langs, server.langs)
 		end
 	end
@@ -66,7 +66,7 @@ end
 function service.install_formaters(servers_list)
 	local formaters = {}
 	for _, server_cfg in ipairs(servers_list) do
-		if server_cfg.formaters then
+		if service.is_server_enabled(server_cfg) and server_cfg.formaters then
 			formaters = vim.tbl_extend("keep", formaters, server_cfg.formaters)
 		end
 	end
@@ -76,12 +76,19 @@ end
 function service.install_test_runners(servers_list)
 	local runners = {}
 	for _, server in pairs(servers_list) do
-		if server.test_runners then
+		if service.is_server_enabled(server) and server.test_runners then
 			runners = vim.tbl_extend("force", runners, server.test_runners)
 		end
 	end
 
 	service.tests_runner_client.install_runners(runners)
+end
+
+function service.is_server_enabled(server_cfg)
+	if server_cfg.enabled == false then
+		return false
+	end
+	return true
 end
 
 return service
