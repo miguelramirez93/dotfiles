@@ -9,7 +9,7 @@ local merge_on_attach = function(callback)
 			vim.lsp.inlay_hint.enable(true)
 		end
 		if callback then
-			callback(clien, bufnr)
+			callback(client, bufnr)
 		end
 	end
 end

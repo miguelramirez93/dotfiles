@@ -1,6 +1,7 @@
 return {
 	"hrsh7th/nvim-cmp",
 	version = false, -- last release is way too old
+	commit = "abacd4cb7ffd640b558845b617cfca1692dcb1a6", -- latest commit is broken rn
 	event = "InsertEnter",
 	lazy = false,
 	dependencies = {

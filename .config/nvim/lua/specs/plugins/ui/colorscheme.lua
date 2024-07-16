@@ -4,7 +4,7 @@ local themes_cfg = {
 		colorscheme_name = "tokyonight-moon",
 		src = "folke/tokyonight.nvim",
 		opts = {
-			transparent = true,
+			transparent = false,
 		},
 	},
 	catppuccin = {
@@ -29,15 +29,23 @@ local themes_cfg = {
 	},
 	awesome = {
 		src = "rafi/awesome-vim-colorschemes",
-		colorscheme_name = "twilight256",
+		colorscheme_name = "jellybeans",
 	},
 	gruver = {
 		src = "blazkowolf/gruber-darker.nvim",
 		colorscheme_name = "gruber-darker",
 	},
+	vscode = {
+		src = "Mofiqul/vscode.nvim",
+		colorscheme_name = "vscode",
+	},
+	mellow = {
+		src = "mellow-theme/mellow.nvim",
+		colorscheme_name = "mellow",
+	},
 }
 
-local selected = "awesome"
+local selected = "vscode"
 
 return {
 	themes_cfg[selected].src,

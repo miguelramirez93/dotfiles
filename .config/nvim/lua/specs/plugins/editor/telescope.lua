@@ -6,18 +6,12 @@ return {
 		"nvim-lua/plenary.nvim",
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
-			build = "make",
+			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
 			enabled = vim.fn.executable("make") == 1,
 			config = function()
 				require("telescope").load_extension("fzf")
 			end,
 		},
-		-- {
-		-- 	"nvim-telescope/telescope-file-browser.nvim",
-		-- 	config = function()
-		-- 		require("telescope").load_extension("file_browser")
-		-- 	end,
-		-- },
 	},
 	keys = {
 		{
@@ -39,19 +33,6 @@ return {
 		-- local fb_actions = require("telescope").extensions.file_browser.actions
 
 		local l_opts = {
-			extensions = {
-				file_browser = {
-					mappings = {
-						["n"] = {
-							-- ["<leader>c"] = fb_actions.create,
-							-- ["<leader>r"] = fb_actions.rename,
-							-- ["<leader>mv"] = fb_actions.move,
-							-- ["<leader>cp"] = fb_actions.copy,
-							-- ["<leader>d"] = fb_actions.remove,
-						},
-					},
-				},
-			},
 			defaults = {
 				layout_strategy = "horizontal",
 				layout_config = {
