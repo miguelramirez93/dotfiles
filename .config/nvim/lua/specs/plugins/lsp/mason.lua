@@ -5,7 +5,6 @@ local opts = {
 return {
 	"williamboman/mason.nvim",
 	lazy = false,
-	priority = 800,
 	install_deps = function(deps)
 		vim.list_extend(opts.ensure_installed, deps)
 		require("mason").setup(opts)

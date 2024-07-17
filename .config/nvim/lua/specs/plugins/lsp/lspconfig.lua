@@ -14,6 +14,12 @@ local merge_on_attach = function(callback)
 	end
 end
 
+function extendDefCapabilities(capabilities)
+	local extCapabilities = vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), capabilities)
+	extCapabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
+	return extCapabilities
+end
+
 return {
 	"neovim/nvim-lspconfig",
 	event = "BufEnter",
@@ -23,10 +29,12 @@ return {
 		"mason.nvim",
 	},
 	setup_servers = function(servers_list, capabilities)
+		local extCapabilities = extendDefCapabilities(capabilities)
+
 		for name, cfg in pairs(servers_list) do
 			cfg.on_attach = merge_on_attach(cfg.on_attach)
 			local extended_cfg = vim.tbl_extend("keep", cfg, {
-				capabilities = capabilities,
+				capabilities = extCapabilities,
 				handlers = handlers,
 			})
 			require("lspconfig")[name].setup(extended_cfg)
