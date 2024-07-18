@@ -1,32 +1,4 @@
 local themes_cfg = {
-	tokyonight = {
-		req_path = "tokyonight",
-		colorscheme_name = "tokyonight-moon",
-		src = "folke/tokyonight.nvim",
-		opts = {
-			transparent = false,
-		},
-	},
-	catppuccin = {
-		req_path = "catppuccin",
-		name = "catppuccin",
-		colorscheme_name = "catppuccin-mocha",
-		src = "catppuccin/nvim",
-		opts = {
-			transparent_background = true,
-		},
-	},
-	rosepine = {
-		src = "rose-pine/neovim",
-		name = "rose-pine",
-		req_path = "rose-pine",
-		colorscheme_name = "rose-pine-main",
-		opts = {
-			styles = {
-				transparency = true,
-			},
-		},
-	},
 	awesome = {
 		src = "rafi/awesome-vim-colorschemes",
 		colorscheme_name = "jellybeans",
@@ -38,10 +10,6 @@ local themes_cfg = {
 	vscode = {
 		src = "Mofiqul/vscode.nvim",
 		colorscheme_name = "vscode",
-	},
-	mellow = {
-		src = "mellow-theme/mellow.nvim",
-		colorscheme_name = "mellow",
 	},
 }
 

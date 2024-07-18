@@ -1,4 +1,5 @@
 local opts = {
+	lazy = false,
 	adapters = {
 		"neotest-plenary",
 	},

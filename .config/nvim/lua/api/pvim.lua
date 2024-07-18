@@ -35,9 +35,9 @@ local function setup_lsp(opts)
 end
 
 function pvim.setup(opts)
-	setup_config_specs(opts)
 	setup_plugs(opts)
 	setup_lsp(opts)
+	setup_config_specs(opts)
 end
 
 return pvim
