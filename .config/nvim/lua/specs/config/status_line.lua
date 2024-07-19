@@ -34,6 +34,7 @@ local m = {
 		["info"] = "󰋽",
 		["hint"] = "",
 		["ok"] = "",
+		["loading"] = "󰁪",
 	},
 }
 
@@ -131,10 +132,11 @@ function m.build_status_line()
 		"%#Normal#",
 		[[%=]],
 		"%#Statusline#",
-		" ",
+		"",
 		" LS: " .. m.get_active_lsp_clients(),
-		" ",
-		" L: %l:%c - %P ",
+		" ",
+		" P: %P ",
+		"E: %{&fileencoding?&fileencoding:&encoding}",
 	}
 	return table.concat(parts, "")
 end
@@ -148,6 +150,7 @@ function m.get_icon(name)
 end
 
 vim.cmd([[
+set laststatus=2
 augroup Statusline
   au!
   au WinEnter,BufEnter * setlocal statusline=%!v:lua.require'specs.config.status_line'.build_status_line()

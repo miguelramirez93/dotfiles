@@ -44,16 +44,23 @@ local function parse_adapters(opts_adapters)
 	return adapters
 end
 
+local function on_test_run_loading()
+	vim.notify("Running tests...")
+end
+
 -- Commands
 vim.api.nvim_create_user_command("TestCurrentFile", function()
+	on_test_run_loading()
 	require("neotest").run.run(vim.fn.expand("%"))
 end, {})
 
 vim.api.nvim_create_user_command("TestFunc", function()
+	on_test_run_loading()
 	require("neotest").run.run()
 end, {})
 
 vim.api.nvim_create_user_command("TestAll", function()
+	on_test_run_loading()
 	require("neotest").run.run(vim.loop.cwd())
 end, {})
 
@@ -62,6 +69,7 @@ vim.api.nvim_create_user_command("TestCurrResult", function()
 end, {})
 
 vim.api.nvim_create_user_command("TestLast", function()
+	on_test_run_loading()
 	require("neotest").run.run_last()
 end, {})
 
