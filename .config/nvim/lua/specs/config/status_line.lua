@@ -130,13 +130,13 @@ function m.build_status_line()
 		"%#Normal#",
 		" D: " .. m.diagnostic_status() .. "%*",
 		"%#Normal#",
+		" LS: " .. m.get_active_lsp_clients(),
 		[[%=]],
 		"%#Statusline#",
 		"",
-		" LS: " .. m.get_active_lsp_clients(),
-		" ",
-		" P: %P ",
-		"E: %{&fileencoding?&fileencoding:&encoding}",
+		"Ln %l, Col %c, P %P ",
+		" ",
+		"E: %{&fileencoding?&fileencoding:&encoding} ",
 	}
 	return table.concat(parts, "")
 end

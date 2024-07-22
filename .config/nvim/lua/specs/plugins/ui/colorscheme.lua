@@ -11,9 +11,18 @@ local themes_cfg = {
 		src = "Mofiqul/vscode.nvim",
 		colorscheme_name = "vscode",
 	},
+	ncf = {
+		src = "aktersnurra/no-clown-fiesta.nvim",
+		colorscheme_name = "no-clown-fiesta",
+	},
+	ok = {
+		src = "e-q/okcolors.nvim",
+		name = "okcolors",
+		colorscheme_name = "okcolors",
+	},
 }
 
-local selected = "vscode"
+local selected = "ok"
 
 return {
 	themes_cfg[selected].src,
