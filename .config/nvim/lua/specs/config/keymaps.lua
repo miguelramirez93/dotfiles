@@ -98,3 +98,23 @@ vim.keymap.set("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>")
 vim.keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_over()<CR>")
 vim.keymap.set("n", "<leader>ds", "<cmd>lua require'dap'.repl.open()<CR>")
 vim.keymap.set("n", "<leader>dq", "<cmd>lua require'dapui'.close()<CR>")
+
+-- new keymaps cfg
+local keymaps = {
+	-- telescope
+	{ mode = "n", bind = "<leader>,", cmd = "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>" },
+	{ mode = "n", bind = "<leader>ff", cmd = "<cmd>Telescope find_files<cr>" },
+	{ mode = "n", bind = "<leader>gc", cmd = "<cmd>Telescope git_commits<CR>" },
+	{ mode = "n", bind = "<leader>fc", cmd = "<cmd>Telescope current_buffer_fuzzy_find<cr>" },
+	{ mode = "n", bind = "<leader>fg", cmd = "<cmd>Telescope live_grep<cr>" },
+	{ mode = "n", bind = "<leader>ss", cmd = "<cmd>Telescope lsp_document_symbols<cr>" },
+	{ mode = "n", bind = "<leader>fb", cmd = "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>" },
+	-- toggle term
+	{ mode = "n", bind = "<leader>j", cmd = "<cmd>ToggleTerm direction=horizontal<cr>" },
+	{ mode = "n", bind = "<leader>jf", cmd = "<cmd>ToggleTerm direction=float<cr>" },
+	{ mode = "n", bind = "<leader>jv", cmd = "<cmd>ToggleTerm direction=vertical<cr>" },
+}
+
+for _, k_map in pairs(keymaps) do
+	vim.keymap.set(k_map.mode, k_map.bind, k_map.cmd)
+end

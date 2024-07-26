@@ -1,10 +1,3 @@
-vim.cmd("hi StatuslinePan guifg=white guibg=#44475A")
-vim.cmd("hi StatuslinePanFull guifg=#44475A guibg=#44475A")
-vim.cmd("hi StatuslineMidPan guifg=white guibg=#282A36")
-vim.cmd("hi StatuslineSignError guifg=#FF5555 guibg=#282A36")
-vim.cmd("hi StatuslineSignHint guifg=#8BE9FD guibg=#282A36")
-vim.cmd("hi StatuslineSignOk guifg=#50FA7B guibg=#282A36")
-vim.cmd("hi StatuslineSignWarn guifg=#F1FA8C guibg=#282A36")
 local m = {
 	modes = {
 		["n"] = "NORMAL",
@@ -30,7 +23,7 @@ local m = {
 	},
 	icons = {
 		["error"] = "󰨰",
-		["warn"] = "",
+		["warn"] = "▲",
 		["info"] = "󰋽",
 		["hint"] = "",
 		["ok"] = "",

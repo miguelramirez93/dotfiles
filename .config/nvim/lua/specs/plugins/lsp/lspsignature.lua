@@ -1,5 +1,6 @@
 return {
 	"ray-x/lsp_signature.nvim",
+	enabled = false,
 	event = { "BufEnter", "VeryLazy" },
 	opts = {
 		bind = true, -- This is mandatory, otherwise border config won't get registered.

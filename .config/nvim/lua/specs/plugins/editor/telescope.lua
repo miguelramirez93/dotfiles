@@ -13,21 +13,6 @@ return {
 			end,
 		},
 	},
-	keys = {
-		{
-			"<leader>,",
-			"<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
-			desc = "Switch Buffer",
-		},
-		{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files (root dir)" },
-		-- git
-		{ "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
-		-- { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "status" },
-		{ "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
-		{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Buffer" },
-		{ "<leader>ss", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Symbols" },
-		{ "<leader>fb", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", desc = "FileBrowser" },
-	},
 	setup = function(opts)
 		local actions = require("telescope.actions")
 		-- local fb_actions = require("telescope").extensions.file_browser.actions

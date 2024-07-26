@@ -1,6 +1,6 @@
 local handlers = {
-	["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-	["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
+	--["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
+	--["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
 }
 
 local merge_on_attach = function(callback)
@@ -14,7 +14,7 @@ local merge_on_attach = function(callback)
 	end
 end
 
-function extendDefCapabilities(capabilities)
+function extend_def_capabilities(capabilities)
 	local extCapabilities = vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), capabilities)
 	extCapabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
 	return extCapabilities
@@ -29,7 +29,7 @@ return {
 		"mason.nvim",
 	},
 	setup_servers = function(servers_list, capabilities)
-		local extCapabilities = extendDefCapabilities(capabilities)
+		local extCapabilities = extend_def_capabilities(capabilities)
 
 		for name, cfg in pairs(servers_list) do
 			cfg.on_attach = merge_on_attach(cfg.on_attach)
