@@ -143,7 +143,7 @@ function m.get_icon(name)
 end
 
 vim.cmd([[
-set laststatus=2
+set laststatus=3
 augroup Statusline
   au!
   au WinEnter,BufEnter * setlocal statusline=%!v:lua.require'specs.config.status_line'.build_status_line()

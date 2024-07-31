@@ -75,8 +75,9 @@ vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search(
 	desc = "Search on current file",
 })
 
---Oil
+--File explorer
 vim.keymap.set("n", "<leader>b", "<Cmd>Oil<CR>")
+-- vim.keymap.set("n", "<leader>b", "<Cmd>Explore<CR>")
 
 -- Tests runner
 vim.keymap.set("n", "<leader>t", "<Cmd>TestFunc<CR>")

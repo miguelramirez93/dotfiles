@@ -1,8 +1,9 @@
 return {
-    "folke/todo-comments.nvim",
-    cmd = { "TodoTrouble", "TodoTelescope" },
-    event = "BufEnter",
-    config = true,
+	"folke/todo-comments.nvim",
+	enabled = false,
+	cmd = { "TodoTrouble", "TodoTelescope" },
+	event = "BufEnter",
+	config = true,
     -- stylua: ignore
     keys = {
       { "]t", function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
@@ -12,4 +13,5 @@ return {
       { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
       { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
     },
-  }
+}
+

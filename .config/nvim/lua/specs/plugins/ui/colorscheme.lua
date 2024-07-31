@@ -3,7 +3,7 @@ local themes_cfg = {
 		src = "rafi/awesome-vim-colorschemes",
 		colorscheme_name = "jellybeans",
 	},
-	gruver = {
+	gruber = {
 		src = "blazkowolf/gruber-darker.nvim",
 		colorscheme_name = "gruber-darker",
 	},
@@ -22,12 +22,12 @@ local themes_cfg = {
 	},
 }
 
-local selected = "ok"
+local selected = "gruber"
 
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
-	priority = 1000,
+	priority = 1200,
 	lazy = false,
 	opts = themes_cfg[selected].opts,
 	setup = function(opts)
