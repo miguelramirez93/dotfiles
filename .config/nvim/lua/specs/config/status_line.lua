@@ -23,9 +23,9 @@ local m = {
 	},
 	icons = {
 		["error"] = "󰨰",
-		["warn"] = "▲",
+		["warn"] = "",
 		["info"] = "󰋽",
-		["hint"] = "",
+		["hint"] = "",
 		["ok"] = "",
 		["loading"] = "󰁪",
 	},
@@ -142,12 +142,12 @@ function m.get_icon(name)
 	return icon
 end
 
-vim.cmd([[
-set laststatus=3
-augroup Statusline
-  au!
-  au WinEnter,BufEnter * setlocal statusline=%!v:lua.require'specs.config.status_line'.build_status_line()
-  au WinLeave,BufLeave * setlocal statusline=%!v:lua.require'specs.config.status_line'.inactive()
-  augroup END
-]])
+-- vim.cmd([[
+-- set laststatus=3
+-- augroup Statusline
+--   au!
+--   au WinEnter,BufEnter * setlocal statusline=%!v:lua.require'specs.config.status_line'.build_status_line()
+--   au WinLeave,BufLeave * setlocal statusline=%!v:lua.require'specs.config.status_line'.inactive()
+--   augroup END
+-- ]])
 return m

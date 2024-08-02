@@ -22,7 +22,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "gruber"
+local selected = "awesome"
 
 return {
 	themes_cfg[selected].src,
