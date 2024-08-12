@@ -3,6 +3,7 @@ return {
 	opts = {},
 	-- Optional dependencies
 	dependencies = { "nvim-tree/nvim-web-devicons" },
+	enabled = false,
 	setup = function(_)
 		require("oil").setup({
 			view_options = {

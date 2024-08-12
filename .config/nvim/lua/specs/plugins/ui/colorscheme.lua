@@ -1,7 +1,7 @@
 local themes_cfg = {
 	awesome = {
 		src = "rafi/awesome-vim-colorschemes",
-		colorscheme_name = "jellybeans",
+		colorscheme_name = "minimalist",
 	},
 	gruber = {
 		src = "blazkowolf/gruber-darker.nvim",
@@ -22,7 +22,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "awesome"
+local selected = "ok"
 
 return {
 	themes_cfg[selected].src,

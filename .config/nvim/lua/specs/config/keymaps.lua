@@ -76,7 +76,8 @@ vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search(
 })
 
 --File explorer
-vim.keymap.set("n", "<leader>b", "<Cmd>Oil<CR>")
+-- vim.keymap.set("n", "<leader>b", "<Cmd>Oil<CR>")
+vim.keymap.set("n", "<leader>b", "<Cmd>Neotree toggle filesystem reveal right<CR>")
 -- vim.keymap.set("n", "<leader>b", "<Cmd>Explore<CR>")
 
 -- Tests runner
