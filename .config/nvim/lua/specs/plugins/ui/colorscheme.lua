@@ -22,7 +22,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "ok"
+local selected = "vscode"
 
 return {
 	themes_cfg[selected].src,
