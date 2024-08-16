@@ -4,7 +4,7 @@ return {
 	setup = function(_)
 		require("staline").setup({
 			defaults = {
-				line_column = "[%l:%c] 並%p%% ",
+				line_column = "[%l:%c] P: %p%% ",
 				true_colors = true,
 			},
 			mode_colors = {
@@ -14,7 +14,7 @@ return {
 				v = "#7287fd",
 			},
 			sections = {
-				left = { "- ", "-mode", "left_sep_double", " ", "branch", " ", "lsp_name", " ", "lsp" },
+				left = { "- ", "-mode", "left_sep_double", " ", "branch" },
 				mid = {},
 				right = { "cool_symbol", "right_sep_double", "-line_column" },
 			},
