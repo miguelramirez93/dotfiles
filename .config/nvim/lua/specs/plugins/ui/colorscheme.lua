@@ -20,9 +20,14 @@ local themes_cfg = {
 		name = "okcolors",
 		colorscheme_name = "okcolors",
 	},
+	rose = {
+		src = "rose-pine/neovim",
+		name = "rose-pine",
+		colorscheme_name = "rose-pine",
+	},
 }
 
-local selected = "vscode"
+local selected = "rose"
 
 return {
 	themes_cfg[selected].src,
