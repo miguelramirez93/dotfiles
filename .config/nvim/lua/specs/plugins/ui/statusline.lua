@@ -8,10 +8,10 @@ return {
 				true_colors = true,
 			},
 			mode_colors = {
-				n = "#ea76cb",
+				n = "#7287fd",
 				i = "#dd7878", -- etc mode
 				c = "#df8e1d",
-				v = "#7287fd",
+				v = "#ea76cb",
 			},
 			sections = {
 				left = { "- ", "-mode", "left_sep_double", " ", "branch", " ", "lsp" },
