@@ -1,7 +1,6 @@
 return {
 	"tamton-aquib/staline.nvim",
 	version = "*",
-	enabled = false,
 	setup = function(_)
 		require("staline").setup({
 			defaults = {
