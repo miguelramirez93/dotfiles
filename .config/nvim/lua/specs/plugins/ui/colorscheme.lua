@@ -25,9 +25,13 @@ local themes_cfg = {
 		name = "rose-pine",
 		colorscheme_name = "rose-pine",
 	},
+	gruvbox = {
+		src = "sainnhe/gruvbox-material",
+		colorscheme_name = "gruvbox-material",
+	},
 }
 
-local selected = "rose"
+local selected = "gruvbox"
 
 return {
 	themes_cfg[selected].src,
