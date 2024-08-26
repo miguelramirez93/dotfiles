@@ -1,5 +1,5 @@
 local opt = vim.opt
-
+local g = vim.g
 -- enable new loader for caching some
 -- internal calls
 vim.loader.enable()
@@ -33,3 +33,6 @@ opt.incsearch = true
 -- enable spelling
 opt.spelllang = "en_us"
 opt.spell = true
+
+-- netrw
+g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
