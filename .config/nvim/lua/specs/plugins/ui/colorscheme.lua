@@ -29,9 +29,13 @@ local themes_cfg = {
 		src = "sainnhe/gruvbox-material",
 		colorscheme_name = "gruvbox-material",
 	},
+	oxoc = {
+		src = "nyoom-engineering/oxocarbon.nvim",
+		colorscheme_name = "oxocarbon",
+	},
 }
 
-local selected = "gruvbox"
+local selected = "oxoc"
 
 return {
 	themes_cfg[selected].src,
