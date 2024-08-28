@@ -11,10 +11,6 @@ local themes_cfg = {
 		src = "Mofiqul/vscode.nvim",
 		colorscheme_name = "vscode",
 	},
-	ncf = {
-		src = "aktersnurra/no-clown-fiesta.nvim",
-		colorscheme_name = "no-clown-fiesta",
-	},
 	ok = {
 		src = "e-q/okcolors.nvim",
 		name = "okcolors",
@@ -29,13 +25,13 @@ local themes_cfg = {
 		src = "sainnhe/gruvbox-material",
 		colorscheme_name = "gruvbox-material",
 	},
-	oxoc = {
-		src = "nyoom-engineering/oxocarbon.nvim",
-		colorscheme_name = "oxocarbon",
+	tokyo = {
+		src = "folke/tokyonight.nvim",
+		colorscheme_name = "tokyonight",
 	},
 }
 
-local selected = "oxoc"
+local selected = "tokyo"
 
 return {
 	themes_cfg[selected].src,
