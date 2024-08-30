@@ -11,6 +11,7 @@ return {
 	deps = {
 		"typescript-language-server",
 		"prettierd",
+		"prettier",
 	},
 	langs = {
 		"typescript",
