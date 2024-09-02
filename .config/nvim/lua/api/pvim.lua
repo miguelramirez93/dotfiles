@@ -1,4 +1,7 @@
-local pvim = {}
+local file_explorer = require("ui.file_explorer")
+local pvim = {
+	fexplorer = file_explorer,
+}
 
 local function setup_plugs(opts)
 	local plgs_service = require("plugins.service")
