@@ -37,6 +37,10 @@ local function setup_lsp(opts)
 	lsp_config_service.setup_servers()
 end
 
+function pvim.open_file_explorer()
+	pvim.fexplorer.open()
+end
+
 function pvim.setup(opts)
 	setup_plugs(opts)
 	setup_lsp(opts)
