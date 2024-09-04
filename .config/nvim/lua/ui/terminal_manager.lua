@@ -4,7 +4,7 @@ local m = {
 			pcall(vim.cmd, "execute 'vsplit'|execute 'terminal'")
 		end,
 		["tab"] = function()
-			pcall(vim.cmd, "execute 'tabnew'|execute 'terminal'")
+			pcall(vim.cmd, "execute 'tab term'")
 		end,
 		["full"] = function()
 			pcall(vim.cmd, "execute 'terminal'")

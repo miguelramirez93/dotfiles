@@ -81,6 +81,7 @@ vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search(
 vim.keymap.set("n", "<leader>b", '<Cmd>lua require("api.pvim").open_file_explorer()<CR>', { silent = true })
 
 -- files
+vim.keymap.set("n", "<leader>p", "<Cmd>echo expand('%:.')<CR>", { silent = true })
 vim.keymap.set("n", "<leader>cp", "<Cmd>echo expand('%')<CR>", { silent = true })
 
 -- Tests runner
@@ -121,11 +122,11 @@ local keymaps = {
 
 	{ mode = "n", bind = "<leader>j", cmd = '<Cmd>lua require("api.pvim").open_terminal()<CR>' },
 	{ mode = "n", bind = "<leader>jv", cmd = '<cmd>lua require("api.pvim").open_terminal("vertical")<CR>' },
-	-- { mode = "n", bind = "<leader>jt", cmd = '<cmd>lua require("api.pvim").open_terminal("tab")<CR>' },
+	{ mode = "n", bind = "<leader>jt", cmd = '<cmd>lua require("api.pvim").open_terminal("tab")<CR>' },
 
-	{ mode = "n", bind = "<leader>t", cmd = "<cmd>tabnew<cr>" },
-	{ mode = "n", bind = "<leader>tn", cmd = "<cmd>tabnext<cr>" },
-	{ mode = "n", bind = "<leader>tp", cmd = "<cmd>tabprev<cr>" },
+	{ mode = "n", bind = "<C-t>", cmd = "<cmd>tabnew<cr>" },
+	{ mode = "n", bind = "<SC-Right>", cmd = "<cmd>tabnext<cr>" },
+	{ mode = "n", bind = "<SC-Left>", cmd = "<cmd>tabprev<cr>" },
 }
 
 for _, k_map in pairs(keymaps) do
