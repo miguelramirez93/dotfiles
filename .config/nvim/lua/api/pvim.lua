@@ -1,6 +1,8 @@
 local file_explorer = require("ui.file_explorer")
+local terminal_manager = require("ui.terminal_manager")
 local pvim = {
 	fexplorer = file_explorer,
+	terminalman = terminal_manager,
 }
 
 local function setup_plugs(opts)
@@ -39,6 +41,10 @@ end
 
 function pvim.open_file_explorer()
 	pvim.fexplorer.open()
+end
+
+function pvim.open_terminal(mode)
+	pvim.terminalman.open(mode)
 end
 
 function pvim.setup(opts)

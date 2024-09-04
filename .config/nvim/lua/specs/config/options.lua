@@ -6,7 +6,7 @@ vim.loader.enable()
 
 opt.relativenumber = true
 opt.number = true
-opt.timeoutlen = 300
+opt.timeoutlen = 400
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.softtabstop = 4

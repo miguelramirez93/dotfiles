@@ -115,9 +115,17 @@ local keymaps = {
 	{ mode = "n", bind = "<leader>ss", cmd = "<cmd>Telescope lsp_document_symbols<cr>" },
 	{ mode = "n", bind = "<leader>fb", cmd = "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>" },
 	-- toggle term
-	{ mode = "n", bind = "<leader>j", cmd = "<cmd>ToggleTerm direction=horizontal<cr>" },
-	{ mode = "n", bind = "<leader>jf", cmd = "<cmd>ToggleTerm direction=float<cr>" },
-	{ mode = "n", bind = "<leader>jv", cmd = "<cmd>ToggleTerm direction=vertical<cr>" },
+	-- { mode = "n", bind = "<leader>j", cmd = "<cmd>ToggleTerm direction=horizontal<cr>" },
+	-- { mode = "n", bind = "<leader>jf", cmd = "<cmd>ToggleTerm direction=float<cr>" },
+	-- { mode = "n", bind = "<leader>jv", cmd = "<cmd>ToggleTerm direction=vertical<cr>" },
+
+	{ mode = "n", bind = "<leader>j", cmd = '<Cmd>lua require("api.pvim").open_terminal()<CR>' },
+	{ mode = "n", bind = "<leader>jv", cmd = '<cmd>lua require("api.pvim").open_terminal("vertical")<CR>' },
+	-- { mode = "n", bind = "<leader>jt", cmd = '<cmd>lua require("api.pvim").open_terminal("tab")<CR>' },
+
+	{ mode = "n", bind = "<leader>t", cmd = "<cmd>tabnew<cr>" },
+	{ mode = "n", bind = "<leader>tn", cmd = "<cmd>tabnext<cr>" },
+	{ mode = "n", bind = "<leader>tp", cmd = "<cmd>tabprev<cr>" },
 }
 
 for _, k_map in pairs(keymaps) do
