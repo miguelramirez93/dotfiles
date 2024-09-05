@@ -43,7 +43,11 @@ function pvim.open_file_explorer()
 	pvim.fexplorer.open()
 end
 
-function pvim.open_terminal(mode)
+function pvim.toggle_terminal(mode)
+	pvim.terminalman.toggle(mode)
+end
+
+function pvim.new_terminal(mode)
 	pvim.terminalman.open(mode)
 end
 

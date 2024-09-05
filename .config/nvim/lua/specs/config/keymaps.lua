@@ -120,9 +120,12 @@ local keymaps = {
 	-- { mode = "n", bind = "<leader>jf", cmd = "<cmd>ToggleTerm direction=float<cr>" },
 	-- { mode = "n", bind = "<leader>jv", cmd = "<cmd>ToggleTerm direction=vertical<cr>" },
 
-	{ mode = "n", bind = "<leader>j", cmd = '<Cmd>lua require("api.pvim").open_terminal()<CR>' },
-	{ mode = "n", bind = "<leader>jv", cmd = '<cmd>lua require("api.pvim").open_terminal("vertical")<CR>' },
-	{ mode = "n", bind = "<leader>jt", cmd = '<cmd>lua require("api.pvim").open_terminal("tab")<CR>' },
+	{ mode = "n", bind = "<C-j>", cmd = '<Cmd>lua require("api.pvim").toggle_terminal()<CR>' },
+	{ mode = "n", bind = "<C-j>v", cmd = '<cmd>lua require("api.pvim").toggle_terminal("vertical")<CR>' },
+	{ mode = "n", bind = "<C-j>h", cmd = '<cmd>lua require("api.pvim").toggle_terminal("horizontal")<CR>' },
+	{ mode = "n", bind = "<C-J>", cmd = '<Cmd>lua require("api.pvim").new_terminal()<CR>' },
+	{ mode = "n", bind = "<C-J>v", cmd = '<cmd>lua require("api.pvim").new_terminal("vertical")<CR>' },
+	{ mode = "n", bind = "<C-J>h", cmd = '<cmd>lua require("api.pvim").new_terminal("horizontal")<CR>' },
 
 	{ mode = "n", bind = "<C-t>", cmd = "<cmd>tabnew<cr>" },
 	{ mode = "n", bind = "<SC-Right>", cmd = "<cmd>tabnext<cr>" },
