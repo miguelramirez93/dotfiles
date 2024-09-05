@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>gs", vim.cmd.Neogit)
 vim.keymap.set("n", "<leader>gd", "<Cmd>Gitsigns preview_hunk<CR>")
 
 -- better copy/paste flow
-vim.keymap.set("x", "<leader>p", '"_dp')
+-- vim.keymap.set("x", "<leader>p", '"_dp')
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
