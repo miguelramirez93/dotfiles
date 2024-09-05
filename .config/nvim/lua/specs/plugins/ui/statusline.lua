@@ -6,6 +6,8 @@ return {
 			defaults = {
 				line_column = "[%l:%c] P %p%% ",
 				true_colors = true,
+				left_separator = "",
+				right_separator = "",
 			},
 			mode_colors = {
 				n = "#7287fd",
@@ -15,17 +17,20 @@ return {
 			},
 			sections = {
 				left = {
-					"- ",
+					"right_sep",
 					"-mode",
-					"- ",
+					"left_sep",
+					" ",
+					"right_sep",
 					"-branch",
-					"left_sep_double",
+					"left_sep",
+					" ",
 					"file_name",
 					" ",
 					"lsp",
 				},
 				mid = {},
-				right = { "cool_symbol", "right_sep_double", "-line_column" },
+				right = { "cool_symbol", "right_sep", "-line_column", "left_sep" },
 			},
 			lsp_symbols = {
 				Error = "󰨰 ",
