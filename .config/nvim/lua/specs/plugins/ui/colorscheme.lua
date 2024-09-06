@@ -29,9 +29,13 @@ local themes_cfg = {
 		src = "folke/tokyonight.nvim",
 		colorscheme_name = "tokyonight",
 	},
+	nightfox = {
+		src = "EdenEast/nightfox.nvim",
+		colorscheme_name = "carbonfox",
+	},
 }
 
-local selected = "tokyo"
+local selected = "nightfox"
 
 return {
 	themes_cfg[selected].src,
