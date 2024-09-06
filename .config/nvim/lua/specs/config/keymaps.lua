@@ -123,9 +123,9 @@ local keymaps = {
 	{ mode = "n", bind = "<C-j>", cmd = '<Cmd>lua require("api.pvim").toggle_terminal()<CR>' },
 	{ mode = "n", bind = "<C-j>v", cmd = '<cmd>lua require("api.pvim").toggle_terminal("vertical")<CR>' },
 	{ mode = "n", bind = "<C-j>h", cmd = '<cmd>lua require("api.pvim").toggle_terminal("horizontal")<CR>' },
-	{ mode = "n", bind = "<C-J>", cmd = '<Cmd>lua require("api.pvim").new_terminal()<CR>' },
-	{ mode = "n", bind = "<C-J>v", cmd = '<cmd>lua require("api.pvim").new_terminal("vertical")<CR>' },
-	{ mode = "n", bind = "<C-J>h", cmd = '<cmd>lua require("api.pvim").new_terminal("horizontal")<CR>' },
+	{ mode = "n", bind = "<C-j>n", cmd = '<Cmd>lua require("api.pvim").new_terminal()<CR>' },
+	{ mode = "n", bind = "<C-j>nv", cmd = '<cmd>lua require("api.pvim").new_terminal("vertical")<CR>' },
+	{ mode = "n", bind = "<C-j>nh", cmd = '<cmd>lua require("api.pvim").new_terminal("horizontal")<CR>' },
 
 	{ mode = "n", bind = "<C-t>", cmd = "<cmd>tabnew<cr>" },
 	{ mode = "n", bind = "<SC-Right>", cmd = "<cmd>tabnext<cr>" },
