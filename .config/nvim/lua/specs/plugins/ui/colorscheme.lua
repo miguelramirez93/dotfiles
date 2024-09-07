@@ -29,13 +29,13 @@ local themes_cfg = {
 		src = "folke/tokyonight.nvim",
 		colorscheme_name = "tokyonight",
 	},
-	nightfox = {
-		src = "EdenEast/nightfox.nvim",
-		colorscheme_name = "carbonfox",
+	darcula = {
+		src = "xiantang/darcula-dark.nvim",
+		colorscheme_name = "darcula-dark",
 	},
 }
 
-local selected = "nightfox"
+local selected = "darcula"
 
 return {
 	themes_cfg[selected].src,
