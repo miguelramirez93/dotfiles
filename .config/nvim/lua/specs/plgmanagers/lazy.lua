@@ -1,4 +1,6 @@
-local lazy = {}
+local lazy = {
+	load_all = false,
+}
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 function lazy.install()
@@ -12,8 +14,17 @@ function lazy.install()
 end
 
 function lazy.sync(plugins_list)
+	local plugs = plugins_list
+
+	if lazy.load_all then
+		for _, plug in ipairs(plugs) do
+			plug.event = nil
+			plug.lazy = false
+		end
+	end
+
 	require("lazy").setup({
-		spec = plugins_list,
+		spec = plugs,
 		defaults = {
 			-- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
 			-- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.

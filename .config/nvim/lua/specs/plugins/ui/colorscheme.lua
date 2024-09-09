@@ -1,7 +1,7 @@
 local themes_cfg = {
 	awesome = {
 		src = "rafi/awesome-vim-colorschemes",
-		colorscheme_name = "minimalist",
+		colorscheme_name = "hybrid",
 	},
 	gruber = {
 		src = "blazkowolf/gruber-darker.nvim",
@@ -29,13 +29,19 @@ local themes_cfg = {
 		src = "folke/tokyonight.nvim",
 		colorscheme_name = "tokyonight",
 	},
-	darcula = {
-		src = "xiantang/darcula-dark.nvim",
-		colorscheme_name = "darcula-dark",
+	osaka = {
+		src = "craftzdog/solarized-osaka.nvim",
+		colorscheme_name = "solarized-osaka",
+		opts = {
+			transparent = false,
+		},
+		setup = function(opts)
+			require("solarized-osaka").setup(opts)
+		end,
 	},
 }
 
-local selected = "darcula"
+local selected = "gruber"
 
 return {
 	themes_cfg[selected].src,
