@@ -127,6 +127,8 @@ local keymaps = {
 	{ mode = "n", bind = "<C-j>nv", cmd = '<cmd>lua require("api.pvim").new_terminal("vertical")<CR>' },
 	{ mode = "n", bind = "<C-j>nh", cmd = '<cmd>lua require("api.pvim").new_terminal("horizontal")<CR>' },
 
+	{ mode = "n", bind = "<C-w>a", cmd = "<cmd>BufOnly<CR>" },
+
 	{ mode = "n", bind = "<C-t>", cmd = "<cmd>tabnew<cr>" },
 	{ mode = "n", bind = "<SC-Right>", cmd = "<cmd>tabnext<cr>" },
 	{ mode = "n", bind = "<SC-Left>", cmd = "<cmd>tabprev<cr>" },
