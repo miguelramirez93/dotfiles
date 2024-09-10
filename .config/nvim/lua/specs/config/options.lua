@@ -36,3 +36,5 @@ opt.spell = true
 
 -- netrw
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+
+opt.laststatus = 3
