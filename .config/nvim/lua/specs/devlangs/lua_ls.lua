@@ -31,5 +31,6 @@ return {
 	langs = {
 		"lua",
 		"vimdoc",
+		"regex",
 	},
 }

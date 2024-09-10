@@ -27,7 +27,6 @@ return {
 		-- "python-lsp-server",
 		"jinja-lsp",
 		"pylint",
-		"black",
 	},
 	langs = {
 		"python",

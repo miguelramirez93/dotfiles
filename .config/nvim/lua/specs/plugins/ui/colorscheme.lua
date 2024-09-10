@@ -41,7 +41,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "gruber"
+local selected = "osaka"
 
 return {
 	themes_cfg[selected].src,

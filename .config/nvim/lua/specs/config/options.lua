@@ -2,7 +2,7 @@ local opt = vim.opt
 local g = vim.g
 -- enable new loader for caching some
 -- internal calls
-vim.loader.enable()
+--vim.loader.enable()
 
 opt.relativenumber = true
 opt.number = true

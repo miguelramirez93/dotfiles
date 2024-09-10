@@ -1,12 +1,12 @@
 local pvim = require("api.pvim")
 
-local plug_man = require("specs.plgmanagers.lazy")
+local lazy_plug_man = require("specs.plgmanagers.lazy")
 
-plug_man.load_all = true
+lazy_plug_man.load_all = true
 
 pvim.setup({
 	plugins = {
-		manager = plug_man,
+		manager = lazy_plug_man,
 		folder = "specs/plugins",
 	},
 	config = {
