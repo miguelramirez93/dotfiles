@@ -1,8 +1,9 @@
 local opt = vim.opt
 local g = vim.g
+
 -- enable new loader for caching some
 -- internal calls
---vim.loader.enable()
+vim.loader.enable()
 
 opt.relativenumber = true
 opt.number = true
@@ -31,8 +32,8 @@ opt.hlsearch = false
 opt.incsearch = true
 
 -- enable spelling
--- opt.spelllang = "en_us"
--- opt.spell = true
+opt.spelllang = "en_us,es"
+opt.spell = true
 
 -- netrw
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
