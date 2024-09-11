@@ -3,6 +3,7 @@ return {
 	name = "barbecue",
 	version = "*",
 	enabled = true,
+	event = "BufEnter",
 	dependencies = {
 		"SmiteshP/nvim-navic",
 		"nvim-tree/nvim-web-devicons", -- optional dependency

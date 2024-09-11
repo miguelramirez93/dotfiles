@@ -1,6 +1,6 @@
 return {
 	"echasnovski/mini.pairs",
-	event = "VeryLazy",
+	event = "BufEnter",
 	opts = {},
 	keys = {
 		{

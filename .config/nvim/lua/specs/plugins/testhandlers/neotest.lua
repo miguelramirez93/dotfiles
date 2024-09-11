@@ -85,6 +85,7 @@ return {
 		"nvim-neotest/nvim-nio",
 		"antoinemadec/FixCursorHold.nvim",
 	},
+	event = "BufEnter",
 	lazy = false,
 	install_runners = function(runners)
 		opts.adapters = vim.tbl_extend("force", opts.adapters, runners)

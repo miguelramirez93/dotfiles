@@ -8,6 +8,7 @@ local function get_runner_deps()
 	local built_runners = {}
 	for _, runner in pairs(runners) do
 		runner["lazy"] = false
+		runner["event"] = "BufEnter"
 		table.insert(built_runners, runner)
 	end
 	return built_runners
