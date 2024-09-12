@@ -1,5 +1,5 @@
 local lazy = {
-	load_all = false,
+	enable_lazy_load = true,
 }
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -16,7 +16,7 @@ end
 function lazy.sync(plugins_list)
 	local plugs = plugins_list
 
-	if lazy.load_all then
+	if not lazy.enable_lazy_load then
 		for _, plug in ipairs(plugs) do
 			plug.event = nil
 			plug.lazy = false

@@ -1,6 +1,7 @@
 return {
 	"tamton-aquib/staline.nvim",
 	version = "*",
+	event = "VeryLazy",
 	setup = function(_)
 		require("staline").setup({
 			defaults = {
@@ -17,20 +18,25 @@ return {
 			},
 			sections = {
 				left = {
-					"right_sep",
+					-- "right_sep",
 					"-mode",
-					"left_sep",
-					" ",
-					"right_sep",
+					-- "left_sep",
+					"- ",
+					-- "right_sep",
 					"-branch",
-					"left_sep",
+					-- "left_sep",
 					" ",
 					-- "file_name",
 					-- " ",
 					"lsp",
 				},
 				mid = {},
-				right = { "cool_symbol", "right_sep", "-line_column", "left_sep" },
+				right = {
+					"cool_symbol",
+					-- "right_sep",
+					"-line_column",
+					-- "left_sep"
+				},
 			},
 			lsp_symbols = {
 				Error = "󰨰 ",

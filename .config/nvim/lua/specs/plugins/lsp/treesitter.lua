@@ -11,7 +11,8 @@ return {
 		"nvim-treesitter/nvim-treesitter-context",
 	},
 	version = false, -- last release is way too old and doesn't work on Windows
-	event = { "BufEnter", "VeryLazy" },
+	event = { "VeryLazy" },
+	lazy = vim.fn.argc(-1) == 0,
 	build = ":TSUpdate",
 	cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 	install_lang_syntax = function(langs)
