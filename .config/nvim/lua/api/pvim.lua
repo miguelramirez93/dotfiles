@@ -1,5 +1,5 @@
-local file_explorer = require("ui.file_explorer")
-local terminal_manager = require("ui.terminal_manager")
+local file_explorer = require("adapters.ui.netrw_file_explorer")
+local terminal_manager = require("adapters.ui.native_terminal_manager")
 local pvim = {
 	fexplorer = file_explorer,
 	terminalman = terminal_manager,
