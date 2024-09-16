@@ -7,6 +7,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
+		"f3fora/cmp-spell",
 		-- "hrsh7th/cmp-nvim-lsp-signature-help",
 		{
 			"saadparwaiz1/cmp_luasnip",
@@ -38,11 +39,21 @@ return {
 			},
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
+				-- this is a time
 				-- { name = "nvim_lsp_signature_help" },
 				{ name = "luasnip" },
 				{ name = "path" },
-			}, {
 				{ name = "buffer" },
+				{
+					name = "spell",
+					option = {
+						keep_all_entries = false,
+						enable_in_context = function()
+							return true
+						end,
+						preselect_correct_word = true,
+					},
+				},
 			}),
 			window = {
 				completion = cmp.config.window.bordered(),

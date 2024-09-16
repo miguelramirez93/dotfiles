@@ -32,8 +32,8 @@ opt.hlsearch = false
 opt.incsearch = true
 
 -- enable spelling
-opt.spelllang = "en_us,es"
 opt.spell = true
+opt.spelllang = "en_us,es"
 
 -- netrw
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
