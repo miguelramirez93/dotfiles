@@ -1,0 +1,117 @@
+---
+  - name: install nvim ubuntu
+    hosts: all
+    vars:
+      - zsh_dependencies: []
+    tasks:
+      - name: Install curl
+        become: yes
+        ansible.builtin.apt:
+          name: curl
+          state: present 
+      - name: Install git
+        become: yes
+        ansible.builtin.apt:
+          name: git
+          state: present 
+      - name: install brew
+        ansible.builtin.shell: NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
+      - name: set brew dirs in PATH
+        ansible.builtin.shell: (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/home-lab/.bashrc && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"  
+      - name: Check if homebrew is available
+        block:
+          - name: try using homebrew in check_mode (no changes)
+            homebrew:
+              update_homebrew: true
+            check_mode: true
+          - name: Homebrew available
+            debug:
+              msg: Homebrew is installed
+          - name: Install zsh via brew
+            community.general.homebrew:
+              name: zsh
+              state: present
+          - name: Set login shell of user {{ ansible_env.USER }} to `/bin/zsh` with `usermod`
+            ansible.builtin.command: usermod --shell /home/linuxbrew/.linuxbrew/bin/zsh {{ ansible_env.USER }}
+            become: true
+            changed_when: false
+          - name: Download Oh My Zsh installation script
+            get_url:
+              url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+              dest: /tmp/install_ohmyzsh.sh
+
+          - name: Run Oh My Zsh installation script
+            command: sh /tmp/install_ohmyzsh.sh --unattended
+            register: ohmyzsh_result
+            failed_when: "'FAILED' in ohmyzsh_result.stderr"
+          - name: set brew dirs in PATH <<ZSH>>
+            ansible.builtin.shell: (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/home-lab/.zshrc && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"  
+          - name: Link brew to zsh 
+            ansible.builtin.shell: brew link zsh 
+
+          - name: Install cmake 
+            community.general.homebrew:
+              name: cmake
+              state: present
+
+          - name: Install mercurial (hg) 
+            community.general.homebrew:
+              name: mercurial
+              state: present
+
+          - name: Install fzf 
+            community.general.homebrew:
+              name: fzf
+              state: present
+
+          - name: Install viu 
+            community.general.homebrew:
+              name: viu
+              state: present
+
+          - name: Install chafa 
+            community.general.homebrew:
+              name: chafa
+              state: present
+          - name: Install luarocks 
+            community.general.homebrew:
+              name: luarocks
+              state: present
+          - name: Install ripgrep 
+            community.general.homebrew:
+              name: ripgrep
+              state: present
+          - name: Install nvm 
+            ansible.builtin.shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash      
+            args:
+              creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+          - name: Source nvm 
+            ansible.builtin.shell: export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+          - name: Install node LTS
+            ansible.builtin.shell: source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install --lts 
+            args:
+              executable: /bin/bash
+          - name: Install rust
+            community.general.homebrew:
+              name: rust
+              state: present
+          - name: Install GO 
+            community.general.homebrew:
+              name: go
+              state: present
+          - name: Install nvim
+            community.general.homebrew:
+              name: nvim
+              state: present
+          - name: Clone dotfiles
+            git:
+              repo: https://github.com/miguelramirez93/dotfiles.git 
+              dest: "{{ lookup('env', 'HOME') }}/dotfiles"
+
+          - name: copy nvim config
+            ansible.builtin.shell: cp -r $HOME/dotfiles/.config/nvim $HOME/.config/nvim
+
+        rescue:
+          - name: No homebrew
+            debug:
+              msg: Homebrew is not installed
