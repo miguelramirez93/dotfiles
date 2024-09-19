@@ -1,7 +1,7 @@
 local themes_cfg = {
 	awesome = {
 		src = "rafi/awesome-vim-colorschemes",
-		colorscheme_name = "minimalist",
+		colorscheme_name = "hybrid",
 	},
 	gruber = {
 		src = "blazkowolf/gruber-darker.nvim",
@@ -10,10 +10,6 @@ local themes_cfg = {
 	vscode = {
 		src = "Mofiqul/vscode.nvim",
 		colorscheme_name = "vscode",
-	},
-	ncf = {
-		src = "aktersnurra/no-clown-fiesta.nvim",
-		colorscheme_name = "no-clown-fiesta",
 	},
 	ok = {
 		src = "e-q/okcolors.nvim",
@@ -25,9 +21,27 @@ local themes_cfg = {
 		name = "rose-pine",
 		colorscheme_name = "rose-pine",
 	},
+	gruvbox = {
+		src = "sainnhe/gruvbox-material",
+		colorscheme_name = "gruvbox-material",
+	},
+	tokyo = {
+		src = "folke/tokyonight.nvim",
+		colorscheme_name = "tokyonight",
+	},
+	osaka = {
+		src = "craftzdog/solarized-osaka.nvim",
+		colorscheme_name = "solarized-osaka",
+		opts = {
+			transparent = false,
+		},
+		setup = function(opts)
+			require("solarized-osaka").setup(opts)
+		end,
+	},
 }
 
-local selected = "rose"
+local selected = "osaka"
 
 return {
 	themes_cfg[selected].src,

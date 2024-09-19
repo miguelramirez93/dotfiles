@@ -1,6 +1,6 @@
 return {
 	ls = {
-		tsserver = {
+		ts_ls = {
 			settings = {
 				completions = {
 					completeFunctionCalls = true,
@@ -11,6 +11,7 @@ return {
 	deps = {
 		"typescript-language-server",
 		"prettierd",
+		"prettier",
 	},
 	langs = {
 		"typescript",

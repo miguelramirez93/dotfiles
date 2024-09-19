@@ -1,7 +1,8 @@
 return {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    lazy = true,
-    opts = {
-        enable_autocmd = false,
-    },
+	"JoosepAlviste/nvim-ts-context-commentstring",
+	lazy = true,
+	event = "BufEnter",
+	opts = {
+		enable_autocmd = false,
+	},
 }

@@ -1,4 +1,9 @@
-local pvim = {}
+local file_explorer = require("adapters.ui.oil_file_explorer")
+local terminal_manager = require("adapters.ui.native_terminal_manager")
+local pvim = {
+	fexplorer = file_explorer,
+	terminalman = terminal_manager,
+}
 
 local function setup_plugs(opts)
 	local plgs_service = require("plugins.service")
@@ -32,6 +37,18 @@ local function setup_lsp(opts)
 	lsp_config_service.tests_runner_client = opts.lsp.tests_runners_client
 
 	lsp_config_service.setup_servers()
+end
+
+function pvim.open_file_explorer()
+	pvim.fexplorer.open()
+end
+
+function pvim.toggle_terminal(mode)
+	pvim.terminalman.toggle(mode)
+end
+
+function pvim.new_terminal(mode)
+	pvim.terminalman.open(mode)
 end
 
 function pvim.setup(opts)

@@ -17,7 +17,7 @@ vim.diagnostic.config({
 			[vim.diagnostic.severity.INFO] = "󰋽",
 		},
 		linehl = {
-			[vim.diagnostic.severity.ERROR] = "ErrorMsg",
+			[vim.diagnostic.severity.ERROR] = "SpellBad",
 		},
 		numhl = {
 			[vim.diagnostic.severity.WARN] = "WarningMsg",

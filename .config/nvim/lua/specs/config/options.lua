@@ -1,4 +1,5 @@
 local opt = vim.opt
+local g = vim.g
 
 -- enable new loader for caching some
 -- internal calls
@@ -6,7 +7,7 @@ vim.loader.enable()
 
 opt.relativenumber = true
 opt.number = true
-opt.timeoutlen = 300
+opt.timeoutlen = 400
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.softtabstop = 4
@@ -31,5 +32,10 @@ opt.hlsearch = false
 opt.incsearch = true
 
 -- enable spelling
-opt.spelllang = "en_us"
 opt.spell = true
+opt.spelllang = "en_us,es"
+
+-- netrw
+g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+
+opt.laststatus = 3

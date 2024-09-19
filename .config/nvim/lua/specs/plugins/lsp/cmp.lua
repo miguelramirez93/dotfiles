@@ -7,10 +7,16 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
+		"f3fora/cmp-spell",
+		-- "hrsh7th/cmp-nvim-lsp-signature-help",
 		{
 			"saadparwaiz1/cmp_luasnip",
 			dependencies = {
 				"L3MON4D3/LuaSnip",
+				-- follow latest release.
+				version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+				-- install jsregexp (optional!).
+				build = "make install_jsregexp",
 				dependencies = {
 					{ "rafamadriz/friendly-snippets" },
 				},
@@ -19,7 +25,6 @@ return {
 	},
 	setup = function()
 		require("luasnip.loaders.from_vscode").lazy_load()
-
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 
@@ -34,10 +39,21 @@ return {
 			},
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
+				-- this is a time
+				-- { name = "nvim_lsp_signature_help" },
 				{ name = "luasnip" },
 				{ name = "path" },
-			}, {
 				{ name = "buffer" },
+				{
+					name = "spell",
+					option = {
+						keep_all_entries = false,
+						enable_in_context = function()
+							return true
+						end,
+						preselect_correct_word = true,
+					},
+				},
 			}),
 			window = {
 				completion = cmp.config.window.bordered(),

@@ -16,13 +16,13 @@ end
 
 function extend_def_capabilities(capabilities)
 	local extCapabilities = vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), capabilities)
-	extCapabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
+	extCapabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 	return extCapabilities
 end
 
 return {
 	"neovim/nvim-lspconfig",
-	event = "BufEnter",
+	event = "VeryLazy",
 	dependencies = {
 		{ "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
 		{ "folke/neodev.nvim", opts = {} },

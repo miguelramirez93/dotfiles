@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>gs", vim.cmd.Neogit)
 vim.keymap.set("n", "<leader>gd", "<Cmd>Gitsigns preview_hunk<CR>")
 
 -- better copy/paste flow
-vim.keymap.set("x", "<leader>p", '"_dp')
+-- vim.keymap.set("x", "<leader>p", '"_dp')
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
@@ -77,8 +77,12 @@ vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search(
 
 --File explorer
 -- vim.keymap.set("n", "<leader>b", "<Cmd>Oil<CR>")
-vim.keymap.set("n", "<leader>b", "<Cmd>Neotree toggle filesystem reveal right<CR>")
--- vim.keymap.set("n", "<leader>b", "<Cmd>Explore<CR>")
+-- vim.keymap.set("n", "<leader>b", "<Cmd>Neotree toggle filesystem reveal right<CR>")
+vim.keymap.set("n", "<leader>b", '<Cmd>lua require("api.pvim").open_file_explorer()<CR>', { silent = true })
+
+-- files
+vim.keymap.set("n", "<leader>p", "<Cmd>echo expand('%:.')<CR>", { silent = true })
+vim.keymap.set("n", "<leader>cp", "<Cmd>echo expand('%')<CR>", { silent = true })
 
 -- Tests runner
 vim.keymap.set("n", "<leader>t", "<Cmd>TestFunc<CR>")
@@ -112,9 +116,22 @@ local keymaps = {
 	{ mode = "n", bind = "<leader>ss", cmd = "<cmd>Telescope lsp_document_symbols<cr>" },
 	{ mode = "n", bind = "<leader>fb", cmd = "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>" },
 	-- toggle term
-	{ mode = "n", bind = "<leader>j", cmd = "<cmd>ToggleTerm direction=horizontal<cr>" },
-	{ mode = "n", bind = "<leader>jf", cmd = "<cmd>ToggleTerm direction=float<cr>" },
-	{ mode = "n", bind = "<leader>jv", cmd = "<cmd>ToggleTerm direction=vertical<cr>" },
+	-- { mode = "n", bind = "<leader>j", cmd = "<cmd>ToggleTerm direction=horizontal<cr>" },
+	-- { mode = "n", bind = "<leader>jf", cmd = "<cmd>ToggleTerm direction=float<cr>" },
+	-- { mode = "n", bind = "<leader>jv", cmd = "<cmd>ToggleTerm direction=vertical<cr>" },
+
+	{ mode = "n", bind = "<C-j>", cmd = '<Cmd>lua require("api.pvim").toggle_terminal()<CR>' },
+	{ mode = "n", bind = "<C-j>v", cmd = '<cmd>lua require("api.pvim").toggle_terminal("vertical")<CR>' },
+	{ mode = "n", bind = "<C-j>h", cmd = '<cmd>lua require("api.pvim").toggle_terminal("horizontal")<CR>' },
+	{ mode = "n", bind = "<C-j>n", cmd = '<Cmd>lua require("api.pvim").new_terminal()<CR>' },
+	{ mode = "n", bind = "<C-j>nv", cmd = '<cmd>lua require("api.pvim").new_terminal("vertical")<CR>' },
+	{ mode = "n", bind = "<C-j>nh", cmd = '<cmd>lua require("api.pvim").new_terminal("horizontal")<CR>' },
+
+	{ mode = "n", bind = "<C-w>a", cmd = "<cmd>BufOnly<CR>" },
+
+	{ mode = "n", bind = "<C-t>", cmd = "<cmd>tabnew<cr>" },
+	{ mode = "n", bind = "<SC-Right>", cmd = "<cmd>tabnext<cr>" },
+	{ mode = "n", bind = "<SC-Left>", cmd = "<cmd>tabprev<cr>" },
 }
 
 for _, k_map in pairs(keymaps) do
