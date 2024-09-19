@@ -1,23 +1,27 @@
 ---
-  - name: install nvim ubuntu
+  - name: install nvim mac os
     hosts: all
     vars:
       - zsh_dependencies: []
+    pre_tasks:
+      - name: Ensuring Homebrew Is Installed
+        stat:
+          path: /usr/local/bin/brew
+        register: homebrew_check
+
+      - name: Fail If Homebrew Is Not Installed and install_homebrew_if_missing Is False
+        fail:
+          msg: Homebrew is missing...Install from http://brew.sh/
+        when:
+          - not homebrew_check.stat.exists
+          - not install_homebrew_if_missing
+
+      - name: Installing Homebrew
+        shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        when:
+          - not homebrew_check.stat.exists
+          - install_homebrew_if_missing
     tasks:
-      - name: Install curl
-        become: yes
-        ansible.builtin.apt:
-          name: curl
-          state: present 
-      - name: Install git
-        become: yes
-        ansible.builtin.apt:
-          name: git
-          state: present 
-      - name: install brew
-        ansible.builtin.shell: NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
-      - name: set brew dirs in PATH
-        ansible.builtin.shell: (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> {{ ansible_env.HOME }}/.bashrc && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"  
       - name: Check if homebrew is available
         block:
           - name: try using homebrew in check_mode (no changes)
@@ -32,7 +36,7 @@
               name: zsh
               state: present
           - name: Set login shell of user {{ ansible_env.USER }} to `/bin/zsh` with `usermod`
-            ansible.builtin.command: usermod --shell /home/linuxbrew/.linuxbrew/bin/zsh {{ ansible_env.USER }}
+            ansible.builtin.command: chsh -s /bin/zsh {{ ansible_env.USER }}
             become: true
             changed_when: false
           - name: Download Oh My Zsh installation script
@@ -44,8 +48,6 @@
             command: sh /tmp/install_ohmyzsh.sh --unattended
             register: ohmyzsh_result
             failed_when: "'FAILED' in ohmyzsh_result.stderr"
-          - name: set brew dirs in PATH <<ZSH>>
-            ansible.builtin.shell: (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> {{ ansible_env.HOME }}/.zshrc && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"  
           - name: Link brew to zsh 
             ansible.builtin.shell: brew link zsh 
 
