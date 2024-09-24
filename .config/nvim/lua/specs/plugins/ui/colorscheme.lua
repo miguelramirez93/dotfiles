@@ -41,7 +41,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "osaka"
+local selected = "tokyo"
 
 return {
 	themes_cfg[selected].src,

@@ -10,6 +10,7 @@ return {
 			winbar = "%{v:lua.require('oil').get_current_dir()}",
 		},
 	},
+	enabled = false,
 	-- Optional dependencies
 	-- dependencies = { { "echasnovski/mini.icons", opts = {} } },
 	dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons

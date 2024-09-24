@@ -1,4 +1,4 @@
-local file_explorer = require("adapters.ui.oil_file_explorer")
+local file_explorer = require("adapters.ui.netrw_file_explorer")
 local terminal_manager = require("adapters.ui.native_terminal_manager")
 local pvim = {
 	fexplorer = file_explorer,
