@@ -11,11 +11,6 @@ local themes_cfg = {
 		src = "Mofiqul/vscode.nvim",
 		colorscheme_name = "vscode",
 	},
-	ok = {
-		src = "e-q/okcolors.nvim",
-		name = "okcolors",
-		colorscheme_name = "okcolors",
-	},
 	rose = {
 		src = "rose-pine/neovim",
 		name = "rose-pine",
@@ -39,9 +34,13 @@ local themes_cfg = {
 			require("solarized-osaka").setup(opts)
 		end,
 	},
+	accent = {
+		src = "alligator/accent.vim",
+		colorscheme_name = "accent",
+	},
 }
 
-local selected = "tokyo"
+local selected = "accent"
 
 return {
 	themes_cfg[selected].src,
