@@ -103,13 +103,10 @@
             community.general.homebrew:
               name: nvim
               state: present
-          - name: Clone dotfiles
-            git:
-              repo: https://github.com/miguelramirez93/dotfiles.git 
-              dest: "{{ lookup('env', 'HOME') }}/dotfiles"
-
           - name: copy nvim config
-            ansible.builtin.shell: cp -r $HOME/dotfiles/.config/nvim $HOME/.config/nvim
+            copy:
+              src: "{{ lookup('env', 'HOME') }}/dotfiles/.config/nvim"
+              dest: "{{ lookup('env', 'HOME') }}/.config"
 
         rescue:
           - name: No homebrew

@@ -1,6 +1,7 @@
 return {
 	"echasnovski/mini.indentscope",
 	version = "*",
+	enabled = false,
 	event = "BufEnter",
 	setup = function()
 		require("mini.indentscope").setup({
