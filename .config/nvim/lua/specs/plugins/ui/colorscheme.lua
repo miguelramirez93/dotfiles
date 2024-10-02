@@ -38,9 +38,13 @@ local themes_cfg = {
 		src = "alligator/accent.vim",
 		colorscheme_name = "accent",
 	},
+	darkvoid = {
+		src = "aliqyan-21/darkvoid.nvim",
+		colorscheme_name = "darkvoid",
+	},
 }
 
-local selected = "accent"
+local selected = "darkvoid"
 
 return {
 	themes_cfg[selected].src,
