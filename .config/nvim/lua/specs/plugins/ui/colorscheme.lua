@@ -42,14 +42,20 @@ local themes_cfg = {
 		src = "aliqyan-21/darkvoid.nvim",
 		colorscheme_name = "darkvoid",
 	},
+	zenbones = {
+		src = "zenbones-theme/zenbones.nvim",
+		colorscheme_name = "zenwritten",
+		dependencies = "rktjmp/lush.nvim",
+	},
 }
 
-local selected = "darkvoid"
+local selected = "zenbones"
 
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
 	priority = 1200,
+	dependencies = themes_cfg[selected].dependencies or nil,
 	lazy = false,
 	opts = themes_cfg[selected].opts,
 	setup = function(opts)
