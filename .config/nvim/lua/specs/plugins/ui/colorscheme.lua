@@ -11,18 +11,13 @@ local themes_cfg = {
 		src = "alligator/accent.vim",
 		colorscheme_name = "accent",
 	},
-	darkvoid = {
-		src = "aliqyan-21/darkvoid.nvim",
-		colorscheme_name = "darkvoid",
-	},
-	atlas = {
-		src = "huyvohcmc/atlas.vim",
-		colorscheme_name = "atlas",
+	meh = {
+		src = "davidosomething/vim-colors-meh",
+		colorscheme_name = "meh",
 	},
 }
 
-local selected = "atlas"
-
+local selected = "meh"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
