@@ -2,6 +2,7 @@ return {
 	"tamton-aquib/staline.nvim",
 	version = "*",
 	event = "VeryLazy",
+	enabled = false,
 	setup = function(_)
 		require("staline").setup({
 			defaults = {
