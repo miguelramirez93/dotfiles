@@ -1,8 +1,4 @@
 local themes_cfg = {
-	awesome = {
-		src = "rafi/awesome-vim-colorschemes",
-		colorscheme_name = "hybrid",
-	},
 	gruber = {
 		src = "blazkowolf/gruber-darker.nvim",
 		colorscheme_name = "gruber-darker",
@@ -10,29 +6,6 @@ local themes_cfg = {
 	vscode = {
 		src = "Mofiqul/vscode.nvim",
 		colorscheme_name = "vscode",
-	},
-	rose = {
-		src = "rose-pine/neovim",
-		name = "rose-pine",
-		colorscheme_name = "rose-pine",
-	},
-	gruvbox = {
-		src = "sainnhe/gruvbox-material",
-		colorscheme_name = "gruvbox-material",
-	},
-	tokyo = {
-		src = "folke/tokyonight.nvim",
-		colorscheme_name = "tokyonight",
-	},
-	osaka = {
-		src = "craftzdog/solarized-osaka.nvim",
-		colorscheme_name = "solarized-osaka",
-		opts = {
-			transparent = false,
-		},
-		setup = function(opts)
-			require("solarized-osaka").setup(opts)
-		end,
 	},
 	accent = {
 		src = "alligator/accent.vim",
@@ -42,14 +15,13 @@ local themes_cfg = {
 		src = "aliqyan-21/darkvoid.nvim",
 		colorscheme_name = "darkvoid",
 	},
-	zenbones = {
-		src = "zenbones-theme/zenbones.nvim",
-		colorscheme_name = "zenwritten",
-		dependencies = "rktjmp/lush.nvim",
+	atlas = {
+		src = "huyvohcmc/atlas.vim",
+		colorscheme_name = "atlas",
 	},
 }
 
-local selected = "zenbones"
+local selected = "atlas"
 
 return {
 	themes_cfg[selected].src,
