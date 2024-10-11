@@ -6,7 +6,7 @@ local handlers = {
 local merge_on_attach = function(callback)
 	return function(client, bufnr)
 		if client.server_capabilities.inlayHintProvider then
-			vim.lsp.inlay_hint.enable(true)
+			vim.lsp.inlay_hint.enable(false)
 		end
 		if callback then
 			callback(client, bufnr)
@@ -14,7 +14,7 @@ local merge_on_attach = function(callback)
 	end
 end
 
-function extend_def_capabilities(capabilities)
+local function extend_def_capabilities(capabilities)
 	local extCapabilities = vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), capabilities)
 	extCapabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 	return extCapabilities
