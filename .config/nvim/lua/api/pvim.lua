@@ -52,9 +52,12 @@ function pvim.new_terminal(mode)
 end
 
 function pvim.setup(opts)
-	setup_plugs(opts)
-	setup_lsp(opts)
+	if not opts.minimal then
+		setup_plugs(opts)
+		setup_lsp(opts)
+	end
 	setup_config_specs(opts)
 end
+
 
 return pvim
