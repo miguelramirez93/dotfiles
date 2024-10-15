@@ -29,6 +29,9 @@ return {
 		local luasnip = require("luasnip")
 
 		cmp.setup({
+			performance = {
+				max_view_entries = 10,
+			},
 			completion = {
 				completeopt = "menu,menuone,noinsert",
 			},
