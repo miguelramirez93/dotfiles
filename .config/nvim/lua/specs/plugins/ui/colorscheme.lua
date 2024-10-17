@@ -19,8 +19,12 @@ local themes_cfg = {
 		src = "ntk148v/komau.vim",
 		colorscheme_name = "komau",
 	},
+	plain = {
+		src = "andreypopp/vim-colors-plain",
+		colorscheme_name = "plain",
+	},
 }
-local selected = "komau"
+local selected = "plain"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
