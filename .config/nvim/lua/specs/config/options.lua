@@ -7,7 +7,7 @@ vim.loader.enable()
 
 opt.relativenumber = true
 opt.number = true
-opt.timeoutlen = 400
+opt.timeoutlen = 300
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.softtabstop = 4
@@ -19,8 +19,10 @@ opt.splitbelow = true
 opt.cursorline = true
 opt.scrolloff = 10
 opt.sidescrolloff = 10
-opt.updatetime = 100
-opt.clipboard = "unnamedplus"
+opt.updatetime = 250
+vim.schedule(function()
+	vim.opt.clipboard = "unnamedplus"
+end)
 opt.termguicolors = true
 opt.showmode = false
 opt.swapfile = false
@@ -30,6 +32,11 @@ opt.undofile = true
 opt.writebackup = false
 opt.hlsearch = false
 opt.incsearch = true
+opt.inccommand = "split"
+
+-- readability
+-- opt.list = true
+-- opt.listchars = { eol = "↲", trail = "·", nbsp = "␣" }
 
 -- enable spelling
 opt.spell = true

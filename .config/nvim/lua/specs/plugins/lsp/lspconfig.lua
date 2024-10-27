@@ -5,8 +5,42 @@ local handlers = {
 
 local merge_on_attach = function(callback)
 	return function(client, bufnr)
-		if client.server_capabilities.inlayHintProvider then
-			vim.lsp.inlay_hint.enable(false)
+		local map = function(keys, func, desc, mode)
+			mode = mode or "n"
+			vim.keymap.set(mode, keys, func, { buffer = bufnr, desc = "LSP: " .. desc })
+		end
+		-- NOTE: Code above enables lsp highlight on cursor hold, disabled for now
+		if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+			local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
+			vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+				buffer = bufnr,
+				group = highlight_augroup,
+				callback = vim.lsp.buf.document_highlight,
+			})
+
+			vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+				buffer = bufnr,
+				group = highlight_augroup,
+				callback = vim.lsp.buf.clear_references,
+			})
+
+			vim.api.nvim_create_autocmd("LspDetach", {
+				group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
+				callback = function(event2)
+					vim.lsp.buf.clear_references()
+					vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
+				end,
+			})
+		end
+
+		-- The following code creates a keymap to toggle inlay hints in your
+		-- code, if the language server you are using supports them
+		--
+		-- This may be unwanted, since they displace some of your code
+		if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+			map("<leader>th", function()
+				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }))
+			end, "[T]oggle Inlay [H]ints")
 		end
 		if callback then
 			callback(client, bufnr)
@@ -22,10 +56,10 @@ end
 
 return {
 	"neovim/nvim-lspconfig",
-	event = "VeryLazy",
 	dependencies = {
 		{ "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
 		{ "folke/neodev.nvim", opts = {} },
+		{ "j-hui/fidget.nvim", opts = {} },
 		"mason.nvim",
 	},
 	setup_servers = function(servers_list, capabilities)

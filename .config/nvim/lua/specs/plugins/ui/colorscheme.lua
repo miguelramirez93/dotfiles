@@ -23,8 +23,17 @@ local themes_cfg = {
 		src = "andreypopp/vim-colors-plain",
 		colorscheme_name = "plain",
 	},
+	no_clown = {
+		src = "aktersnurra/no-clown-fiesta.nvim",
+		colorscheme_name = "no-clown-fiesta",
+	},
+	base16 = {
+		src = "chriskempson/base16-vim",
+		colorscheme_name = "base16-grayscale-dark",
+	},
 }
-local selected = "plain"
+
+local selected = "base16"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,

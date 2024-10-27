@@ -1,36 +1,69 @@
+local kind_icons = {
+	Text = "󰉿",
+	Method = "m",
+	Function = "󰊕",
+	Constructor = "",
+	Field = "",
+	Variable = "󰆧",
+	Class = "󰌗",
+	Interface = "",
+	Module = "",
+	Property = "",
+	Unit = "",
+	Value = "󰎠",
+	Enum = "",
+	Keyword = "󰌋",
+	Snippet = "",
+	Color = "󰏘",
+	File = "󰈙",
+	Reference = "",
+	Folder = "󰉋",
+	EnumMember = "",
+	Constant = "󰇽",
+	Struct = "",
+	Event = "",
+	Operator = "󰆕",
+	TypeParameter = "󰊄",
+}
+
 return {
 	"hrsh7th/nvim-cmp",
 	version = false, -- last release is way too old
 	event = "InsertEnter",
 	lazy = false,
 	dependencies = {
+		"L3MON4D3/LuaSnip",
+		build = (function()
+			-- Build Step is needed for regex support in snippets.
+			-- This step is not supported in many windows environments.
+			-- Remove the below condition to re-enable on windows.
+			if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
+				return
+			end
+			return "make install_jsregexp"
+		end)(),
+		dependencies = {
+			{
+				"rafamadriz/friendly-snippets",
+				config = function()
+					require("luasnip.loaders.from_vscode").lazy_load()
+				end,
+			},
+		},
+		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
-		"f3fora/cmp-spell",
-		-- "hrsh7th/cmp-nvim-lsp-signature-help",
-		{
-			"saadparwaiz1/cmp_luasnip",
-			dependencies = {
-				"L3MON4D3/LuaSnip",
-				-- follow latest release.
-				version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-				-- install jsregexp (optional!).
-				build = "make install_jsregexp",
-				dependencies = {
-					{ "rafamadriz/friendly-snippets" },
-				},
-			},
-		},
+		"hrsh7th/cmp-nvim-lsp-signature-help",
+		-- "f3fora/cmp-spell",
 	},
 	setup = function()
-		require("luasnip.loaders.from_vscode").lazy_load()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 
 		cmp.setup({
 			performance = {
-				max_view_entries = 20,
+				max_view_entries = 30,
 			},
 			completion = {
 				completeopt = "menu,menuone,noinsert",
@@ -43,21 +76,36 @@ return {
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				-- this is a time
-				-- { name = "nvim_lsp_signature_help" },
+				{ name = "nvim_lsp_signature_help" },
 				{ name = "luasnip" },
 				{ name = "path" },
 				{ name = "buffer" },
-				{
-					name = "spell",
-					option = {
-						keep_all_entries = false,
-						enable_in_context = function()
-							return true
-						end,
-						preselect_correct_word = true,
-					},
-				},
+				-- {
+				-- 	name = "spell",
+				-- 	option = {
+				-- 		keep_all_entries = false,
+				-- 		enable_in_context = function()
+				-- 			return true
+				-- 		end,
+				-- 		preselect_correct_word = true,
+				-- 	},
+				-- },
 			}),
+			formatting = {
+				fields = { "kind", "abbr", "menu" },
+				format = function(entry, vim_item)
+					-- Kind icons
+					vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+					-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+					vim_item.menu = ({
+						nvim_lsp = "[LSP]",
+						luasnip = "[Snippet]",
+						buffer = "[Buffer]",
+						path = "[Path]",
+					})[entry.source.name]
+					return vim_item
+				end,
+			},
 			window = {
 				completion = cmp.config.window.bordered(),
 				documentation = cmp.config.window.bordered(),
