@@ -27,13 +27,13 @@ local themes_cfg = {
 		src = "aktersnurra/no-clown-fiesta.nvim",
 		colorscheme_name = "no-clown-fiesta",
 	},
-	base16 = {
-		src = "chriskempson/base16-vim",
-		colorscheme_name = "base16-grayscale-dark",
+	candle = {
+		src = "aditya-azad/candle-grey",
+		colorscheme_name = "candle-grey",
 	},
 }
 
-local selected = "base16"
+local selected = "candle"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,

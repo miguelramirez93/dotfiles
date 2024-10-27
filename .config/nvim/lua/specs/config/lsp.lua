@@ -16,12 +16,12 @@ vim.diagnostic.config({
 			-- [vim.diagnostic.severity.INFO] = "»",
 			[vim.diagnostic.severity.INFO] = "󰋽",
 		},
-		linehl = {
-			[vim.diagnostic.severity.ERROR] = "SpellBad",
-		},
-		numhl = {
-			[vim.diagnostic.severity.WARN] = "WarningMsg",
-		},
+		-- linehl = {
+		-- 	[vim.diagnostic.severity.ERROR] = "SpellBad",
+		-- },
+		-- numhl = {
+		-- 	[vim.diagnostic.severity.WARN] = "WarningMsg",
+		-- },
 	},
 })
 
