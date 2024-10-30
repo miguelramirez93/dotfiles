@@ -15,10 +15,6 @@ local themes_cfg = {
 		src = "davidosomething/vim-colors-meh",
 		colorscheme_name = "meh",
 	},
-	komau = {
-		src = "ntk148v/komau.vim",
-		colorscheme_name = "komau",
-	},
 	plain = {
 		src = "andreypopp/vim-colors-plain",
 		colorscheme_name = "plain",
@@ -27,13 +23,9 @@ local themes_cfg = {
 		src = "aktersnurra/no-clown-fiesta.nvim",
 		colorscheme_name = "no-clown-fiesta",
 	},
-	candle = {
-		src = "aditya-azad/candle-grey",
-		colorscheme_name = "candle-grey",
-	},
 }
 
-local selected = "candle"
+local selected = "plain"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,

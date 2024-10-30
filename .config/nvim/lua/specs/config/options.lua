@@ -16,10 +16,11 @@ opt.smartindent = true
 opt.incsearch = true
 opt.splitright = true
 opt.splitbelow = true
-opt.cursorline = false
+opt.cursorline = true
 opt.scrolloff = 10
 opt.sidescrolloff = 10
 opt.updatetime = 250
+opt.signcolumn = "yes"
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)

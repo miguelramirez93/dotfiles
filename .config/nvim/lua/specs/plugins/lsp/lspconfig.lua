@@ -10,28 +10,28 @@ local merge_on_attach = function(callback)
 			vim.keymap.set(mode, keys, func, { buffer = bufnr, desc = "LSP: " .. desc })
 		end
 		-- NOTE: Code above enables lsp highlight on cursor hold, disabled for now
-		if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
-			local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
-			vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-				buffer = bufnr,
-				group = highlight_augroup,
-				callback = vim.lsp.buf.document_highlight,
-			})
-
-			vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-				buffer = bufnr,
-				group = highlight_augroup,
-				callback = vim.lsp.buf.clear_references,
-			})
-
-			vim.api.nvim_create_autocmd("LspDetach", {
-				group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
-				callback = function(event2)
-					vim.lsp.buf.clear_references()
-					vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
-				end,
-			})
-		end
+		-- if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+		-- 	local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
+		-- 	vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+		-- 		buffer = bufnr,
+		-- 		group = highlight_augroup,
+		-- 		callback = vim.lsp.buf.document_highlight,
+		-- 	})
+		--
+		-- 	vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+		-- 		buffer = bufnr,
+		-- 		group = highlight_augroup,
+		-- 		callback = vim.lsp.buf.clear_references,
+		-- 	})
+		--
+		-- 	vim.api.nvim_create_autocmd("LspDetach", {
+		-- 		group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
+		-- 		callback = function(event2)
+		-- 			vim.lsp.buf.clear_references()
+		-- 			vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
+		-- 		end,
+		-- 	})
+		-- end
 
 		-- The following code creates a keymap to toggle inlay hints in your
 		-- code, if the language server you are using supports them
@@ -70,6 +70,11 @@ return {
 			local extended_cfg = vim.tbl_extend("keep", cfg, {
 				capabilities = extCapabilities,
 				handlers = handlers,
+				on_init = function(client)
+					client.config.flags = {
+						allow_incremental_sync = false,
+					}
+				end,
 			})
 			require("lspconfig")[name].setup(extended_cfg)
 		end
