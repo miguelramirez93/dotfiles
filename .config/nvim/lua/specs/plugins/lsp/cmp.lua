@@ -32,25 +32,27 @@ return {
 	event = "InsertEnter",
 	lazy = false,
 	dependencies = {
-		"L3MON4D3/LuaSnip",
-		build = (function()
-			-- Build Step is needed for regex support in snippets.
-			-- This step is not supported in many windows environments.
-			-- Remove the below condition to re-enable on windows.
-			if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
-				return
-			end
-			return "make install_jsregexp"
-		end)(),
-		dependencies = {
-			{
-				"rafamadriz/friendly-snippets",
-				config = function()
-					require("luasnip.loaders.from_vscode").lazy_load()
-				end,
+		{
+			"saadparwaiz1/cmp_luasnip",
+			dependencies = {
+				"L3MON4D3/LuaSnip",
+				-- follow latest release.
+				version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+				-- install jsregexp (optional!).
+				build = (function()
+					-- Build Step is needed for regex support in snippets.
+					-- This step is not supported in many windows environments.
+					-- Remove the below condition to re-enable on windows.
+					if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
+						return
+					end
+					return "make install_jsregexp"
+				end)(),
+				dependencies = {
+					{ "rafamadriz/friendly-snippets" },
+				},
 			},
 		},
-		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
@@ -58,13 +60,11 @@ return {
 		-- "f3fora/cmp-spell",
 	},
 	setup = function()
+		require("luasnip.loaders.from_vscode").lazy_load()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 
 		cmp.setup({
-			performance = {
-				max_view_entries = 30,
-			},
 			completion = {
 				completeopt = "menu,menuone,noinsert",
 			},
