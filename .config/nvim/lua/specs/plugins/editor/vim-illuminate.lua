@@ -3,7 +3,7 @@ return {
 	event = "BufEnter",
 	enabled = true,
 	opts = {
-		delay = 300,
+		delay = 750,
 		filetypes_denylist = {
 			"dirbuf",
 			"dirvish",

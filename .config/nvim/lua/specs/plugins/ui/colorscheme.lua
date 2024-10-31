@@ -23,9 +23,13 @@ local themes_cfg = {
 		src = "aktersnurra/no-clown-fiesta.nvim",
 		colorscheme_name = "no-clown-fiesta",
 	},
+	off = {
+		src = "pbrisbin/vim-colors-off",
+		colorscheme_name = "off",
+	},
 }
 
-local selected = "plain"
+local selected = "off"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
