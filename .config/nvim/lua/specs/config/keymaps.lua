@@ -84,6 +84,14 @@ vim.keymap.set("n", "<leader>b", '<Cmd>lua require("api.pvim").open_file_explore
 vim.keymap.set("n", "<leader>p", "<Cmd>echo expand('%:.')<CR>", { silent = true })
 vim.keymap.set("n", "<leader>cp", "<Cmd>echo expand('%')<CR>", { silent = true })
 
+-- git
+vim.keymap.set(
+	"n",
+	"<leader>gb",
+	"<Cmd>lua vim.notify('   ' .. require('api.pvim').git_branch())<CR>",
+	{ silent = true }
+)
+
 -- Tests runner
 vim.keymap.set("n", "<leader>t", "<Cmd>TestFunc<CR>")
 vim.keymap.set("n", "<leader>tf", "<Cmd>TestCurrentFile<CR>")
@@ -132,6 +140,8 @@ local keymaps = {
 	{ mode = "n", bind = "<C-t>", cmd = "<cmd>tabnew<cr>" },
 	{ mode = "n", bind = "<SC-Right>", cmd = "<cmd>tabnext<cr>" },
 	{ mode = "n", bind = "<SC-Left>", cmd = "<cmd>tabprev<cr>" },
+	{ mode = "n", bind = "<SC-Left>", cmd = "<cmd>tabprev<cr>" },
+	{ mode = "n", bind = "<leader>d", cmd = "<cmd>Trouble diagnostics toggle<cr>" },
 }
 
 for _, k_map in pairs(keymaps) do

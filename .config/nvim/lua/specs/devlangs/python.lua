@@ -20,7 +20,6 @@ return {
 		-- },
 		pyright = {},
 		-- basedpyright = {},
-		ruff_lsp = {},
 		ruff = {},
 	},
 	deps = {

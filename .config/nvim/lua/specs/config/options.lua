@@ -25,7 +25,7 @@ vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)
 opt.termguicolors = true
-opt.showmode = false
+opt.showmode = true
 opt.swapfile = false
 opt.signcolumn = "yes"
 opt.termguicolors = true
