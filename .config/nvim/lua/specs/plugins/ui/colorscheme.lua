@@ -27,9 +27,13 @@ local themes_cfg = {
 		src = "pbrisbin/vim-colors-off",
 		colorscheme_name = "off",
 	},
+	lackluster = {
+		src = "slugbyte/lackluster.nvim",
+		colorscheme_name = "lackluster",
+	},
 }
 
-local selected = "meh"
+local selected = "lackluster"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
