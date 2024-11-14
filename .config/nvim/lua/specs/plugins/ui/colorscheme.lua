@@ -31,9 +31,13 @@ local themes_cfg = {
 		src = "slugbyte/lackluster.nvim",
 		colorscheme_name = "lackluster",
 	},
+	jellybeans = {
+		src = "wtfox/jellybeans.nvim",
+		colorscheme_name = "jellybeans",
+	},
 }
 
-local selected = "lackluster"
+local selected = "plain"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
