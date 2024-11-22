@@ -1,5 +1,5 @@
 local function statusline()
-	local set_color_1 = "%#TermCursor#"
+	local set_color_1 = "%#CursorLineNr#"
 	local mode = ""
 	local set_color_2 = "%#CursorLineNr#"
 	-- local file_name = " %f"
