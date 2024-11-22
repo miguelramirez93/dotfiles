@@ -37,7 +37,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "plain"
+local selected = "lackluster"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
