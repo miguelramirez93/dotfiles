@@ -7,17 +7,9 @@ local themes_cfg = {
 		src = "Mofiqul/vscode.nvim",
 		colorscheme_name = "vscode",
 	},
-	accent = {
-		src = "alligator/accent.vim",
-		colorscheme_name = "accent",
-	},
 	meh = {
 		src = "davidosomething/vim-colors-meh",
 		colorscheme_name = "meh",
-	},
-	plain = {
-		src = "andreypopp/vim-colors-plain",
-		colorscheme_name = "plain",
 	},
 	no_clown = {
 		src = "aktersnurra/no-clown-fiesta.nvim",
@@ -37,7 +29,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "lackluster"
+local selected = "jellybeans"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,

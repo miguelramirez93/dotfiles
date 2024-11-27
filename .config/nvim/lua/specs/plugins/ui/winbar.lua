@@ -2,7 +2,7 @@ return {
 	"utilyre/barbecue.nvim",
 	name = "barbecue",
 	version = "*",
-	enabled = true,
+	enabled = false,
 	event = "VeryLazy",
 	dependencies = {
 		"SmiteshP/nvim-navic",
@@ -13,7 +13,7 @@ return {
 		attach_navic = false,
 		show_dirname = true,
 		show_modified = true,
-		exclude_filetypes = { "toggleterm" },
+		exclude_filetypes = { "toggleterm", "netrw" },
 	},
 	setup = function(opts)
 		require("barbecue").setup(opts)

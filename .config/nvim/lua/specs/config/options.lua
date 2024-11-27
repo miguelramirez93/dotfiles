@@ -21,9 +21,10 @@ opt.scrolloff = 10
 opt.sidescrolloff = 10
 opt.updatetime = 250
 opt.signcolumn = "yes"
-vim.schedule(function()
-	vim.opt.clipboard = "unnamedplus"
-end)
+opt.clipboard = "unnamedplus"
+-- vim.schedule(function()
+-- 	vim.opt.clipboard = "unnamedplus"
+-- end)
 opt.termguicolors = true
 opt.showmode = true
 opt.swapfile = false
@@ -46,4 +47,4 @@ opt.spelllang = "en_us,es"
 -- netrw
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 
-opt.laststatus = 3
+-- opt.laststatus = 3

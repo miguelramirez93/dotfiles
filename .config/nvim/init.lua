@@ -4,6 +4,8 @@ local lazy_plug_man = require("specs.plgmanagers.lazy")
 
 lazy_plug_man.enable_lazy_load = true
 
+pvim.fexplorer = require("adapters.ui.oil_file_explorer")
+
 pvim.setup({
 	minimal = false,
 	plugins = {
