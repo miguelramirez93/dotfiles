@@ -5,7 +5,7 @@ local g = vim.g
 -- internal calls
 vim.loader.enable()
 
-opt.relativenumber = true
+opt.relativenumber = false
 opt.number = true
 opt.timeoutlen = 300
 opt.tabstop = 4
@@ -45,6 +45,6 @@ opt.spell = true
 opt.spelllang = "en_us,es"
 
 -- netrw
-g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+-- g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 
 -- opt.laststatus = 3
