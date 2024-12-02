@@ -3,9 +3,9 @@ local g = vim.g
 
 -- enable new loader for caching some
 -- internal calls
-vim.loader.enable()
+-- vim.loader.enable()
 
-opt.relativenumber = false
+opt.relativenumber = true
 opt.number = true
 opt.timeoutlen = 300
 opt.tabstop = 4
@@ -45,6 +45,6 @@ opt.spell = true
 opt.spelllang = "en_us,es"
 
 -- netrw
--- g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 
 -- opt.laststatus = 3

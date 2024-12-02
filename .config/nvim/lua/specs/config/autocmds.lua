@@ -11,3 +11,5 @@ vim.cmd("autocmd FileType netrw setlocal number")
 -- 	end,
 -- 	nested = true,
 -- })
+
+vim.cmd("autocmd TermOpen * setlocal nonumber norelativenumber")
