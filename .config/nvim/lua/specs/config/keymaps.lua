@@ -122,7 +122,6 @@ local keymaps = {
 	{ mode = "n", bind = "<leader>fc", cmd = "<cmd>Telescope current_buffer_fuzzy_find<cr>" },
 	{ mode = "n", bind = "<leader>fg", cmd = "<cmd>Telescope live_grep<cr>" },
 	{ mode = "n", bind = "<leader>ss", cmd = "<cmd>Telescope lsp_document_symbols<cr>" },
-	{ mode = "n", bind = "<leader>fb", cmd = "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>" },
 	-- toggle term
 	-- { mode = "n", bind = "<leader>j", cmd = "<cmd>ToggleTerm direction=horizontal<cr>" },
 	-- { mode = "n", bind = "<leader>jf", cmd = "<cmd>ToggleTerm direction=float<cr>" },
@@ -139,7 +138,6 @@ local keymaps = {
 
 	{ mode = "n", bind = "<C-t>", cmd = "<cmd>tabnew<cr>" },
 	{ mode = "n", bind = "<SC-Right>", cmd = "<cmd>tabnext<cr>" },
-	{ mode = "n", bind = "<SC-Left>", cmd = "<cmd>tabprev<cr>" },
 	{ mode = "n", bind = "<SC-Left>", cmd = "<cmd>tabprev<cr>" },
 	{ mode = "n", bind = "<leader>d", cmd = "<cmd>Trouble diagnostics toggle<cr>" },
 }

@@ -27,9 +27,13 @@ local themes_cfg = {
 		src = "wtfox/jellybeans.nvim",
 		colorscheme_name = "jellybeans",
 	},
+	darkvoid = {
+		src = "aliqyan-21/darkvoid.nvim",
+		colorscheme_name = "darkvoid",
+	},
 }
 
-local selected = "jellybeans"
+local selected = "darkvoid"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,

@@ -13,3 +13,21 @@ vim.cmd("autocmd FileType netrw setlocal number")
 -- })
 
 vim.cmd("autocmd TermOpen * setlocal nonumber norelativenumber")
+
+-- Disable automatically adding comments to the next line
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "*",
+	callback = function()
+		vim.opt.formatoptions:remove({ "c", "r", "o" })
+
+		-- Disable swapfiles
+		vim.bo.swapfile = false
+
+		-- Insert 4 spaces instead of a tab char when pressing the tab key in insert
+		-- modes
+		vim.bo.expandtab = true
+
+		-- Tab counts for 4 spaces
+		vim.bo.tabstop = 4
+	end,
+})

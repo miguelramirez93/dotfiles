@@ -36,6 +36,11 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = "qf",
 	callback = function()
 		vim.keymap.set("n", "<Up>", "<Up><CR><C-w>p", { buffer = true, remap = false, desc = "Navigate up quickfix" })
-		vim.keymap.set("n", "<Down>", "<Down><CR><C-w>p", { remap = false, desc = "Navigate down quickfix" })
+		vim.keymap.set(
+			"n",
+			"<Down>",
+			"<Down><CR><C-w>p",
+			{ buffer = true, remap = false, desc = "Navigate down quickfix" }
+		)
 	end,
 })

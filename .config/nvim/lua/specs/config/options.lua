@@ -48,3 +48,5 @@ opt.spelllang = "en_us,es"
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 
 -- opt.laststatus = 3
+-- -- Allow recursive find
+opt.path:append("**")
