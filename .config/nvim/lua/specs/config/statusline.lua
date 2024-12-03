@@ -1,5 +1,5 @@
 local function statusline()
-	local set_color_1 = "%#PmenuSel#"
+	local set_color_1 = "%#ModeMsg#"
 	local mode = ""
 	local set_color_2 = "%#StatusLine#"
 	local file_name = "  %f"

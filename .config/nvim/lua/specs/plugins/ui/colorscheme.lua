@@ -31,9 +31,13 @@ local themes_cfg = {
 		src = "aliqyan-21/darkvoid.nvim",
 		colorscheme_name = "darkvoid",
 	},
+	nightfox = {
+		src = "EdenEast/nightfox.nvim",
+		colorscheme_name = "nightfox",
+	},
 }
 
-local selected = "darkvoid"
+local selected = "nightfox"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
