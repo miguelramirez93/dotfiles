@@ -35,6 +35,10 @@ local themes_cfg = {
 		src = "EdenEast/nightfox.nvim",
 		colorscheme_name = "nightfox",
 	},
+	monochrome = {
+		src = "fxn/vim-monochrome",
+		colorscheme_name = "monochrome",
+	},
 }
 
 local selected = "nightfox"

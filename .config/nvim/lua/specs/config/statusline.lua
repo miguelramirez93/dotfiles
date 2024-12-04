@@ -2,10 +2,10 @@ local function statusline()
 	local set_color_1 = "%#ModeMsg#"
 	local mode = ""
 	local set_color_2 = "%#StatusLine#"
-	local file_name = "  %f"
-	local modified = "%m"
-	-- local file_name = " "
-	-- local modified = ""
+	-- local file_name = "  %f"
+	-- local modified = "%m"
+	local file_name = " "
+	local modified = ""
 	local align_right = "%="
 	local fileencoding = " %{&fileencoding?&fileencoding:&encoding}"
 	local fileformat = " [%{&fileformat}]"
@@ -30,3 +30,4 @@ local function statusline()
 end
 
 vim.opt.statusline = statusline()
+vim.opt.winbar = "  %f%m"
