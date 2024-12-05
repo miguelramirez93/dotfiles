@@ -3,7 +3,7 @@ local g = vim.g
 
 -- enable new loader for caching some
 -- internal calls
--- vim.loader.enable()
+vim.loader.enable()
 
 opt.relativenumber = true
 opt.number = true
@@ -46,7 +46,8 @@ opt.spelllang = "en_us,es"
 
 -- netrw
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+g.netrw_banner = 0
 
--- opt.laststatus = 3
+opt.laststatus = 3
 -- -- Allow recursive find
 opt.path:append("**")

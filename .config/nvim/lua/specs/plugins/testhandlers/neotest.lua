@@ -83,7 +83,6 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-neotest/nvim-nio",
-		"antoinemadec/FixCursorHold.nvim",
 	},
 	event = "BufEnter",
 	lazy = false,
