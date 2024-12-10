@@ -13,7 +13,7 @@ return {
 		attach_navic = false,
 		show_dirname = true,
 		show_modified = true,
-		exclude_filetypes = { "toggleterm", "netrw" },
+		exclude_filetypes = { "toggleterm" },
 	},
 	setup = function(opts)
 		require("barbecue").setup(opts)
