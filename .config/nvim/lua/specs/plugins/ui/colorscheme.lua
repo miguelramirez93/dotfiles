@@ -35,13 +35,13 @@ local themes_cfg = {
 		src = "EdenEast/nightfox.nvim",
 		colorscheme_name = "nightfox",
 	},
-	simpledark = {
-		src = "tek256/simple-dark",
-		colorscheme_name = "simple-dark",
+	alabaster = {
+		src = "p00f/alabaster.nvim",
+		colorscheme_name = "alabaster",
 	},
 }
 
-local selected = "nightfox"
+local selected = "alabaster"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,

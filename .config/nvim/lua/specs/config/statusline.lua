@@ -30,4 +30,4 @@ local function statusline()
 end
 
 vim.opt.statusline = statusline()
-vim.opt.winbar = "  %f%m"
+vim.opt.winbar = "  %t%m"
