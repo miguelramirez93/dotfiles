@@ -29,5 +29,6 @@ local function statusline()
 	)
 end
 
+vim.opt.laststatus = 3
 vim.opt.statusline = statusline()
--- vim.opt.winbar = "%#ModeMsg#  %f%m %#MsgArea#"
+vim.opt.winbar = "%#WinBar#  %f%m %#MsgArea#"

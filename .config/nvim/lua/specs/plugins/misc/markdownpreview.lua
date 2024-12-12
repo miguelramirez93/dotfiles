@@ -4,6 +4,7 @@ return {
 	build = "cd app && npm install",
 	init = function()
 		vim.g.mkdp_filetypes = { "markdown" }
+		vim.g.mkdp_refresh_slow = 1
 	end,
 	ft = { "markdown" },
 }
