@@ -4,7 +4,7 @@ local function statusline()
 	local set_color_2 = "%#StatusLine#"
 	-- local file_name = "  %f"
 	-- local modified = "%m"
-	local file_name = " "
+	local file_name = ""
 	local modified = ""
 	local align_right = "%="
 	local fileencoding = " %{&fileencoding?&fileencoding:&encoding}"
@@ -31,4 +31,4 @@ end
 
 vim.opt.laststatus = 3
 vim.opt.statusline = statusline()
-vim.opt.winbar = "%#WinBar#  %f%m %#MsgArea#"
+vim.opt.winbar = "%!v:lua.require'specs.config.winbar'.build()"
