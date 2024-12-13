@@ -1,4 +1,5 @@
 local winbar = require("specs.config.winbar")
+local statusline = require("specs.config.statusline")
 
 vim.cmd("au TermOpen * setlocal nospell")
 -- vim.cmd("hi SpellBad ctermfg=red guifg=red cterm=underline")
@@ -39,5 +40,12 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("BufEnter", {
 	callback = function()
 		vim.wo.winbar = winbar.build_static()
+	end,
+})
+
+-- custom statusline
+vim.api.nvim_create_autocmd({ "UIEnter", "ModeChanged", "BufEnter" }, {
+	callback = function()
+		vim.wo.statusline = statusline.build()
 	end,
 })

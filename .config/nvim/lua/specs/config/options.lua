@@ -26,7 +26,7 @@ opt.clipboard = "unnamedplus"
 -- 	vim.opt.clipboard = "unnamedplus"
 -- end)
 opt.termguicolors = true
-opt.showmode = true
+opt.showmode = false
 opt.swapfile = false
 opt.signcolumn = "yes"
 opt.termguicolors = true
@@ -50,3 +50,7 @@ g.netrw_banner = 0
 
 -- -- Allow recursive find
 opt.path:append("**")
+
+-- statusline
+opt.laststatus = 3
+-- opt.statusline = "%!v:lua.require'specs.config.statusline'.build()"
