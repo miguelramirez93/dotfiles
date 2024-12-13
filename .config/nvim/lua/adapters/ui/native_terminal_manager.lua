@@ -12,6 +12,20 @@ local m = {
 	opened_buffer_id = nil,
 }
 
+local function is_there_an_opened_terminal()
+	return m.opened_buffer_id ~= nil
+end
+
+local function open_terminal_buffer()
+	local ok, _ = pcall(vim.cmd, "execute 'buffer " .. m.opened_buffer_id .. "'")
+	return ok
+end
+
+local function buffer_exists(id)
+	local ok, _ = pcall(vim.api.nvim_buf_get_name, id)
+	return ok
+end
+
 function m.open(mode)
 	local cmd = "execute 'terminal'"
 	if mode == nil or m.modes[mode] == nil then
@@ -43,20 +57,6 @@ function m.toggle(mode)
 	end
 	pcall(vim.cmd, "execute 'terminal'")
 	m.opened_buffer_id = vim.api.nvim_get_current_buf()
-end
-
-function is_there_an_opened_terminal()
-	return m.opened_buffer_id ~= nil
-end
-
-function open_terminal_buffer()
-	local ok, _ = pcall(vim.cmd, "execute 'buffer " .. m.opened_buffer_id .. "'")
-	return ok
-end
-
-function buffer_exists(id)
-	local ok, _ = pcall(vim.api.nvim_buf_get_name, id)
-	return ok
 end
 
 return m

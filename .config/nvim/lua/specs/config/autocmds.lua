@@ -37,9 +37,13 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- custom winbar
 -- TODO: create a plugin for this
-vim.api.nvim_create_autocmd("BufEnter", {
+vim.api.nvim_create_autocmd({ "UIEnter", "BufEnter" }, {
 	callback = function()
-		vim.wo.winbar = winbar.build_static()
+		-- only reload winbar when entering in a "normal" window
+		-- ignore other ones like float type
+		if vim.fn.win_gettype() == "" then
+			vim.wo.winbar = winbar.build_static()
+		end
 	end,
 })
 
