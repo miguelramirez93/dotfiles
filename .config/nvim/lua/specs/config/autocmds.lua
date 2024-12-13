@@ -1,3 +1,5 @@
+local winbar = require("specs.config.winbar")
+
 vim.cmd("au TermOpen * setlocal nospell")
 -- vim.cmd("hi SpellBad ctermfg=red guifg=red cterm=underline")
 vim.cmd("autocmd FileType netrw setlocal number")
@@ -29,5 +31,13 @@ vim.api.nvim_create_autocmd("FileType", {
 
 		-- Tab counts for 4 spaces
 		vim.bo.tabstop = 4
+	end,
+})
+
+-- custom winbar
+-- TODO: create a plugin for this
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function()
+		vim.wo.winbar = winbar.build_static()
 	end,
 })

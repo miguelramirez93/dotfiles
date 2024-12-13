@@ -1,11 +1,4 @@
-local m = {
-	parts = {
-		"%#WinBar#",
-		[[%<%{luaeval("require'specs.config.winbar'.get_file_path()")} ]],
-		[[%<%{luaeval("require'specs.config.winbar'.get_buffer_status()")} ]],
-		"%*",
-	},
-}
+local m = {}
 
 function m.get_file_path()
 	local raw_file_path = vim.fn.expand("%:.")
@@ -20,13 +13,20 @@ end
 
 function m.get_buffer_status()
 	if vim.bo.modified then
-		return ""
+		return "[]"
 	end
 	return ""
 end
 
-function m.build()
-	return table.concat(m.parts, "")
+function m.build_static()
+	local parts = {
+		"%#WinBar#",
+		m.get_file_path(),
+		"",
+		[[%<%{luaeval("require'specs.config.winbar'.get_buffer_status()")} ]],
+		"%*",
+	}
+	return table.concat(parts, "")
 end
 
 return m
