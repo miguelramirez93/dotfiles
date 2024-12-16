@@ -24,11 +24,12 @@ return {
 						rangeVariableTypes = true,
 					},
 					analyses = {
-						fieldalignment = true,
 						nilness = true,
 						unusedparams = true,
 						unusedwrite = true,
 						useany = true,
+						unreachable = false,
+						unusedvariable = true,
 					},
 					usePlaceholders = true,
 					completeUnimported = true,

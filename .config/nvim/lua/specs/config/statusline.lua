@@ -18,6 +18,7 @@ local m = {
 		nt = "TERMINAL",
 		t = "TERMINAL",
 		no = "DELETE",
+		RO = "FILE BROWSER",
 	},
 	modes_icon_map = {
 		n = "󰫻",
@@ -31,7 +32,7 @@ local m = {
 	},
 }
 function m.get_mode_text()
-	return " " .. "[" .. m.parse_mode(m.modes_text_map) .. "]"
+	return "  " .. "[" .. m.parse_mode(m.modes_text_map) .. "]"
 end
 
 function m.get_mode_icon()

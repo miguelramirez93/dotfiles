@@ -46,7 +46,7 @@ opt.spelllang = "en_us,es"
 
 -- netrw
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
-g.netrw_banner = 1
+g.netrw_banner = 0
 
 -- -- Allow recursive find
 opt.path:append("**")

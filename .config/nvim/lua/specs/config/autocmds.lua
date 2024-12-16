@@ -47,6 +47,18 @@ vim.api.nvim_create_autocmd({ "UIEnter", "BufEnter" }, {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = "netrw",
+	callback = function()
+		-- only reload winbar when entering in a "normal" window
+		-- ignore other ones like float type
+		if vim.fn.win_gettype() == "" then
+			vim.wo.winbar = winbar.build_static()
+		end
+
+		vim.wo.statusline = statusline.build()
+	end,
+})
 -- custom statusline
 vim.api.nvim_create_autocmd({ "UIEnter", "ModeChanged", "BufEnter" }, {
 	callback = function()

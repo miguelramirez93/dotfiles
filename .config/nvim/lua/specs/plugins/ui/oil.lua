@@ -17,7 +17,7 @@ return {
 			winblend = 0,
 		}, -- },
 	},
-	enabled = true,
+	enabled = false,
 	-- Optional dependencies
 	-- dependencies = { { "echasnovski/mini.icons", opts = {} } },
 	dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
