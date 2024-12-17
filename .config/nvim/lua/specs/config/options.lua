@@ -37,8 +37,8 @@ opt.incsearch = true
 opt.inccommand = "split"
 
 -- readability
--- opt.list = true
--- opt.listchars = { eol = "↲", trail = "·", nbsp = "␣" }
+opt.list = true
+opt.listchars = { eol = "↲", trail = " ", nbsp = "␣", tab = " " }
 
 -- enable spelling
 opt.spell = true
@@ -53,4 +53,3 @@ opt.path:append("**")
 
 -- statusline
 opt.laststatus = 3
--- opt.statusline = "%!v:lua.require'specs.config.statusline'.build()"

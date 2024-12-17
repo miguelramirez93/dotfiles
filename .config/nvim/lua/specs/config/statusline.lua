@@ -32,7 +32,7 @@ local m = {
 	},
 }
 function m.get_mode_text()
-	return "  " .. "[" .. m.parse_mode(m.modes_text_map) .. "]"
+	return "[ " .. m.parse_mode(m.modes_text_map) .. "]"
 end
 
 function m.get_mode_icon()
@@ -50,7 +50,8 @@ end
 function m.build()
 	local parts = {
 		m.set_color_1,
-		m.get_mode_text(),
+		m.get_mode_icon(),
+		" ",
 		m.set_color_2,
 		m.align_right,
 		m.filetype,

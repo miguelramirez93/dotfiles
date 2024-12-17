@@ -7,14 +7,6 @@ local themes_cfg = {
 		src = "Mofiqul/vscode.nvim",
 		colorscheme_name = "vscode",
 	},
-	no_clown = {
-		src = "aktersnurra/no-clown-fiesta.nvim",
-		colorscheme_name = "no-clown-fiesta",
-	},
-	off = {
-		src = "pbrisbin/vim-colors-off",
-		colorscheme_name = "off",
-	},
 	jellybeans = {
 		src = "wtfox/jellybeans.nvim",
 		colorscheme_name = "jellybeans",
@@ -31,6 +23,10 @@ local themes_cfg = {
 		src = "zenbones-theme/zenbones.nvim",
 		dependencies = "rktjmp/lush.nvim",
 		colorscheme_name = "zenwritten",
+	},
+	neomodern = {
+		src = "cdmill/neomodern.nvim",
+		colorscheme_name = "roseprime",
 	},
 }
 

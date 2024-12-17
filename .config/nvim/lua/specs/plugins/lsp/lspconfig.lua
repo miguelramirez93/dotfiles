@@ -45,6 +45,11 @@ local merge_on_attach = function(callback)
 		if callback then
 			callback(client, bufnr)
 		end
+		-- Add navic capabilities
+		local navic = require("nvim-navic")
+		if client.server_capabilities.documentSymbolProvider then
+			navic.attach(client, bufnr)
+		end
 	end
 end
 
@@ -57,6 +62,7 @@ end
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
+		"SmiteshP/nvim-navic",
 		{ "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
 		{ "folke/neodev.nvim", opts = {} },
 		{ "j-hui/fidget.nvim", opts = {} },

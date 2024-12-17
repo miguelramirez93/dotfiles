@@ -58,6 +58,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- lsp
 		vim.keymap.set("n", "gv", ":vsplit | lua vim.lsp.buf.definition()<CR>", { silent = true })
 		vim.keymap.set("n", "rn", vim.lsp.buf.rename, { silent = true })
+		vim.keymap.set(
+			"n",
+			"<space>cc",
+			"<Cmd>lua vim.notify('  ' .. require'nvim-navic'.get_location())<CR>",
+			{ silent = true }
+		)
 	end,
 })
 
@@ -88,7 +94,7 @@ vim.keymap.set("n", "<leader>cp", "<Cmd>echo expand('%')<CR>", { silent = true }
 vim.keymap.set(
 	"n",
 	"<leader>gb",
-	"<Cmd>lua vim.notify('   ' .. require('api.pvim').git_branch())<CR>",
+	"<Cmd>lua vim.notify('   ' .. require('api.pvim').git_branch())<CR>",
 	{ silent = true }
 )
 
