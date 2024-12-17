@@ -20,10 +20,10 @@ end
 
 function m.build_static()
 	local parts = {
-		"%#WinBar#",
+		"%#Normal#",
 		m.get_file_path(),
 		[[%<%{luaeval("require'specs.config.winbar'.get_buffer_status()")} ]],
-		"%*",
+		-- "%*",
 	}
 	return table.concat(parts, "")
 end

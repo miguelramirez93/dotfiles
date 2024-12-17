@@ -38,7 +38,7 @@ opt.inccommand = "split"
 
 -- readability
 opt.list = true
-opt.listchars = { eol = "↲", trail = " ", nbsp = "␣", tab = " " }
+opt.listchars = { eol = "↲", trail = " ", nbsp = "␣", tab = "  " }
 
 -- enable spelling
 opt.spell = true

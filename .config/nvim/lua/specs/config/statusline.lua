@@ -36,7 +36,7 @@ function m.get_mode_text()
 end
 
 function m.get_mode_icon()
-	return " [" .. m.parse_mode(m.modes_icon_map) .. "]"
+	return " " .. m.parse_mode(m.modes_icon_map) .. " "
 end
 
 function m.parse_mode(map_table)

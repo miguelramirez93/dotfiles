@@ -78,7 +78,7 @@ return {
 				handlers = handlers,
 				on_init = function(client)
 					client.config.flags = {
-						allow_incremental_sync = false,
+						allow_incremental_sync = true,
 					}
 				end,
 			})

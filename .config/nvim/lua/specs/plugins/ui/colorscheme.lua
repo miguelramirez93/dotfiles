@@ -26,11 +26,11 @@ local themes_cfg = {
 	},
 	neomodern = {
 		src = "cdmill/neomodern.nvim",
-		colorscheme_name = "roseprime",
+		colorscheme_name = "coffeecat",
 	},
 }
 
-local selected = "nightfox"
+local selected = "neomodern"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
