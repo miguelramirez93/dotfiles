@@ -26,7 +26,7 @@ local themes_cfg = {
 	},
 	neomodern = {
 		src = "cdmill/neomodern.nvim",
-		colorscheme_name = "coffeecat",
+		colorscheme_name = "roseprime",
 	},
 }
 

@@ -31,6 +31,7 @@ return {
 	version = false, -- last release is way too old
 	event = "InsertEnter",
 	lazy = false,
+	enabled = false,
 	dependencies = {
 		{
 			"saadparwaiz1/cmp_luasnip",
