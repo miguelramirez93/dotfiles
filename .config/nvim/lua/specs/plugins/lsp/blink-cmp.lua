@@ -66,7 +66,9 @@ return {
 		sources = {
 			default = { "lsp", "path", "snippets", "luasnip", "buffer" },
 			-- optionally disable cmdline completions
-			-- cmdline = {},
+			cmdline = {
+				preset = "default",
+			},
 		},
 		-- experimental signature help support
 		signature = {

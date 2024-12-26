@@ -30,7 +30,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "neomodern"
+local selected = "nightfox"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
