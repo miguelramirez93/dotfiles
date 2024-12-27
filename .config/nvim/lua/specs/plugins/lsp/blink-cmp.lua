@@ -2,6 +2,7 @@ return {
 	"saghen/blink.cmp",
 	-- optional: provides snippets for the snippet source
 	-- dependencies = "rafamadriz/friendly-snippets",
+	event = "InsertEnter",
 	dependencies = {
 		"L3MON4D3/LuaSnip",
 		-- follow latest release.

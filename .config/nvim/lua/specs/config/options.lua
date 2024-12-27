@@ -38,7 +38,9 @@ opt.inccommand = "split"
 
 -- readability
 opt.list = true
-opt.listchars = { eol = "↲", trail = " ", nbsp = "␣", tab = "  " }
+-- TODO: show visible list char by triggering a command or keymap
+-- opt.listchars = { eol = "↲", trail = " ", nbsp = "␣", tab = "  " }
+opt.listchars = { eol = " ", trail = " ", nbsp = "␣", tab = "  " }
 
 -- enable spelling
 opt.spell = true

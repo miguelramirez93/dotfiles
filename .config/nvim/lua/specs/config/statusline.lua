@@ -20,6 +20,17 @@ local m = {
 		no = "DELETE",
 		RO = "FILE BROWSER",
 	},
+	modes_minimal_text_map = {
+		n = "N",
+		i = "I",
+		c = "C",
+		v = "V",
+		V = "V",
+		nt = "T",
+		t = "T",
+		no = "D",
+		RO = "F",
+	},
 	modes_icon_map = {
 		n = "󰫻",
 		i = "󰫶",
@@ -32,7 +43,11 @@ local m = {
 	},
 }
 function m.get_mode_text()
-	return "[ " .. m.parse_mode(m.modes_text_map) .. "]"
+	return "[" .. m.parse_mode(m.modes_text_map) .. "]"
+end
+
+function m.get_mode_minimal_text()
+	return "  " .. m.parse_mode(m.modes_minimal_text_map) .. " "
 end
 
 function m.get_mode_icon()
@@ -50,7 +65,7 @@ end
 function m.build()
 	local parts = {
 		m.set_color_1,
-		m.get_mode_icon(),
+		m.get_mode_minimal_text(),
 		" ",
 		m.set_color_2,
 		m.align_right,
