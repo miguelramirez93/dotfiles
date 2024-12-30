@@ -28,9 +28,13 @@ local themes_cfg = {
 		src = "cdmill/neomodern.nvim",
 		colorscheme_name = "roseprime",
 	},
+	badwolf = {
+		src = "sjl/badwolf",
+		colorscheme_name = "goodwolf",
+	},
 }
 
-local selected = "nightfox"
+local selected = "badwolf"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,

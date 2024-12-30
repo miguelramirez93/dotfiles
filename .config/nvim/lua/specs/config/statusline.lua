@@ -1,6 +1,6 @@
 local m = {
 	set_color_1 = "%#ModeMsg#",
-	set_color_2 = "%#StatusLine#",
+	set_color_2 = "%#StatusLineNC#",
 	file_name = "",
 	modified = "",
 	align_right = "%=",

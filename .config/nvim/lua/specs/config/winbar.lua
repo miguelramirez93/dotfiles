@@ -6,7 +6,7 @@ function m.get_file_path()
 		return ""
 	end
 
-	local formatted_file_path = "  " .. string.gsub(raw_file_path, "/", " > ")
+	local formatted_file_path = " 󰣞 " .. string.gsub(raw_file_path, "/", " > ")
 
 	return formatted_file_path
 end
