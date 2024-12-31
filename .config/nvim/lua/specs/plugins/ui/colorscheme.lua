@@ -30,7 +30,7 @@ local themes_cfg = {
 	},
 	badwolf = {
 		src = "sjl/badwolf",
-		colorscheme_name = "goodwolf",
+		colorscheme_name = "badwolf",
 	},
 }
 
