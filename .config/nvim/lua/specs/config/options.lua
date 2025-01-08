@@ -1,9 +1,10 @@
 local opt = vim.opt
 local g = vim.g
 
--- enable new loader for caching some
--- internal calls
-vim.loader.enable()
+-- netrw
+g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+g.netrw_banner = 0
+g.netrw_winsize = 30
 
 opt.relativenumber = true
 opt.number = true
@@ -46,12 +47,12 @@ opt.listchars = { eol = " ", trail = " ", nbsp = "␣", tab = "  " }
 opt.spell = true
 opt.spelllang = "en_us,es"
 
--- netrw
-g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
-g.netrw_banner = 0
-
 -- -- Allow recursive find
 opt.path:append("**")
 
 -- statusline
 opt.laststatus = 3
+
+-- enable new loader for caching some
+-- internal calls
+vim.loader.enable()

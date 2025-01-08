@@ -23,7 +23,7 @@ return {
 	},
 
 	-- use a release tag to download pre-built binaries
-	version = "v0.*",
+	version = "*",
 	-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
 	-- build = 'cargo build --release',
 	-- If you use nix, you can build from source using latest nightly rust with:
@@ -38,20 +38,6 @@ return {
 		-- see the "default configuration" section below for full documentation on how to define
 		-- your own keymap.
 		keymap = { preset = "enter" },
-		snippets = {
-			expand = function(snippet)
-				require("luasnip").lsp_expand(snippet)
-			end,
-			active = function(filter)
-				if filter and filter.direction then
-					return require("luasnip").jumpable(filter.direction)
-				end
-				return require("luasnip").in_snippet()
-			end,
-			jump = function(direction)
-				require("luasnip").jump(direction)
-			end,
-		},
 		appearance = {
 			-- Sets the fallback highlight groups to nvim-cmp's highlight groups
 			-- Useful for when your theme doesn't support blink.cmp
@@ -65,7 +51,7 @@ return {
 		-- default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "lsp", "path", "snippets", "luasnip", "buffer" },
+			default = { "lsp", "path", "snippets", "buffer" },
 			-- optionally disable cmdline completions
 			cmdline = {
 				preset = "default",
