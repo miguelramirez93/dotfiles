@@ -15,22 +15,9 @@ local themes_cfg = {
 		src = "EdenEast/nightfox.nvim",
 		colorscheme_name = "nightfox",
 	},
-	alabaster = {
-		src = "p00f/alabaster.nvim",
-		colorscheme_name = "alabaster",
-	},
-	zenbones = {
-		src = "zenbones-theme/zenbones.nvim",
-		dependencies = "rktjmp/lush.nvim",
-		colorscheme_name = "zenwritten",
-	},
 	neomodern = {
 		src = "cdmill/neomodern.nvim",
 		colorscheme_name = "roseprime",
-	},
-	badwolf = {
-		src = "sjl/badwolf",
-		colorscheme_name = "badwolf",
 	},
 	vague = {
 		src = "vague2k/vague.nvim",

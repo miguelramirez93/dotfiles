@@ -4,7 +4,7 @@ local g = vim.g
 -- netrw
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 g.netrw_banner = 0
-g.netrw_winsize = 30
+g.netrw_winsize = 75
 
 opt.relativenumber = true
 opt.number = true
