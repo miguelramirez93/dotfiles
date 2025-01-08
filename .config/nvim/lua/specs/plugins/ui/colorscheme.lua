@@ -32,9 +32,13 @@ local themes_cfg = {
 		src = "sjl/badwolf",
 		colorscheme_name = "badwolf",
 	},
+	vague = {
+		src = "vague2k/vague.nvim",
+		colorscheme_name = "vague",
+	},
 }
 
-local selected = "badwolf"
+local selected = "vague"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
