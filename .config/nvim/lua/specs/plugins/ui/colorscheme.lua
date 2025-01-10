@@ -23,9 +23,16 @@ local themes_cfg = {
 		src = "vague2k/vague.nvim",
 		colorscheme_name = "vague",
 	},
+	off = {
+		src = "pbrisbin/vim-colors-off",
+		colorscheme_name = "off",
+		overwrite = function()
+			vim.api.nvim_set_hl(0, "PmenuSel", { link = "TabLine" })
+		end,
+	},
 }
 
-local selected = "vague"
+local selected = "off"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
@@ -41,5 +48,9 @@ return {
 			require(themes_cfg[selected].req_path).setup(opts)
 		end
 		vim.cmd.colorscheme(themes_cfg[selected].colorscheme_name)
+
+		if themes_cfg[selected].overwrite then
+			themes_cfg[selected].overwrite()
+		end
 	end,
 }

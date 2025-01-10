@@ -5,7 +5,6 @@ local g = vim.g
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 g.netrw_banner = 0
 g.netrw_winsize = 75
-
 opt.relativenumber = true
 opt.number = true
 opt.timeoutlen = 300
@@ -46,7 +45,6 @@ opt.listchars = { eol = " ", trail = " ", nbsp = "␣", tab = "  " }
 -- enable spelling
 opt.spell = true
 opt.spelllang = "en_us,es"
-
 -- -- Allow recursive find
 opt.path:append("**")
 
