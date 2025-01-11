@@ -1,6 +1,7 @@
 local opt = vim.opt
 local g = vim.g
 
+vim.cmd.syntax("off")
 -- netrw
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 g.netrw_banner = 0
@@ -36,6 +37,9 @@ opt.hlsearch = false
 opt.incsearch = true
 opt.inccommand = "split"
 
+-- wildmenu
+opt.wildmenu = true
+opt.wildmode = "longest:full,full"
 -- readability
 opt.list = true
 -- TODO: show visible list char by triggering a command or keymap
@@ -43,14 +47,13 @@ opt.list = true
 opt.listchars = { eol = " ", trail = " ", nbsp = "␣", tab = "  " }
 
 -- enable spelling
-opt.spell = true
+opt.spell = false
 opt.spelllang = "en_us,es"
 -- -- Allow recursive find
 opt.path:append("**")
 
 -- statusline
 opt.laststatus = 3
-
 -- enable new loader for caching some
 -- internal calls
 vim.loader.enable()
