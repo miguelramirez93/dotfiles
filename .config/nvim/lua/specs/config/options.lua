@@ -1,7 +1,7 @@
 local opt = vim.opt
 local g = vim.g
 
-vim.cmd.syntax("off")
+-- vim.cmd.syntax("off")
 -- netrw
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 g.netrw_banner = 0
@@ -39,7 +39,7 @@ opt.inccommand = "split"
 
 -- wildmenu
 opt.wildmenu = true
-opt.wildmode = "longest:full,full"
+-- opt.wildmode = "longest:full,full"
 -- readability
 opt.list = true
 -- TODO: show visible list char by triggering a command or keymap
