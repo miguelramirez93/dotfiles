@@ -47,7 +47,7 @@ opt.list = true
 opt.listchars = { eol = " ", trail = " ", nbsp = "␣", tab = "  " }
 
 -- enable spelling
-opt.spell = false
+opt.spell = true
 opt.spelllang = "en_us,es"
 -- -- Allow recursive find
 opt.path:append("**")
