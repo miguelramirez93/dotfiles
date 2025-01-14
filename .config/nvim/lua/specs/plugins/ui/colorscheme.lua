@@ -2,6 +2,10 @@ local themes_cfg = {
 	gruber = {
 		src = "blazkowolf/gruber-darker.nvim",
 		colorscheme_name = "gruber-darker",
+		overwrite = function()
+			-- IncSearch
+			vim.api.nvim_set_hl(0, "Search", { link = "IncSearch" })
+		end,
 	},
 	vscode = {
 		src = "Mofiqul/vscode.nvim",

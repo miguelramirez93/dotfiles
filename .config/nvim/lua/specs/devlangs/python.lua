@@ -18,8 +18,16 @@ return {
 		-- 		pyls_isort = { enabled = true },
 		-- 	},
 		-- },
-		pyright = {},
-		-- basedpyright = {},
+		-- pyright = {},
+		basedpyright = {
+			analysis = {
+				autoSearchPaths = true,
+				diagnosticMode = "workspace",
+				useLibraryCodeForTypes = true,
+				autoImportCompletions = true,
+				typeCheckingMode = "standard", --["off", "basic", "standard", "strict", "recommended", "all"]:
+			},
+		},
 		ruff = {},
 	},
 	deps = {
