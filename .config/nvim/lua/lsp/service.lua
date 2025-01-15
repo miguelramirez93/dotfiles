@@ -26,21 +26,34 @@ local service = {
 function service.setup_servers()
 	local servers_list = module_loader.load_from_folder(service.devlangs_folder)
 	local servers = {}
-	for _, server_cfg in ipairs(servers_list) do
-		if service.is_server_enabled(server_cfg) and server_cfg.ls then
-			servers = vim.tbl_extend("keep", servers, server_cfg.ls)
-		end
-	end
+    for _, server_cfg in ipairs(servers_list) do
+        if service.is_server_enabled(server_cfg) and server_cfg.ls then
+            servers = vim.tbl_extend("keep", servers, server_cfg.ls)
+        end
+    end
 
-	service.install_lang_syntax(servers_list)
+    service.install_lang_syntax(servers_list)
 
-	service.install_lang_deps(servers_list)
+    service.install_lang_deps(servers_list)
 
-	service.ls_client.setup_servers(servers, service.capabilities_enhancer_client.get_lsp_capabilities())
+    service.ls_client.setup_servers(servers, service.capabilities_enhancer_client.get_lsp_capabilities())
 
-	service.install_test_runners(servers_list)
+    service.install_test_runners(servers_list)
 
 	service.install_formaters(servers_list)
+end
+
+function service.setup_servers_zenmode()
+	local servers_list = module_loader.load_from_folder(service.devlangs_folder)
+
+    local zen_servers = {}
+    for _, server_cfg in ipairs(servers_list) do 
+        zen_servers = vim.tbl_extend("keep", zen_servers, {formaters = server_cfg.formaters, langs = server_cfg.langs}) 
+    end
+
+    service.install_lang_syntax(zen_servers)
+    service.install_lang_deps(zen_servers)
+	service.install_formaters(zen_servers)
 end
 
 function service.install_lang_deps(servers_list)

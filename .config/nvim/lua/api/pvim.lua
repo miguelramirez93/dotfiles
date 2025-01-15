@@ -6,6 +6,11 @@ local pvim = {
 }
 
 local function setup_plugs(opts)
+	-- prevent to load lsp related plugins
+	-- if zen mode activated
+	vim.g.zen_mode = opts.lsp.zen_mode or false
+    vim.g.enable_lsp_plugs = not vim.g.zen_mode
+
 	local plgs_service = require("plugins.service")
 
 	plgs_service.manager = opts.plugins.manager
@@ -35,6 +40,13 @@ local function setup_lsp(opts)
 	lsp_config_service.capabilities_enhancer_client = opts.lsp.capabilities_enhancer_client
 
 	lsp_config_service.tests_runner_client = opts.lsp.tests_runners_client
+
+	lsp_config_service.zen_mode = opts.lsp.zen_mode and true or false
+
+	if opts.lsp.zen_mode then
+		lsp_config_service.setup_servers_zenmode()
+		return
+	end
 
 	lsp_config_service.setup_servers()
 end

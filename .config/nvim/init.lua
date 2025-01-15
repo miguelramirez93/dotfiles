@@ -17,6 +17,7 @@ pvim.setup({
 		folder = "specs/config",
 	},
 	lsp = {
+		zen_mode = true,
 		devlangs_client = require("specs.plugins.lsp.lspconfig"),
 		devlangs_deps_client = require("specs.plugins.lsp.mason"),
 		syntax_tree_client = require("specs.plugins.lsp.treesitter"),
@@ -25,5 +26,4 @@ pvim.setup({
 		tests_runners_client = require("specs.plugins.testhandlers.neotest"),
 	},
 })
-
 -- testing

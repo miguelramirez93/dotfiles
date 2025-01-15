@@ -85,6 +85,7 @@ return {
 		"nvim-neotest/nvim-nio",
 	},
 	event = "BufEnter",
+	enabled = vim.g.enable_lsp_plugs,
 	lazy = false,
 	install_runners = function(runners)
 		opts.adapters = vim.tbl_extend("force", opts.adapters, runners)

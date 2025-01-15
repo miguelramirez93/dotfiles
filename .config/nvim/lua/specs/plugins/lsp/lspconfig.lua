@@ -63,11 +63,12 @@ return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		"SmiteshP/nvim-navic",
-		{ "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
+		{ "folke/neoconf.nvim", cmd = "Neoconf", config = false },
 		{ "folke/neodev.nvim", opts = {} },
 		{ "j-hui/fidget.nvim", opts = {} },
 		"mason.nvim",
 	},
+	enabled = vim.g.enable_lsp_plugs,
 	setup_servers = function(servers_list, capabilities)
 		local extCapabilities = extend_def_capabilities(capabilities)
 

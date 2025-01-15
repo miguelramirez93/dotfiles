@@ -14,6 +14,7 @@ return {
 		-- },
 	},
 
+	enabled = vim.g.zen_mode or true,
 	-- use a release tag to download pre-built binaries
 	version = "*",
 	-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
