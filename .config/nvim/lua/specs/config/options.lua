@@ -39,7 +39,7 @@ opt.inccommand = "split"
 
 -- wildmenu
 opt.wildmenu = true
--- opt.wildmode = "longest:full,full"
+opt.wildmode = "longest:full,full"
 -- readability
 opt.list = true
 -- TODO: show visible list char by triggering a command or keymap
