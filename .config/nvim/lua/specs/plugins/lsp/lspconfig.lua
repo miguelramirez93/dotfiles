@@ -68,7 +68,7 @@ return {
 		{ "j-hui/fidget.nvim", opts = {} },
 		"mason.nvim",
 	},
-	enabled = vim.g.enable_lsp_plugs,
+	enabled = vim.g.enable_lsp_plugs or false,
 	setup_servers = function(servers_list, capabilities)
 		local extCapabilities = extend_def_capabilities(capabilities)
 
