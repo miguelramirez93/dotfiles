@@ -30,6 +30,7 @@ return {
 	"stevearc/conform.nvim",
 	cmd = "ConformInfo",
 	event = "BufEnter",
+	enabled = vim.g.enable_lsp_plugs,
 	install_formaters = function(formaters)
 		require("conform").setup({
 			formatters_by_ft = formaters,
