@@ -126,6 +126,7 @@ local keymaps = {
 	-- { mode = "n", bind = "<leader>ff", cmd = "<cmd>Telescope find_files<cr>" },
 	{ mode = "n", bind = "<leader>,", cmd = ":buffer " },
 	{ mode = "n", bind = "<leader>ff", cmd = ":find " },
+	{ mode = "n", bind = "<leader>fw", cmd = "<cmd>Rgrep<cr>" },
 	{ mode = "n", bind = "<leader>gc", cmd = "<cmd>Telescope git_commits<CR>" },
 	{ mode = "n", bind = "<leader>fc", cmd = "<cmd>Telescope current_buffer_fuzzy_find<cr>" },
 	{ mode = "n", bind = "<leader>fg", cmd = "<cmd>Telescope live_grep<cr>" },
