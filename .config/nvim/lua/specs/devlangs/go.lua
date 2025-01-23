@@ -48,6 +48,8 @@ return {
 		"impl",
 		"delve",
 		"gotests",
+		"golangci-lint",
+		"golines",
 	},
 	langs = {
 		"go",
@@ -56,7 +58,10 @@ return {
 		"gosum",
 	},
 	formaters = {
-		go = { "gofmt", "goimports" },
+		go = { "gofumpt", "goimports" },
+	},
+	linters = {
+		go = { "golangcilint" },
 	},
 	test_runners = {
 		["neotest-go"] = {

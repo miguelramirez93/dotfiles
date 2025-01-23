@@ -6,7 +6,7 @@ lazy_plug_man.enable_lazy_load = true
 
 -- pvim.fexplorer = require("adapters.ui.oil_file_explorer")
 -- pvim.fexplorer = require("adapters.ui.neotree_file_explorer")
-pvim.enable_zen_mode()
+-- pvim.enable_zen_mode()
 
 pvim.setup({
 	minimal = false,
@@ -24,6 +24,7 @@ pvim.setup({
 		format_client = require("specs.plugins.coding.conform"),
 		capabilities_enhancer_client = require("specs.plugins.lsp.blink-cmp"),
 		tests_runners_client = require("specs.plugins.testhandlers.neotest"),
+		linter_client = require("specs.plugins.lsp.linter"),
 	},
 })
 -- testing

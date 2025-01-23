@@ -40,6 +40,8 @@ local function setup_lsp(opts)
 
 	lsp_config_service.tests_runner_client = opts.lsp.tests_runners_client
 
+	lsp_config_service.linter_client = opts.lsp.linter_client
+
 	if vim.g.zen_mode == true then
 		lsp_config_service.setup_servers_zenmode()
 		return
