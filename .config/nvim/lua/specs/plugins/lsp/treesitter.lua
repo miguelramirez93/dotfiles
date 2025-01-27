@@ -7,9 +7,9 @@ local opts = {
 
 return {
 	"nvim-treesitter/nvim-treesitter",
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter-context",
-	},
+	-- dependencies = {
+	-- 	"nvim-treesitter/nvim-treesitter-context",
+	-- },
 	-- version = false, -- last release is way too old and doesn't work on Windows
 	event = { "VeryLazy" },
 	lazy = vim.fn.argc(-1) == 0,

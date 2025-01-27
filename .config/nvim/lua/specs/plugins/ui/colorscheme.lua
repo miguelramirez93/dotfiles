@@ -34,9 +34,13 @@ local themes_cfg = {
 			vim.api.nvim_set_hl(0, "PmenuSel", { link = "TabLine" })
 		end,
 	},
+	twilight = {
+		src = "vim-scripts/twilight256.vim",
+		colorscheme_name = "twilight256",
+	},
 }
 
-local selected = "gruber"
+local selected = "twilight"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
