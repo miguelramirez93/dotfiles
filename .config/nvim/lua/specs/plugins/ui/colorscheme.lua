@@ -40,7 +40,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "twilight"
+local selected = "gruber"
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,
