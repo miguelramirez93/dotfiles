@@ -37,9 +37,11 @@ opt.hlsearch = false
 opt.incsearch = true
 opt.inccommand = "split"
 
--- wildmenu
+-- search capabilities
+opt.path:append("**") -- Allow recursive find
 opt.wildmenu = true
 opt.wildmode = "longest:full,full"
+opt.wildignore = opt.wildignore + "env/**,node_modules/**,.git/**" -- ignore folders in recursive find
 -- readability
 opt.list = true
 -- TODO: show visible list char by triggering a command or keymap
@@ -49,8 +51,6 @@ opt.listchars = { eol = " ", trail = " ", nbsp = "␣", tab = "  " }
 -- enable spelling
 opt.spell = true
 opt.spelllang = "en_us,es"
--- -- Allow recursive find
-opt.path:append("**")
 
 -- statusline
 opt.laststatus = 3

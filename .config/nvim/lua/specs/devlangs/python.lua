@@ -30,10 +30,19 @@ return {
 		},
 		ruff = {},
 	},
+	formaters = {
+		python = {
+			"autopep8",
+			-- "ruff_fix",
+			-- "ruff_format",
+			-- "ruff_organize_imports",
+		},
+	},
 	deps = {
 		-- "python-lsp-server",
 		"jinja-lsp",
 		"pylint",
+		"autopep8",
 	},
 	langs = {
 		"python",

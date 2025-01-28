@@ -13,6 +13,9 @@ local service = {
 	format_client = {
 		install_formaters = function(formaters) end,
 	},
+	linter_client = {
+		install_linters = function(linters) end,
+	},
 	capabilities_enhancer_client = {
 		get_lsp_capabilities = function()
 			return {}
@@ -41,6 +44,17 @@ function service.setup_servers()
 	service.install_test_runners(servers_list)
 
 	service.install_formaters(servers_list)
+
+	service.install_linters(servers_list)
+end
+
+function service.setup_servers_zenmode()
+	local servers_list = module_loader.load_from_folder(service.devlangs_folder)
+
+	service.install_lang_syntax(servers_list)
+	service.install_lang_deps(servers_list)
+	service.install_formaters(servers_list)
+	service.install_linters(servers_list)
 end
 
 function service.install_lang_deps(servers_list)
@@ -71,6 +85,16 @@ function service.install_formaters(servers_list)
 		end
 	end
 	service.format_client.install_formaters(formaters)
+end
+
+function service.install_linters(servers_list)
+	local linters = {}
+	for _, server_cfg in ipairs(servers_list) do
+		if service.is_server_enabled(server_cfg) and server_cfg.linters then
+			linters = vim.tbl_extend("keep", linters, server_cfg.linters)
+		end
+	end
+	service.linter_client.install_linters(formaters)
 end
 
 function service.install_test_runners(servers_list)

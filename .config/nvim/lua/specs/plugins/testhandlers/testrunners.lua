@@ -5,6 +5,10 @@ local runners = {
 }
 
 local function get_runner_deps()
+    if vim.g.enable_lsp_plugs == false then
+        return {}
+    end
+
 	local built_runners = {}
 	for _, runner in pairs(runners) do
 		runner["lazy"] = false

@@ -10,7 +10,7 @@ return {
 	-- dependencies = {
 	-- 	"nvim-treesitter/nvim-treesitter-context",
 	-- },
-	version = false, -- last release is way too old and doesn't work on Windows
+	-- version = false, -- last release is way too old and doesn't work on Windows
 	event = { "VeryLazy" },
 	lazy = vim.fn.argc(-1) == 0,
 	build = ":TSUpdate",

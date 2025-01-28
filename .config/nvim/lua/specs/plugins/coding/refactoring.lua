@@ -8,6 +8,7 @@ return {
 	config = function()
 		require("refactoring").setup()
 	end,
+	enabled = false,
 	opts = {
 		prompt_func_return_type = {
 			go = true,
