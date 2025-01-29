@@ -38,9 +38,19 @@ local themes_cfg = {
 		src = "vim-scripts/twilight256.vim",
 		colorscheme_name = "twilight256",
 	},
+	builtin = {
+		colorscheme_name = "retrobox",
+		builtin = true,
+	},
 }
 
 local selected = "gruber"
+
+if themes_cfg[selected].builtin == true then
+	vim.cmd.colorscheme(themes_cfg[selected].colorscheme_name)
+	return
+end
+
 return {
 	themes_cfg[selected].src,
 	name = themes_cfg[selected].name or nil,

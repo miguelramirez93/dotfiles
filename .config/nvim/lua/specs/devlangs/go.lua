@@ -50,6 +50,7 @@ return {
 		"gotests",
 		"golangci-lint",
 		"golines",
+		"goimports-reviser",
 	},
 	langs = {
 		"go",
@@ -58,7 +59,7 @@ return {
 		"gosum",
 	},
 	formaters = {
-		go = { "gofumpt", "goimports" },
+		go = { "gofumpt", "goimports", "goimports-reviser" },
 	},
 	linters = {
 		go = { "golangcilint" },
