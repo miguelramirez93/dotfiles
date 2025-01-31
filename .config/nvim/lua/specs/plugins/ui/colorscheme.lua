@@ -44,7 +44,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "gruber"
+local selected = "vague"
 
 if themes_cfg[selected].builtin == true then
 	vim.cmd.colorscheme(themes_cfg[selected].colorscheme_name)

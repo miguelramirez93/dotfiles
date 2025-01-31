@@ -18,16 +18,16 @@ return {
 		-- 		pyls_isort = { enabled = true },
 		-- 	},
 		-- },
-		-- pyright = {},
-		basedpyright = {
-			analysis = {
-				autoSearchPaths = true,
-				diagnosticMode = "workspace",
-				useLibraryCodeForTypes = true,
-				autoImportCompletions = true,
-				typeCheckingMode = "standard", --["off", "basic", "standard", "strict", "recommended", "all"]:
-			},
-		},
+		pyright = {},
+		-- basedpyright = {
+		-- 	analysis = {
+		-- 		autoSearchPaths = true,
+		-- 		diagnosticMode = "workspace",
+		-- 		useLibraryCodeForTypes = true,
+		-- 		autoImportCompletions = true,
+		-- 		typeCheckingMode = "recommend", --["off", "basic", "standard", "strict", "recommended", "all"]:
+		-- 	},
+		-- },
 		ruff = {},
 	},
 	formaters = {
@@ -35,7 +35,7 @@ return {
 			"autopep8",
 			-- "ruff_fix",
 			-- "ruff_format",
-			-- "ruff_organize_imports",
+			"ruff_organize_imports",
 		},
 	},
 	deps = {
