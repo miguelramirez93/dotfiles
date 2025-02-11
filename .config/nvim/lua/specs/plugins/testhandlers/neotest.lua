@@ -85,14 +85,15 @@ return {
 		"nvim-neotest/nvim-nio",
 	},
 	event = "BufEnter",
-	enabled = vim.g.enable_lsp_plugs,
+	-- enabled = vim.g.enable_lsp_plugs,
+	enabled = false,
 	lazy = false,
 	install_runners = function(runners)
-		opts.adapters = vim.tbl_extend("force", opts.adapters, runners)
-
-		if opts.adapters then
-			opts.adapters = parse_adapters(opts.adapters)
-		end
+		-- opts.adapters = vim.tbl_extend("force", opts.adapters, runners)
+		--
+		-- if opts.adapters then
+		-- 	opts.adapters = parse_adapters(opts.adapters)
+		-- end
 		-- get neotest namespace (api call creates or returns namespace)
 		-- local neotest_ns = vim.api.nvim_create_namespace("neotest")
 		-- vim.diagnostic.config({
@@ -104,6 +105,6 @@ return {
 		-- 	},
 		-- }, neotest_ns)
 
-		require("neotest").setup(opts)
+		-- require("neotest").setup(opts)
 	end,
 }
