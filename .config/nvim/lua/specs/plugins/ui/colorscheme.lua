@@ -38,13 +38,17 @@ local themes_cfg = {
 		src = "vim-scripts/twilight256.vim",
 		colorscheme_name = "twilight256",
 	},
+	poimandres = {
+		src = "olivercederborg/poimandres.nvim",
+		colorscheme_name = "poimandres",
+	},
 	builtin = {
 		colorscheme_name = "retrobox",
 		builtin = true,
 	},
 }
 
-local selected = "vague"
+local selected = "poimandres"
 
 if themes_cfg[selected].builtin == true then
 	vim.cmd.colorscheme(themes_cfg[selected].colorscheme_name)
