@@ -48,7 +48,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "poimandres"
+local selected = "vscode"
 
 if themes_cfg[selected].builtin == true then
 	vim.cmd.colorscheme(themes_cfg[selected].colorscheme_name)
