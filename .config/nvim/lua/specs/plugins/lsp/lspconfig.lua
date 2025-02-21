@@ -65,7 +65,7 @@ return {
 		"SmiteshP/nvim-navic",
 		{ "folke/neoconf.nvim", cmd = "Neoconf", config = false },
 		{ "folke/neodev.nvim", opts = {} },
-		{ "j-hui/fidget.nvim", opts = {} },
+		-- { "j-hui/fidget.nvim", opts = {} },
 		"mason.nvim",
 	},
 	enabled = vim.g.enable_lsp_plugs or false,

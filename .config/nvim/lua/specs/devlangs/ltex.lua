@@ -1,4 +1,5 @@
 return {
+	enabled = false,
 	ls = {
 		ltex = {
 			cmd = { "ltex-ls" },
