@@ -46,9 +46,22 @@ local themes_cfg = {
 		colorscheme_name = "retrobox",
 		builtin = true,
 	},
+	-- TODO: make a fork for this theme
+	-- URL: https://github.com/alexxGmZ/e-ink.nvim
+	eink = {
+		src = "alexxGmZ/e-ink.nvim",
+		colorscheme_name = "e-ink",
+		overwrite = function()
+			-- IncSearch
+			vim.api.nvim_set_hl(0, "Normal", { fg = "#d4d4d4", bg = "#1f1f1f" })
+			vim.api.nvim_set_hl(0, "CursorLine", { bg = "#363636" })
+			-- Normal         xxx guifg=#d4d4d4 guibg=#1f1f1f
+			-- CursorLine     xxx guibg=#363636
+		end,
+	},
 }
 
-local selected = "vscode"
+local selected = "eink"
 
 if themes_cfg[selected].builtin == true then
 	vim.cmd.colorscheme(themes_cfg[selected].colorscheme_name)
