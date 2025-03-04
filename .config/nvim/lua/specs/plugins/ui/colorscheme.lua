@@ -61,7 +61,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "vscode"
+local selected = "gruber"
 
 if themes_cfg[selected].builtin == true then
 	vim.cmd.colorscheme(themes_cfg[selected].colorscheme_name)
