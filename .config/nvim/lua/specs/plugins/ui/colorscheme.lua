@@ -43,8 +43,45 @@ local themes_cfg = {
 		colorscheme_name = "poimandres",
 	},
 	builtin = {
-		colorscheme_name = "retrobox",
+		colorscheme_name = "quiet",
 		builtin = true,
+		overwrite = function()
+			vim.api.nvim_set_hl(0, "Normal", { fg = "#d4d4d4", bg = "#1f1f1f" })
+			vim.api.nvim_set_hl(0, "Pmenu", { fg = "#bbbbbb", bg = "#202020" })
+			vim.api.nvim_set_hl(0, "PmenuSel", { fg = "#bbbbbb", bg = "#04395e" })
+			vim.api.nvim_set_hl(0, "LangKeyWord", { fg = "#c586c0" })
+			vim.api.nvim_set_hl(0, "Conditional", { link = "LangKeyWord" })
+			vim.api.nvim_set_hl(0, "Repeat", { link = "LangKeyWord" })
+			vim.api.nvim_set_hl(0, "Statement", { link = "LangKeyWord" })
+			vim.api.nvim_set_hl(0, "GenComment", { fg = "#6a9955" })
+			vim.api.nvim_set_hl(0, "SpecialComment", { link = "GenComment" })
+			vim.api.nvim_set_hl(0, "Comment", { link = "GenComment" })
+			-- Character      xxx guifg=#ce9178
+			-- Constant       xxx guifg=#569cd6
+			-- Number         xxx guifg=#b5cea8
+			-- Boolean        xxx guifg=#569cd6
+			-- Float          xxx guifg=#b5cea8
+			-- Conditional    xxx guifg=#c586c0
+			-- Statement      xxx guifg=#c586c0
+			-- Repeat         xxx guifg=#c586c0
+			-- Label          xxx guifg=#c586c0
+			-- Keyword        xxx guifg=#c586c0
+			-- Exception      xxx guifg=#c586c0
+			-- Include        xxx guifg=#c586c0
+			-- PreProc        xxx guifg=#c586c0
+			-- Define         xxx guifg=#c586c0
+			-- Macro          xxx guifg=#c586c0
+			-- PreCondit      xxx links to PreProc
+			-- StorageClass   xxx guifg=#569cd6
+			-- Type           xxx guifg=#569cd6
+			-- Structure      xxx guifg=#4ec9b0
+			-- Typedef        xxx guifg=#569cd6
+			-- Tag            xxx guifg=#d4d4d4
+			-- Special        xxx guifg=#d7ba7d
+			-- SpecialChar    xxx guifg=#d4d4d4
+			-- SpecialComment xxx guifg=#6a9955
+			-- Comment        xxx guifg=#6a9955
+		end,
 	},
 	-- TODO: make a fork for this theme
 	-- URL: https://github.com/alexxGmZ/e-ink.nvim
@@ -55,16 +92,17 @@ local themes_cfg = {
 			-- IncSearch
 			vim.api.nvim_set_hl(0, "Normal", { fg = "#d4d4d4", bg = "#1f1f1f" })
 			vim.api.nvim_set_hl(0, "CursorLine", { bg = "#363636" })
-			-- Normal         xxx guifg=#d4d4d4 guibg=#1f1f1f
-			-- CursorLine     xxx guibg=#363636
 		end,
 	},
 }
 
-local selected = "gruber"
+local selected = "vscode"
 
 if themes_cfg[selected].builtin == true then
 	vim.cmd.colorscheme(themes_cfg[selected].colorscheme_name)
+	if themes_cfg[selected].overwrite then
+		themes_cfg[selected].overwrite()
+	end
 	return
 end
 
