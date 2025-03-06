@@ -18,6 +18,14 @@ local themes_cfg = {
 	nightfox = {
 		src = "EdenEast/nightfox.nvim",
 		colorscheme_name = "nightfox",
+		opts = {
+			options = {
+				transparent = true,
+			},
+		},
+		setup = function(opts)
+			require("nightfox").setup(opts)
+		end,
 	},
 	neomodern = {
 		src = "cdmill/neomodern.nvim",
@@ -96,7 +104,7 @@ local themes_cfg = {
 	},
 }
 
-local selected = "vscode"
+local selected = "nightfox"
 
 if themes_cfg[selected].builtin == true then
 	vim.cmd.colorscheme(themes_cfg[selected].colorscheme_name)
