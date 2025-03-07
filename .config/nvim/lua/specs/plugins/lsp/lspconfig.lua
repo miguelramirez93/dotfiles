@@ -63,8 +63,7 @@ return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		"SmiteshP/nvim-navic",
-		{ "folke/neoconf.nvim", cmd = "Neoconf", config = false },
-		{ "folke/neodev.nvim", opts = {} },
+		{ "folke/lazydev.nvim", opts = {} },
 		-- { "j-hui/fidget.nvim", opts = {} },
 		"mason.nvim",
 	},

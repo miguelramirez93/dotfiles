@@ -6,6 +6,7 @@ return {
 	dependencies = {
 		"rafamadriz/friendly-snippets",
 		"mikavilpas/blink-ripgrep.nvim",
+		{ "folke/lazydev.nvim", opts = {} },
 		-- add blink.compat to dependencies
 		-- {
 		-- 	"saghen/blink.compat",
@@ -48,11 +49,15 @@ return {
 			enabled = false,
 		},
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer", "ripgrep" },
+			default = { "lsp", "path", "snippets", "buffer", "ripgrep", "lazydev" },
 			providers = {
+				lsp = {
+					score_offset = 100,
+				},
 				ripgrep = {
 					module = "blink-ripgrep",
 					name = "Ripgrep",
+					score_offset = 1,
 					-- the options below are optional, some default values are shown
 					---@module "blink-ripgrep"
 					---@type blink-ripgrep.Options
@@ -131,6 +136,12 @@ return {
 						end
 						return items
 					end,
+				},
+				lazydev = {
+					name = "LazyDev",
+					module = "lazydev.integrations.blink",
+					-- make lazydev completions top priority (see `:h blink.cmp`)
+					score_offset = 100,
 				},
 			},
 		},
