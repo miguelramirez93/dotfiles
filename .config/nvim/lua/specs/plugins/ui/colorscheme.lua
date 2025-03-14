@@ -89,6 +89,15 @@ local themes_cfg = {
 			-- SpecialChar    xxx guifg=#d4d4d4
 			-- SpecialComment xxx guifg=#6a9955
 			-- Comment        xxx guifg=#6a9955
+
+			-- Pmenu          xxx guifg=#bbbbbb guibg=#202020
+			-- PmenuSel       xxx guifg=#bbbbbb guibg=#04395e
+			-- PmenuKind      xxx links to Pmenu
+			-- PmenuKindSel   xxx links to PmenuSel
+			-- PmenuExtra     xxx links to Pmenu
+			-- PmenuExtraSel  xxx links to PmenuSel
+			-- PmenuSbar      xxx guibg=#343b41
+			-- PmenuThumb     xxx guibg=#bbbbbb
 		end,
 	},
 	-- TODO: make a fork for this theme
@@ -102,9 +111,29 @@ local themes_cfg = {
 			vim.api.nvim_set_hl(0, "CursorLine", { bg = "#363636" })
 		end,
 	},
+	kanagawa = {
+		src = "rebelot/kanagawa.nvim",
+		colorscheme_name = "kanagawa-dragon",
+		opts = {
+			transparent = true,
+		},
+		overwrite = function()
+			vim.api.nvim_set_hl(0, "Pmenu", { fg = "#bbbbbb", bg = "#202020" })
+			vim.api.nvim_set_hl(0, "PmenuSel", { fg = "#bbbbbb", bg = "#04395e" })
+			vim.api.nvim_set_hl(0, "PmenuKind", { link = "Pmenu" })
+			vim.api.nvim_set_hl(0, "PmenuKindSel", { link = "PmenuSel" })
+			vim.api.nvim_set_hl(0, "PmenuExtra", { link = "Pmenu" })
+			vim.api.nvim_set_hl(0, "PmenuExtraSel", { link = "PmenuSel" })
+			vim.api.nvim_set_hl(0, "PmenuSbar", { bg = "#343b41" })
+			vim.api.nvim_set_hl(0, "PmenuThumb", { bg = "#bbbbbb" })
+		end,
+		setup = function(opts)
+			require("kanagawa").setup(opts)
+		end,
+	},
 }
 
-local selected = "nightfox"
+local selected = "kanagawa"
 
 if themes_cfg[selected].builtin == true then
 	vim.cmd.colorscheme(themes_cfg[selected].colorscheme_name)
