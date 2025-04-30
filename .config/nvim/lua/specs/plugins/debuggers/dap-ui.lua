@@ -1,7 +1,8 @@
 return {
 	"rcarriga/nvim-dap-ui",
 	event = "BufEnter",
-	enabled = vim.g.enable_lsp_plugs,
+	--enabled = vim.g.enable_lsp_plugs,
+	enabled = false,
 	dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
 	setup = function(_)
 		require("dapui").setup()
