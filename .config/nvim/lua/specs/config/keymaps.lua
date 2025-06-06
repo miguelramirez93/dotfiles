@@ -61,7 +61,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set(
 			"n",
 			"<space>cc",
-			"<Cmd>lua vim.notify('  ' .. require'nvim-navic'.get_location())<CR>",
+			"<Cmd>lua vim.notify('   ' .. require'nvim-navic'.get_location())<CR>",
 			{ silent = true }
 		)
 	end,
@@ -82,9 +82,7 @@ vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search(
 })
 
 --File explorer
--- vim.keymap.set("n", "<leader>b", "<Cmd>Oil<CR>")
--- vim.keymap.set("n", "<leader>b", "<Cmd>Neotree toggle filesystem reveal right<CR>")
-vim.keymap.set("n", "<leader>b", '<Cmd>lua require("api.pvim").open_file_explorer()<CR>', { silent = true })
+vim.keymap.set("n", "<leader>b", "<Cmd>Explore<CR>", { silent = true })
 
 -- files
 vim.keymap.set("n", "<leader>p", "<Cmd>echo expand('%:.')<CR>", { silent = true })
@@ -94,30 +92,9 @@ vim.keymap.set("n", "<leader>cp", "<Cmd>echo expand('%')<CR>", { silent = true }
 vim.keymap.set(
 	"n",
 	"<leader>gb",
-	"<Cmd>lua vim.notify('   ' .. require('api.pvim').git_branch())<CR>",
+	"<Cmd>lua vim.notify('   ' .. require('internal.git.helpers').git_branch())<CR>",
 	{ silent = true }
 )
-
--- Tests runner
-vim.keymap.set("n", "<leader>t", "<Cmd>TestFunc<CR>")
-vim.keymap.set("n", "<leader>tf", "<Cmd>TestCurrentFile<CR>")
-vim.keymap.set("n", "<leader>tt", "<Cmd>TestAll<CR>")
-vim.keymap.set("n", "<leader>ts", "<Cmd>TestSummary<CR>")
-vim.keymap.set("n", "<leader>tr", "<Cmd>TestCurrResult<CR>")
-vim.keymap.set("n", "<leader>td", "<Cmd>TestDebug<CR>")
-
-vim.api.nvim_create_user_command("TestDebug", function()
-	require("neotest").run.run({ strategy = "dap" })
-	require("dapui").open()
-end, {})
-
--- debug
-vim.keymap.set("n", "<leader>dp", "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
-vim.keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>")
-vim.keymap.set("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>")
-vim.keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_over()<CR>")
-vim.keymap.set("n", "<leader>ds", "<cmd>lua require'dap'.repl.open()<CR>")
-vim.keymap.set("n", "<leader>dq", "<cmd>lua require'dapui'.close()<CR>")
 
 -- new keymaps cfg
 local keymaps = {
@@ -136,12 +113,12 @@ local keymaps = {
 	-- { mode = "n", bind = "<leader>jf", cmd = "<cmd>ToggleTerm direction=float<cr>" },
 	-- { mode = "n", bind = "<leader>jv", cmd = "<cmd>ToggleTerm direction=vertical<cr>" },
 
-	{ mode = "n", bind = "<C-j>", cmd = '<Cmd>lua require("api.pvim").toggle_terminal()<CR>' },
-	{ mode = "n", bind = "<C-j>v", cmd = '<cmd>lua require("api.pvim").toggle_terminal("vertical")<CR>' },
-	{ mode = "n", bind = "<C-j>h", cmd = '<cmd>lua require("api.pvim").toggle_terminal("horizontal")<CR>' },
-	{ mode = "n", bind = "<C-j>n", cmd = '<Cmd>lua require("api.pvim").new_terminal()<CR>' },
-	{ mode = "n", bind = "<C-j>nv", cmd = '<cmd>lua require("api.pvim").new_terminal("vertical")<CR>' },
-	{ mode = "n", bind = "<C-j>nh", cmd = '<cmd>lua require("api.pvim").new_terminal("horizontal")<CR>' },
+	{ mode = "n", bind = "<C-j>", cmd = '<Cmd>lua require("internal.terminal.viewer").toggle()<CR>' },
+	{ mode = "n", bind = "<C-j>v", cmd = '<cmd>lua require("internal.terminal.viewer").toggle("vertical")<CR>' },
+	{ mode = "n", bind = "<C-j>h", cmd = '<cmd>lua require("internal.terminal.viewer").toggle("horizontal")<CR>' },
+	{ mode = "n", bind = "<C-j>n", cmd = '<Cmd>lua require("internal.terminal.viewer").open()<CR>' },
+	{ mode = "n", bind = "<C-j>nv", cmd = '<cmd>lua require("internal.terminal.viewer").open("vertical")<CR>' },
+	{ mode = "n", bind = "<C-j>nh", cmd = '<cmd>lua require("internal.terminal.viewer").open("horizontal")<CR>' },
 
 	{ mode = "n", bind = "<C-w>a", cmd = "<cmd>BufOnly<CR>" },
 

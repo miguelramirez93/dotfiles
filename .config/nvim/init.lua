@@ -1,30 +1,15 @@
-local pvim = require("api.pvim")
+local plg_man = require("internal.plugins.manager")
+local module_loader = require("internal.module.loader")
 
-local lazy_plug_man = require("specs.plgmanagers.lazy")
+local _plgs_path = "specs/plugins"
+local _cfg_path = "specs/config"
 
-lazy_plug_man.enable_lazy_load = true
+plg_man.install()
 
--- pvim.fexplorer = require("adapters.ui.oil_file_explorer")
--- pvim.fexplorer = require("adapters.ui.neotree_file_explorer")
--- pvim.enable_zen_mode()
+local plugins = module_loader.recursive_load_form_folder(_plgs_path)
 
-pvim.setup({
-	minimal = false,
-	plugins = {
-		manager = lazy_plug_man,
-		folder = "specs/plugins",
-	},
-	config = {
-		folder = "specs/config",
-	},
-	lsp = {
-		devlangs_client = require("specs.plugins.lsp.lspconfig"),
-		devlangs_deps_client = require("specs.plugins.lsp.mason"),
-		syntax_tree_client = require("specs.plugins.lsp.treesitter"),
-		format_client = require("specs.plugins.coding.conform"),
-		capabilities_enhancer_client = require("specs.plugins.lsp.blink-cmp"),
-		tests_runners_client = require("specs.plugins.testhandlers.neotest"),
-		linter_client = require("specs.plugins.lsp.linter"),
-	},
-})
--- testing
+module_loader.recursive_load_form_folder(_cfg_path)
+
+plg_man.sync(plugins)
+
+plg_man.setup(plugins)

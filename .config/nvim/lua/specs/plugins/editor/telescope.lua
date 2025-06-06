@@ -15,7 +15,6 @@ return {
 	},
 	setup = function(opts)
 		local actions = require("telescope.actions")
-		-- local fb_actions = require("telescope").extensions.file_browser.actions
 
 		local l_opts = {
 			defaults = {
@@ -67,7 +66,7 @@ return {
 			},
 		}
 
-		local extended_opts = vim.tbl_extend("force", opts, l_opts)
+		local extended_opts = vim.tbl_extend("force", opts or {} , l_opts)
 
 		require("telescope").setup(extended_opts)
 	end,
