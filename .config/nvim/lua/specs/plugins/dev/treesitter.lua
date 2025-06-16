@@ -1,6 +1,6 @@
 local opts = {
 	sync_install = true,
-	highlight = { enable = false },
+	highlight = { enable = true },
 	indent = { enable = true },
 	ensure_installed = {
 		--go
@@ -16,6 +16,7 @@ local opts = {
 		"jsonc",
 		--md
 		"markdown_inline",
+		"markdown",
 		--jscript/typescript
 		"javascript",
 		"typescript",

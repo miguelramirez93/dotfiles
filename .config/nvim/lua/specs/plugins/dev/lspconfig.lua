@@ -124,7 +124,7 @@ end
 
 local function extend_def_capabilities(capabilities)
 	local extCapabilities = vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), capabilities)
-	extCapabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+	-- extCapabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 	return extCapabilities
 end
 

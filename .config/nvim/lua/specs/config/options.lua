@@ -3,7 +3,7 @@ local g = vim.g
 
 -- vim.cmd.syntax("off")
 -- netrw
-g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+-- g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 g.netrw_banner = 0
 g.netrw_winsize = 75
 opt.relativenumber = true
