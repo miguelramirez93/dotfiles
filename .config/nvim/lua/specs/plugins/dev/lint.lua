@@ -7,7 +7,8 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 })
 
 local linters = {
-    go = { "golangcilint" },
+	go = { "golangcilint" },
+	clojure = { "clj-kondo" },
 }
 
 return {

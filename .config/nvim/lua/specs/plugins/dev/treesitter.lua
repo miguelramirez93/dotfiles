@@ -25,6 +25,8 @@ local opts = {
 		"python",
 		"ninja",
 		"rst",
+		--clojure
+		"clojure",
 	},
 }
 

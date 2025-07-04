@@ -98,6 +98,9 @@ local servers_list = {
 	{
 		name = "ruff",
 	},
+	{
+		name = "clojure_lsp",
+	},
 }
 
 local merge_on_attach = function(callback)

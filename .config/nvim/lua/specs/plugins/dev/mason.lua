@@ -29,6 +29,10 @@ local opts = {
 		"jinja-lsp",
 		"pylint",
 		"autopep8",
+		-- clojure
+		"clojure-lsp",
+		"cljfmt",
+		"clj-kondo",
 	},
 }
 
