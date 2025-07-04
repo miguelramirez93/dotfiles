@@ -1,12 +1,9 @@
 return {
-	"craftzdog/solarized-osaka.nvim",
+	"ellisonleao/gruvbox.nvim",
 	lazy = false,
 	priority = 1000,
-	opts = {
-        transparent = false,
-    },
+	opts = {},
 	setup = function(opts)
-        require("solarized-osaka").setup(opts)
-		vim.cmd.colorscheme("solarized-osaka")
+		vim.cmd.colorscheme("gruvbox")
 	end,
 }
