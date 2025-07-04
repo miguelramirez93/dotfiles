@@ -5,6 +5,9 @@ return {
 	opts = {
 		provider = "copilot",
 		hints = { enabled = false },
+		behaviour = {
+			enable_token_counting = false,
+		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",
