@@ -59,4 +59,4 @@ vim.o.winborder = "rounded"
 
 -- enable new loader for caching some
 -- internal calls
-vim.loader.enable()
+-- vim.loader.enable()
