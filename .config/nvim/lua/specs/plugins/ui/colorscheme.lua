@@ -1,9 +1,12 @@
 return {
-	"ellisonleao/gruvbox.nvim",
+	"webhooked/kanso.nvim",
 	lazy = false,
 	priority = 1000,
-	opts = {},
+	opts = {
+		transparent = true,
+	},
 	setup = function(opts)
-		vim.cmd.colorscheme("gruvbox")
+		require("kanso").setup(opts)
+		vim.cmd.colorscheme("kanso")
 	end,
 }

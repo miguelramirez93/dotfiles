@@ -54,6 +54,9 @@ opt.spelllang = "en_us,es"
 
 -- statusline
 opt.laststatus = 3
+
+vim.o.winborder = "rounded"
+
 -- enable new loader for caching some
 -- internal calls
 vim.loader.enable()
