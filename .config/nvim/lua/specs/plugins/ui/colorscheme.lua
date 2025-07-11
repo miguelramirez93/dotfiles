@@ -1,12 +1,12 @@
 return {
-	"webhooked/kanso.nvim",
+	"EdenEast/nightfox.nvim",
 	lazy = false,
 	priority = 1000,
 	opts = {
-		transparent = true,
+		transparent = false,
 	},
 	setup = function(opts)
-		require("kanso").setup(opts)
-		vim.cmd.colorscheme("kanso")
+        require("nightfox").setup(opts)
+		vim.cmd.colorscheme("nightfox")
 	end,
 }

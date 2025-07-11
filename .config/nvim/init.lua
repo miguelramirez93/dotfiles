@@ -6,10 +6,18 @@ local _cfg_path = "specs/config"
 
 plg_man.install()
 
-local plugins = module_loader.recursive_load_form_folder(_plgs_path)
+local all_plugins = module_loader.recursive_load_form_folder(_plgs_path)
+
+local enabled_plugins = {}
+
+for _, plg in ipairs(all_plugins) do
+	if not plg.disabled or plg.disabled == false then
+		table.insert(enabled_plugins, plg)
+	end
+end
 
 module_loader.recursive_load_form_folder(_cfg_path)
 
-plg_man.sync(plugins)
+plg_man.sync(enabled_plugins)
 
-plg_man.setup(plugins)
+plg_man.setup(enabled_plugins)

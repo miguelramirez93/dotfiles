@@ -101,6 +101,9 @@ local servers_list = {
 	{
 		name = "clojure_lsp",
 	},
+	{
+		name = "pylsp",
+	},
 }
 
 local merge_on_attach = function(callback)
