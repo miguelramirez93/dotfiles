@@ -10,13 +10,10 @@ function m.recursive_load_form_folder(path)
 			vim.notify("Failed loading " .. req_file, vim.log.levels.ERROR)
 		end
 		if type(plg) == "table" then
-			if not plg.disabled or plg.disabled == false then
-				table.insert(modules_list, plg)
-			end
+			table.insert(modules_list, plg)
 		end
 	end
 	return modules_list
 end
 
 return m
-
