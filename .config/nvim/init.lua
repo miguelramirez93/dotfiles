@@ -21,3 +21,5 @@ module_loader.recursive_load_form_folder(_cfg_path)
 plg_man.sync(enabled_plugins)
 
 plg_man.setup(enabled_plugins)
+
+vim.cmd.colorscheme("habamax")

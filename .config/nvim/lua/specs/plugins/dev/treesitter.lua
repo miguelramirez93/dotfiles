@@ -1,6 +1,6 @@
 local opts = {
 	sync_install = true,
-	highlight = { enable = false },
+	highlight = { enable = true },
 	indent = { enable = true },
 	ensure_installed = {
 		--go

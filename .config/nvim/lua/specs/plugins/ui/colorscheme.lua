@@ -1,12 +1,14 @@
 return {
-	"rebelot/kanagawa.nvim",
+	"stevedylandev/darkmatter-nvim",
 	lazy = false,
 	priority = 1000,
+    disabled = true,
 	opts = {
 		transparent = false,
 	},
+	config = function(_, opts) end,
 	setup = function(opts)
-		require("kanagawa").setup(opts)
-		vim.cmd.colorscheme("kanagawa-dragon")
+		require("darkmatter").setup(opts)
+		vim.cmd.colorscheme("darkmatter")
 	end,
 }
