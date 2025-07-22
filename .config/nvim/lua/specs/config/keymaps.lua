@@ -82,7 +82,7 @@ vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search(
 })
 
 --File explorer
-vim.keymap.set("n", "<leader>b", "<Cmd>Explore<CR>", { silent = true })
+vim.keymap.set("n", "<leader>b", "<Cmd>lua require('internal.explorer.manager').toggle()<CR>", { silent = true })
 
 -- files
 vim.keymap.set("n", "<leader>p", "<Cmd>echo expand('%:.')<CR>", { silent = true })
