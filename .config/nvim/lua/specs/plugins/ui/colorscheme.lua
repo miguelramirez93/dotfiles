@@ -1,5 +1,5 @@
 return {
-	"rebelot/kanagawa.nvim",
+	"vague2k/vague.nvim",
 	lazy = false,
 	priority = 1000,
 	opts = {
@@ -7,7 +7,7 @@ return {
 	},
 	config = function(_, opts) end,
 	setup = function(opts)
-		require("kanagawa").setup(opts)
-		vim.cmd.colorscheme("kanagawa-dragon")
+		require("vague").setup(opts)
+		vim.cmd.colorscheme("vague")
 	end,
 }

@@ -2,11 +2,12 @@ return {
 	"nvim-telescope/telescope.nvim",
 	cmd = "Telescope",
 	version = false, -- telescope did only one release, so use HEAD for now
+	disabled = false,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
-			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
+			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && cmake --build build --config Release",
 			enabled = vim.fn.executable("make") == 1,
 			config = function()
 				require("telescope").load_extension("fzf")
@@ -66,7 +67,7 @@ return {
 			},
 		}
 
-		local extended_opts = vim.tbl_extend("force", opts or {} , l_opts)
+		local extended_opts = vim.tbl_extend("force", opts or {}, l_opts)
 
 		require("telescope").setup(extended_opts)
 	end,
