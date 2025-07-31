@@ -37,12 +37,25 @@ markup=none
 
 [volume]
 #label=♪
-command=$SCRIPT_DIR/volume/volume
+# command=$SCRIPT_DIR/volume/volume
 label=VOL
 interval=once
 signal=10
 #STEP=5%
 
+[volume-pipewire]
+command=$SCRIPT_DIR/volume-pipewire/volume-pipewire
+interval=once
+signal=1
+# SHORT_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
+
+[bandwidth]
+command=$SCRIPT_DIR/bandwidth/bandwidth
+interval=5
+#INTERFACE=eth0
+#INLABEL=IN 
+#OUTLABEL=OUT 
+#TREAT_UNKNOWN_AS_UP=0
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
@@ -87,7 +100,7 @@ interval=10
 separator=false
 
 [bandwidth]
-#INTERFACE=eth0
+#INTERFACE=wlp6s0
 interval=5
 
 # CPU usage
@@ -142,7 +155,7 @@ interval=5
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [temperature]
-# command=$SCRIPT_DIR/temperature/temperature
+# command=$SCRIPT_DIR/temperature/temperature/temperature
 label=TEMP
 interval=10
 
