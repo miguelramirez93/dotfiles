@@ -1,5 +1,5 @@
 return {
-	"vague2k/vague.nvim",
+	"savq/melange-nvim",
 	lazy = false,
 	priority = 1000,
 	opts = {
@@ -7,7 +7,7 @@ return {
 	},
 	config = function(_, opts) end,
 	setup = function(opts)
-		require("vague").setup(opts)
-		vim.cmd.colorscheme("vague")
+		-- require("melange").setup(opts)
+		vim.cmd.colorscheme("melange")
 	end,
 }

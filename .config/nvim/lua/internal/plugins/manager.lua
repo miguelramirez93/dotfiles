@@ -12,7 +12,7 @@ end
 
 function m.setup(plugins_list)
 	for _, plg in pairs(plugins_list) do
-		if (not plg.disabled or plg.disabled == false) and plg.setup then
+		if plg.setup then
 			plg.setup(plg.opts or {})
 		end
 	end

@@ -129,9 +129,7 @@ local merge_on_attach = function(callback)
 end
 
 local function extend_def_capabilities(capabilities)
-	local extCapabilities = vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), capabilities)
-	-- extCapabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
-	return extCapabilities
+	return vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), capabilities)
 end
 
 return {
@@ -150,11 +148,6 @@ return {
 			local extCapabilities = extend_def_capabilities({})
 			local extended_cfg = vim.tbl_extend("keep", cfg, {
 				capabilities = extCapabilities,
-				-- on_init = function(client)
-				-- 	client.config.flags = {
-				-- 		allow_incremental_sync = true,
-				-- 	}
-				-- end,
 			})
 			vim.lsp.config[sl.name] = extended_cfg
 			vim.lsp.enable(sl.name)
