@@ -1,13 +1,15 @@
 return {
-	"savq/melange-nvim",
+	"briones-gabriel/darcula-solid.nvim",
 	lazy = false,
 	priority = 1000,
+	dependencies = {
+		"rktjmp/lush.nvim",
+	},
 	opts = {
 		transparent = false,
 	},
 	config = function(_, opts) end,
-	setup = function(opts)
-		-- require("melange").setup(opts)
-		vim.cmd.colorscheme("melange")
+	setup = function(_)
+		vim.cmd.colorscheme("darcula-solid")
 	end,
 }
