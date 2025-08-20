@@ -1,15 +1,15 @@
 return {
-	"briones-gabriel/darcula-solid.nvim",
+	"Mofiqul/vscode.nvim",
 	lazy = false,
 	priority = 1000,
-	dependencies = {
-		"rktjmp/lush.nvim",
-	},
+	-- dependencies = {
+	-- 	"rktjmp/lush.nvim",
+	-- },
 	opts = {
 		transparent = false,
 	},
 	config = function(_, opts) end,
 	setup = function(_)
-		vim.cmd.colorscheme("darcula-solid")
+		vim.cmd.colorscheme("vscode")
 	end,
 }
