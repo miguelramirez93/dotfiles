@@ -104,6 +104,9 @@ local servers_list = {
 	{
 		name = "pylsp",
 	},
+	{
+		name = "dartls",
+	},
 }
 
 local merge_on_attach = function(callback)

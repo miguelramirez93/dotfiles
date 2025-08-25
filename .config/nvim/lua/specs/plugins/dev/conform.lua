@@ -4,6 +4,7 @@ local formaters = {
 	typescript = { { "prettierd", "prettier" } },
 	python = { "autopep8", "ruff_organize_imports" },
 	clojure = { "cljfmt", "cljstyle" },
+	dart = { "dart_format" },
 }
 
 local function format_on_save_wrapper(bufnr)

@@ -1,5 +1,5 @@
 return {
-	"Mofiqul/vscode.nvim",
+	"davidosomething/vim-colors-meh",
 	lazy = false,
 	priority = 1000,
 	-- dependencies = {
@@ -10,6 +10,6 @@ return {
 	},
 	config = function(_, opts) end,
 	setup = function(_)
-		vim.cmd.colorscheme("vscode")
+		vim.cmd.colorscheme("meh")
 	end,
 }

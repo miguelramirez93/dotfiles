@@ -27,6 +27,8 @@ local opts = {
 		"rst",
 		--clojure
 		"clojure",
+		--dart
+		"dart",
 	},
 }
 

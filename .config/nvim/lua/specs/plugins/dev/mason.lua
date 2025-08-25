@@ -33,6 +33,8 @@ local opts = {
 		"clojure-lsp",
 		"cljfmt",
 		"clj-kondo",
+		--dart
+		"dcm",
 	},
 }
 
