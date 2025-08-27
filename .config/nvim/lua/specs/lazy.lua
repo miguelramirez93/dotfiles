@@ -35,3 +35,4 @@ function lazy.sync(plugins_list)
 end
 
 return lazy
+
