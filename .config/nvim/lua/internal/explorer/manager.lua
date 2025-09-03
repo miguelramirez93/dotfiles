@@ -1,7 +1,7 @@
 local m = {}
 
 function m.toggle()
-	vim.cmd("Oil")
+	vim.cmd("Explore")
 end
 
 return m

@@ -1,5 +1,5 @@
 return {
-	"kvrohit/rasmus.nvim",
+	"xiantang/darcula-dark.nvim",
 	lazy = false,
 	priority = 1000,
 	-- dependencies = {
@@ -10,6 +10,6 @@ return {
 	},
 	config = function(_, opts) end,
 	setup = function(_)
-		vim.cmd.colorscheme("rasmus")
+		vim.cmd.colorscheme("darcula-dark")
 	end,
 }
