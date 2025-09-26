@@ -1,4 +1,6 @@
-local m = {}
+local m = {
+	disabled = false,
+}
 
 function m.get_file_path()
 	local raw_file_path = vim.fn.expand("%:.")

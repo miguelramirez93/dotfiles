@@ -35,33 +35,40 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- custom winbar
--- TODO: create a plugin for this
-vim.api.nvim_create_autocmd({ "UIEnter", "BufEnter" }, {
-	callback = function()
-		-- only reload winbar when entering in a "normal" window
-		-- ignore other ones like float type
-		if vim.fn.win_gettype() == "" then
-			vim.wo.winbar = winbar.build_static()
-		end
-	end,
-})
+if not winbar.disabled then
+	-- custom winbar
+	-- TODO: create a plugin for this
+	vim.api.nvim_create_autocmd({ "UIEnter", "BufEnter" }, {
+		callback = function()
+			-- only reload winbar when entering in a "normal" window
+			-- ignore other ones like float type
+			if vim.fn.win_gettype() == "" then
+				vim.wo.winbar = winbar.build_static()
+			end
+		end,
+	})
+end
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = "netrw",
 	callback = function()
 		-- only reload winbar when entering in a "normal" window
 		-- ignore other ones like float type
-		if vim.fn.win_gettype() == "" then
+		if not winbar.disabled and vim.fn.win_gettype() == "" then
 			vim.wo.winbar = winbar.build_static()
 		end
 
-		vim.wo.statusline = statusline.build()
+		if not statusline.disabled then
+			vim.wo.statusline = statusline.build()
+		end
 	end,
 })
--- custom statusline
-vim.api.nvim_create_autocmd({ "UIEnter", "ModeChanged", "BufEnter" }, {
-	callback = function()
-		vim.wo.statusline = statusline.build()
-	end,
-})
+
+if not statusline.disabled then
+	-- custom statusline
+	vim.api.nvim_create_autocmd({ "UIEnter", "ModeChanged", "BufEnter" }, {
+		callback = function()
+			vim.wo.statusline = statusline.build()
+		end,
+	})
+end
