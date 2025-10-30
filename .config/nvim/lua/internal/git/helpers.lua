@@ -9,4 +9,11 @@ function m.git_branch()
 	end
 end
 
+vim.keymap.set(
+	"n",
+	"<leader>gb",
+	"<Cmd>lua vim.notify('   ' .. require('internal.git.helpers').git_branch())<CR>",
+	{ silent = true }
+)
+
 return m

@@ -79,4 +79,10 @@ function m.build()
 	return table.concat(parts, "")
 end
 
-return m
+if not m.disabled then
+	vim.api.nvim_create_autocmd({ "UIEnter", "ModeChanged", "BufEnter" }, {
+		callback = function()
+			vim.wo.statusline = m.build()
+		end,
+	})
+end

@@ -30,4 +30,17 @@ function m.build_static()
 	return table.concat(parts, "")
 end
 
+if not m.disabled then
+	vim.api.nvim_create_autocmd({ "UIEnter", "BufEnter" }, {
+		callback = function()
+			-- only reload winbar when entering in a "normal" window
+			-- ignore other ones like float type
+			if vim.fn.win_gettype() == "" then
+				vim.wo.winbar = m.build_static()
+			end
+		end,
+	})
+end
+
+-- must be returned because there is no way to reload paths without luaeval this module
 return m
