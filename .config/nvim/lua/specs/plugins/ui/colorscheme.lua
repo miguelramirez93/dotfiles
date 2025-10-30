@@ -1,15 +1,16 @@
 return {
-	"catppuccin/nvim",
+	"Mofiqul/vscode.nvim",
 	lazy = false,
 	priority = 1000,
 	-- dependencies = {
 	-- 	"rktjmp/lush.nvim",
 	-- },
 	opts = {
-		transparent = false,
+		transparent = true,
 	},
 	config = function(_, opts) end,
-	setup = function(_)
-		vim.cmd.colorscheme("catppuccin-frappe")
+	setup = function(opts)
+		require("vscode").setup(opts)
+		vim.cmd.colorscheme("vscode")
 	end,
 }

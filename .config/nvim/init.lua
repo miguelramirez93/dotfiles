@@ -6,7 +6,7 @@ local _cfg_path = "specs/config"
 
 plg_man.install()
 
-local all_plugins = module_loader.recursive_load_form_folder(_plgs_path)
+local all_plugins = module_loader.load_folder(_plgs_path)
 
 local enabled_plugins = {}
 
@@ -16,7 +16,7 @@ for _, plg in ipairs(all_plugins) do
 	end
 end
 
-module_loader.recursive_load_form_folder(_cfg_path)
+module_loader.load_folder(_cfg_path)
 
 plg_man.sync(enabled_plugins)
 

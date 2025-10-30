@@ -64,6 +64,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
+-- TODO: Make this configuration explicit.
 if not statusline.disabled then
 	-- custom statusline
 	vim.api.nvim_create_autocmd({ "UIEnter", "ModeChanged", "BufEnter" }, {

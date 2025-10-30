@@ -1,5 +1,5 @@
 local m = {
-	disabled = false,
+	disabled = true,
 }
 
 function m.get_file_path()

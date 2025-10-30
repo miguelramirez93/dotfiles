@@ -14,7 +14,7 @@ local navic_cfg = {
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	disabled = false,
+	disabled = true,
 	opts = {
 		sections = {
 			lualine_a = { "mode" },

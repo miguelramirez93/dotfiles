@@ -70,5 +70,17 @@ return {
 		local extended_opts = vim.tbl_extend("force", opts or {}, l_opts)
 
 		require("telescope").setup(extended_opts)
+
+		vim.keymap.set(
+			"n",
+			"<leader>,",
+			"<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
+			{ silent = true }
+		)
+		vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { silent = true })
+		vim.keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { silent = true })
+		vim.keymap.set("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { silent = true })
+		vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { silent = true })
+		vim.keymap.set("n", "<leader>ss", "<cmd>Telescope lsp_document_symbols<cr>", { silent = true })
 	end,
 }

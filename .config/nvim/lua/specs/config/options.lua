@@ -23,10 +23,10 @@ opt.sidescrolloff = 10
 opt.updatetime = 250
 
 -- Horizontal scrolling settings for long lines
-opt.wrap = false          -- Disable line wrapping
-opt.sidescroll = 1        -- Smooth horizontal scrolling (1 character at a time)
-opt.sidescrolloff = 10    -- Keep cursor away from horizontal edges
-opt.listchars:append("extends:→,precedes:←")  -- Show indicators for long lines
+opt.wrap = false -- Disable line wrapping
+opt.sidescroll = 1 -- Smooth horizontal scrolling (1 character at a time)
+opt.sidescrolloff = 10 -- Keep cursor away from horizontal edges
+opt.listchars:append("extends:→,precedes:←") -- Show indicators for long lines
 opt.signcolumn = "yes"
 opt.clipboard = "unnamedplus"
 -- vim.schedule(function()
@@ -65,4 +65,4 @@ vim.o.winborder = "rounded"
 
 -- enable new loader for caching some
 -- internal calls
--- vim.loader.enable()
+vim.loader.enable()

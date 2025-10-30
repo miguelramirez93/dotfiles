@@ -5,4 +5,7 @@ return {
 	opts = {
 		use_diagnostic_signs = true,
 	},
+	setup = function(opts)
+		vim.keymap.set("n", "<leader>d", "<cmd>Trouble diagnostics toggle<cr>", { silent = true })
+	end,
 }

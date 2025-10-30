@@ -1,6 +1,7 @@
 return {
 	"SmiteshP/nvim-navic",
 	event = "BufReadPre",
+	disabled = true,
 	dependencies = { "neovim/nvim-lspconfig" },
 	config = function()
 		require("nvim-navic").setup({

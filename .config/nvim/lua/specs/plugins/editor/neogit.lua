@@ -9,4 +9,7 @@ return {
 		"ibhagwan/fzf-lua", -- optional
 	},
 	config = true,
+	setup = function(_)
+		vim.keymap.set("n", "<leader>gs", vim.cmd.Neogit)
+	end,
 }
