@@ -1,5 +1,5 @@
 return {
-	"Mofiqul/vscode.nvim",
+	"chriskempson/base16-vim",
 	lazy = false,
 	priority = 1000,
 	-- dependencies = {
@@ -10,7 +10,9 @@ return {
 	},
 	config = function(_, opts) end,
 	setup = function(opts)
-		require("vscode").setup(opts)
-		vim.cmd.colorscheme("vscode")
+		vim.cmd.colorscheme("base16-default-dark")
+		if opts.transparent then
+			vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+		end
 	end,
 }

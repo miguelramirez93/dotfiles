@@ -41,17 +41,18 @@ return {
 		})
 
 		-- change the highlight style
-		vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
-		vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
-		vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
+		local link_style = "CurSearch"
+		vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = link_style })
+		vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = link_style })
+		vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = link_style })
 
 		--- auto update the highlight style on colorscheme change
 		vim.api.nvim_create_autocmd({ "ColorScheme" }, {
 			pattern = { "*" },
 			callback = function(ev)
-				vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
-				vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
-				vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
+				vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = link_style })
+				vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = link_style })
+				vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = link_style })
 			end,
 		})
 	end,

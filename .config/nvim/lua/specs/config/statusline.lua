@@ -1,5 +1,5 @@
 local m = {
-	disabled = false,
+	disabled = true,
 	set_color_1 = "%#StatusLineNC#",
 	set_color_2 = "%#StatusLine#",
 	file_name = "",
