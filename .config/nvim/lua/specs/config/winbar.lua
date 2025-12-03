@@ -1,5 +1,5 @@
 local m = {
-	disabled = true,
+	disabled = false,
 }
 
 function m.get_file_path()
@@ -14,9 +14,9 @@ function m.get_file_path()
 end
 
 function m.get_buffer_status()
-	if vim.bo.modified then
-		return "[]"
-	end
+	-- if vim.bo.modified then
+	-- 	return "[]"
+	-- end
 	return ""
 end
 
@@ -25,7 +25,7 @@ function m.build_static()
 		"%#Normal#",
 		m.get_file_path(),
 		[[%<%{luaeval("require'specs.config.winbar'.get_buffer_status()")} ]],
-		-- "%*",
+		"%*",
 	}
 	return table.concat(parts, "")
 end

@@ -7,7 +7,7 @@ return {
 		"nvim-tree/nvim-web-devicons", -- optional, but recommended
 	},
 	lazy = false, -- neo-tree will lazily load itself
-	disabled = false,
+	disabled = true,
 	setup = function(_)
 		require("neo-tree").setup({
 			-- options go here

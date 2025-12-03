@@ -35,17 +35,17 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- vim.api.nvim_create_autocmd({ "FileType" }, {
--- 	pattern = "netrw",
--- 	callback = function()
--- 		-- only reload winbar when entering in a "normal" window
--- 		-- ignore other ones like float type
--- 		if not winbar.disabled and vim.fn.win_gettype() == "" then
--- 			vim.wo.winbar = winbar.build_static()
--- 		end
---
--- 		if not statusline.disabled then
--- 			vim.wo.statusline = statusline.build()
--- 		end
--- 	end,
--- })
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = "netrw",
+	callback = function()
+		-- only reload winbar when entering in a "normal" window
+		-- ignore other ones like float type
+		if not winbar.disabled and vim.fn.win_gettype() == "" then
+			vim.wo.winbar = winbar.build_static()
+		end
+
+		if not statusline.disabled then
+			vim.wo.statusline = statusline.build()
+		end
+	end,
+})

@@ -9,7 +9,7 @@ vim.keymap.set("n", "<space>nv", ":vsplit /Users/joser/Dev/tech_notes/ <CR>", { 
 vim.keymap.set("n", "<space>n", ":e /Users/joser/Dev/tech_notes/ <CR>", { silent = true })
 
 --File explorer
-vim.keymap.set("n", "<leader>b", "<Cmd>Explore<CR>", { silent = true })
+vim.keymap.set("n", "<leader>b", ':Explore <bar> :sil! /<C-R>=expand("%:t")<CR><CR>', { silent = true })
 
 -- files - buffers
 vim.keymap.set("n", "<leader>p", "<Cmd>echo expand('%:.')<CR>", { silent = true })

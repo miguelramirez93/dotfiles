@@ -7,6 +7,7 @@ local g = vim.g
 g.netrw_banner = 0
 g.netrw_winsize = 75
 opt.relativenumber = true
+g.netrw_liststyle = 3
 opt.number = true
 opt.timeoutlen = 300
 opt.tabstop = 4
