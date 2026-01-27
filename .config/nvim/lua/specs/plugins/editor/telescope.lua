@@ -82,5 +82,6 @@ return {
 		vim.keymap.set("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { silent = true })
 		vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { silent = true })
 		vim.keymap.set("n", "<leader>ss", "<cmd>Telescope lsp_document_symbols<cr>", { silent = true })
+		vim.keymap.set("n", "<leader>tt", "<cmd>Telescope telescope-tabs list_tabs<cr>", { silent = true })
 	end,
 }

@@ -6,7 +6,7 @@ local g = vim.g
 -- g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 g.netrw_banner = 0
 g.netrw_winsize = 75
-opt.relativenumber = true
+opt.relativenumber = false
 g.netrw_liststyle = 3
 opt.number = true
 opt.timeoutlen = 300
@@ -66,4 +66,4 @@ vim.o.winborder = "rounded"
 
 -- enable new loader for caching some
 -- internal calls
-vim.loader.enable()
+-- vim.loader.enable()
