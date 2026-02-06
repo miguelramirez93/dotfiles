@@ -57,6 +57,12 @@ return {
 				-- Buffer local mappings.
 				-- See `:help vim.lsp.*` for documentation on any of the below functions
 				local opts = { buffer = ev.buf }
+				vim.api.nvim_set_keymap(
+					"n",
+					"gdt",
+					"<cmd>tab split | lua vim.lsp.buf.definition()<CR>",
+					{ noremap = true, silent = true, desc = "Go to definition in a new tab" }
+				)
 				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)

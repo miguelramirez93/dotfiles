@@ -6,7 +6,7 @@ return {
 	-- 	"rktjmp/lush.nvim",
 	-- },
 	opts = {
-		transparent = false,
+		transparent = true,
 	},
 	config = function(_, opts) end,
 	setup = function(opts)
