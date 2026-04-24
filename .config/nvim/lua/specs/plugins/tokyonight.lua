@@ -1,0 +1,14 @@
+return {
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {
+    on_highlights = function(hl, c)
+      hl.WinSeparator = { fg = c.fg_dark }
+    end,
+  },
+  config = function(_, opts)
+    require("tokyonight").setup(opts)
+    vim.cmd.colorscheme("tokyonight")
+  end,
+}
