@@ -1,8 +1,37 @@
 vim.o.laststatus = 3
 
 local git = require("core.git.watcher")
+local lsp = require("core.lsp.loader")
 git.watch_branch()
 git.watch_changes()
+
+local spinner_frames = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+local spinner_idx = 1
+local spinner_timer = nil
+
+local function start_spinner()
+  if spinner_timer then return end
+  spinner_timer = vim.uv.new_timer()
+  spinner_timer:start(0, 80, vim.schedule_wrap(function()
+    spinner_idx = (spinner_idx % #spinner_frames) + 1
+    vim.cmd("redrawstatus")
+
+    local has_loading = false
+    for _, state in pairs(lsp.status()) do
+      if state == "enabled" then has_loading = true break end
+    end
+    if not has_loading and spinner_timer then
+      spinner_timer:stop()
+      spinner_timer:close()
+      spinner_timer = nil
+    end
+  end))
+end
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LspLoading",
+  callback = start_spinner,
+})
 
 function _G.custom_statusline()
   local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":~:h")
@@ -31,8 +60,28 @@ function _G.custom_statusline()
     left = left .. "  " .. table.concat(parts, " ")
   end
 
+  local lsp_section = ""
+  local status = lsp.status()
+  local attached = {}
+  local loading = {}
+  for name, state in pairs(status) do
+    if state == "attached" then
+      table.insert(attached, name)
+    elseif state == "enabled" then
+      table.insert(loading, name)
+    end
+  end
+
+  local lsp_icon = vim.fn.nr2char(0xf085)
+  if #loading > 0 then
+    lsp_section = spinner_frames[spinner_idx] .. " " .. table.concat(loading, ", ") .. "  "
+  end
+  if #attached > 0 then
+    lsp_section = lsp_icon .. " " .. table.concat(attached, ", ") .. "  "
+  end
+
   local progress_icon = vim.fn.nr2char(0xf0d8)
-  local right = progress_icon .. " %p%% "
+  local right = lsp_section .. progress_icon .. " %p%% "
 
   return left .. "%=" .. right
 end

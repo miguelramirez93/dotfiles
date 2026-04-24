@@ -1,7 +1,28 @@
 local M = {}
 
-local loaded = {}
 local servers_dir = nil
+local server_states = {}
+-- States: "registered" -> "enabled" -> "attached"
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client then
+      server_states[client.name] = "attached"
+      vim.schedule(function() vim.cmd("redrawstatus") end)
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("LspDetach", {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client and server_states[client.name] then
+      server_states[client.name] = "enabled"
+      vim.schedule(function() vim.cmd("redrawstatus") end)
+    end
+  end,
+})
 
 local function scan_names()
   local path = vim.fn.stdpath("config") .. "/lua/" .. servers_dir:gsub("%.", "/")
@@ -28,6 +49,7 @@ function M.load(dir)
     local ok, config = pcall(require, servers_dir .. "." .. name)
     if ok and config then
       vim.lsp.config(name, config)
+      server_states[name] = "registered"
 
       local filetypes = config.filetypes or {}
       if #filetypes > 0 then
@@ -35,9 +57,12 @@ function M.load(dir)
           pattern = filetypes,
           once = true,
           callback = function()
-            if not loaded[name] then
-              loaded[name] = true
+            if server_states[name] ~= "enabled" and server_states[name] ~= "attached" then
+              server_states[name] = "enabled"
               vim.lsp.enable(name)
+              vim.schedule(function()
+                vim.api.nvim_exec_autocmds("User", { pattern = "LspLoading" })
+              end)
             end
           end,
         })
@@ -50,6 +75,24 @@ end
 --- @return string[]
 function M.list()
   return scan_names()
+end
+
+--- Return a table of server_name -> state.
+--- @return table<string, string>
+function M.status()
+  return server_states
+end
+
+--- Return names of currently attached servers.
+--- @return string[]
+function M.attached()
+  local result = {}
+  for name, state in pairs(server_states) do
+    if state == "attached" then
+      table.insert(result, name)
+    end
+  end
+  return result
 end
 
 return M
