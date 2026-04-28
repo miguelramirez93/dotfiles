@@ -10,22 +10,31 @@ local spinner_idx = 1
 local spinner_timer = nil
 
 local function start_spinner()
-  if spinner_timer then return end
+  if spinner_timer then
+    return
+  end
   spinner_timer = vim.uv.new_timer()
-  spinner_timer:start(0, 80, vim.schedule_wrap(function()
-    spinner_idx = (spinner_idx % #spinner_frames) + 1
-    vim.cmd("redrawstatus")
+  spinner_timer:start(
+    0,
+    80,
+    vim.schedule_wrap(function()
+      spinner_idx = (spinner_idx % #spinner_frames) + 1
+      vim.cmd("redrawstatus")
 
-    local has_loading = false
-    for _, state in pairs(lsp.status()) do
-      if state == "enabled" then has_loading = true break end
-    end
-    if not has_loading and spinner_timer then
-      spinner_timer:stop()
-      spinner_timer:close()
-      spinner_timer = nil
-    end
-  end))
+      local has_loading = false
+      for _, state in pairs(lsp.status()) do
+        if state == "enabled" then
+          has_loading = true
+          break
+        end
+      end
+      if not has_loading and spinner_timer then
+        spinner_timer:stop()
+        spinner_timer:close()
+        spinner_timer = nil
+      end
+    end)
+  )
 end
 
 vim.api.nvim_create_autocmd("User", {
@@ -54,9 +63,15 @@ function _G.custom_statusline()
     local icon_added = vim.fn.nr2char(0xf055)
     local icon_modified = vim.fn.nr2char(0xf040)
     local icon_deleted = vim.fn.nr2char(0xf056)
-    if c.added > 0 then table.insert(parts, icon_added .. " " .. c.added) end
-    if c.modified > 0 then table.insert(parts, icon_modified .. " " .. c.modified) end
-    if c.deleted > 0 then table.insert(parts, icon_deleted .. " " .. c.deleted) end
+    if c.added > 0 then
+      table.insert(parts, icon_added .. " " .. c.added)
+    end
+    if c.modified > 0 then
+      table.insert(parts, icon_modified .. " " .. c.modified)
+    end
+    if c.deleted > 0 then
+      table.insert(parts, icon_deleted .. " " .. c.deleted)
+    end
     left = left .. "  " .. table.concat(parts, " ")
   end
 

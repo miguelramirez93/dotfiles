@@ -19,6 +19,12 @@ return {
     },
   },
   keys = {
-    { "<leader>e", function() Snacks.explorer({ focus_file = vim.api.nvim_buf_get_name(0) }) end, desc = "File Explorer" },
+    {
+      "<leader>e",
+      function()
+        Snacks.explorer({ focus_file = vim.api.nvim_buf_get_name(0) })
+      end,
+      desc = "File Explorer",
+    },
   },
 }

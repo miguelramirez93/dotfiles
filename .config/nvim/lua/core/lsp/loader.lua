@@ -9,7 +9,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
     if client then
       server_states[client.name] = "attached"
-      vim.schedule(function() vim.cmd("redrawstatus") end)
+      vim.schedule(function()
+        vim.cmd("redrawstatus")
+      end)
     end
   end,
 })
@@ -19,7 +21,9 @@ vim.api.nvim_create_autocmd("LspDetach", {
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
     if client and server_states[client.name] then
       server_states[client.name] = "enabled"
-      vim.schedule(function() vim.cmd("redrawstatus") end)
+      vim.schedule(function()
+        vim.cmd("redrawstatus")
+      end)
     end
   end,
 })

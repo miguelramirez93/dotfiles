@@ -2,7 +2,13 @@ return {
   "stevearc/conform.nvim",
   event = "BufWritePre",
   keys = {
-    { "<leader>cf", function() require("conform").format({ async = true }) end, desc = "Format buffer" },
+    {
+      "<leader>cf",
+      function()
+        require("conform").format({ async = true })
+      end,
+      desc = "Format buffer",
+    },
   },
   opts = {
     format_on_save = {

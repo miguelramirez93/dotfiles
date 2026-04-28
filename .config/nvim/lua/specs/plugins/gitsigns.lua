@@ -3,6 +3,12 @@ return {
   event = "BufReadPre",
   opts = {},
   keys = {
-    { "<leader>gd", function() require("gitsigns").preview_hunk() end, desc = "Preview git hunk" },
+    {
+      "<leader>gd",
+      function()
+        require("gitsigns").preview_hunk()
+      end,
+      desc = "Preview git hunk",
+    },
   },
 }

@@ -51,11 +51,15 @@ local function watch_git_head()
 
   local head_file = git_dir .. "/HEAD"
   fs_branch_watcher = vim.uv.new_fs_event()
-  fs_branch_watcher:start(head_file, {}, vim.schedule_wrap(function()
-    read_branch()
-    vim.cmd("redrawstatus")
-    watch_git_head()
-  end))
+  fs_branch_watcher:start(
+    head_file,
+    {},
+    vim.schedule_wrap(function()
+      read_branch()
+      vim.cmd("redrawstatus")
+      watch_git_head()
+    end)
+  )
 end
 
 -- Changes
@@ -92,11 +96,15 @@ local function watch_git_index()
 
   local index_file = git_dir .. "/index"
   fs_index_watcher = vim.uv.new_fs_event()
-  fs_index_watcher:start(index_file, {}, vim.schedule_wrap(function()
-    read_changes()
-    vim.cmd("redrawstatus")
-    watch_git_index()
-  end))
+  fs_index_watcher:start(
+    index_file,
+    {},
+    vim.schedule_wrap(function()
+      read_changes()
+      vim.cmd("redrawstatus")
+      watch_git_index()
+    end)
+  )
 end
 
 -- Public API
