@@ -23,7 +23,7 @@ local function start_spinner()
 
       local has_loading = false
       for _, state in pairs(lsp.status()) do
-        if state == "enabled" then
+        if state == lsp.STATE.ENABLED then
           has_loading = true
           break
         end
@@ -40,6 +40,14 @@ end
 vim.api.nvim_create_autocmd("User", {
   pattern = "LspLoading",
   callback = start_spinner,
+})
+
+vim.api.nvim_create_autocmd({ "LspAttach", "LspDetach" }, {
+  callback = function()
+    vim.schedule(function()
+      vim.cmd("redrawstatus")
+    end)
+  end,
 })
 
 function _G.custom_statusline()
@@ -80,19 +88,19 @@ function _G.custom_statusline()
   local attached = {}
   local loading = {}
   for name, state in pairs(status) do
-    if state == "attached" then
+    if state == lsp.STATE.ATTACHED then
       table.insert(attached, name)
-    elseif state == "enabled" then
+    elseif state == lsp.STATE.ENABLED then
       table.insert(loading, name)
     end
   end
 
   local lsp_icon = vim.fn.nr2char(0xf085)
-  if #loading > 0 then
-    lsp_section = spinner_frames[spinner_idx] .. " " .. table.concat(loading, ", ") .. "  "
-  end
   if #attached > 0 then
     lsp_section = lsp_icon .. " " .. table.concat(attached, ", ") .. "  "
+  end
+  if #loading > 0 then
+    lsp_section = lsp_section .. spinner_frames[spinner_idx] .. " " .. table.concat(loading, ", ") .. "  "
   end
 
   local progress_icon = vim.fn.nr2char(0xf0d8)
