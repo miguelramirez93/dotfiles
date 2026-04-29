@@ -6,6 +6,15 @@ return {
   keys = {
     { "<leader>cc", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
     { "<leader>cf", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
+    {
+      "<leader>ct",
+      function()
+        vim.cmd("tabnew")
+        vim.cmd("ClaudeCodeFocus")
+        vim.cmd("only")
+      end,
+      desc = "Claude in new tab",
+    },
     { "<leader>cr", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
     { "<leader>cC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
     { "<leader>cs", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send selection" },
