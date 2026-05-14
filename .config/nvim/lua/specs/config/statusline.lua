@@ -51,19 +51,22 @@ vim.api.nvim_create_autocmd({ "LspAttach", "LspDetach" }, {
 })
 
 function _G.custom_statusline()
+  local left = ""
+
+  local branch = git.branch()
+  if branch ~= "" then
+    local branch_icon = vim.fn.nr2char(0xe725)
+    left = " " .. branch_icon .. " " .. branch
+  end
+
   local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":~:h")
   if path == "" or path == "." then
     path = vim.fn.fnamemodify(vim.fn.getcwd(), ":~")
   end
 
   local folder_icon = vim.fn.nr2char(0xf07c)
-  local left = " " .. folder_icon .. " " .. path
-
-  local branch = git.branch()
-  if branch ~= "" then
-    local branch_icon = vim.fn.nr2char(0xe725)
-    left = left .. "  " .. branch_icon .. " " .. branch
-  end
+  local separator = left == "" and " " or "  "
+  left = left .. separator .. folder_icon .. " " .. path
 
   local c = git.changes()
   if c.added > 0 or c.modified > 0 or c.deleted > 0 then
