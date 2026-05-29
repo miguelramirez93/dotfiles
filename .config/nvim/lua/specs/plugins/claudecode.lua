@@ -2,7 +2,11 @@ return {
   "coder/claudecode.nvim",
   dependencies = { "folke/snacks.nvim" },
   lazy = false,
-  config = true,
+  opts = {
+    terminal = {
+      split_width_percentage = 0.5,
+    },
+  },
   keys = {
     { "<leader>cc", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
     { "<leader>cf", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
