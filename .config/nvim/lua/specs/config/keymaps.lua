@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 -- tabs
 vim.keymap.set("n", "<C-t>", "<cmd>tabnew<cr>", { silent = true })
 vim.keymap.set("n", "<SC-Right>", "<cmd>tabnext<cr>", { silent = true })

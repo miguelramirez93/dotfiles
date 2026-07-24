@@ -1,8 +1,10 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+config_loader = require("config.controllers.loader")
 
-require("core.config.loader").load("specs.config")
-require("core.lsp.loader").load("specs.servers")
+lazy_plg_cli = require("platform.clients.lazy")
 
-local plugin_manager = "lazy"
-require("core.plg_manager.loader").load(plugin_manager, "specs.plugins")
+config_loader.plg_cli = lazy_plg_cli
+
+local cfg_modules_dir_path = "specs.config"
+local plgs_dir_path = "specs.plugins"
+
+config_loader.load(plgs_dir_path, cfg_modules_dir_path)
