@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 config_loader = require("config.controllers.loader")
 
 lazy_plg_cli = require("platform.clients.lazy")
