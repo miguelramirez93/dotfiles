@@ -3,6 +3,14 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
 		sections = {
+			lualine_x = {
+				function()
+					return vim.lsp.status()
+				end,
+				"encoding",
+				"fileformat",
+				"filetype",
+			},
 			lualine_c = {
 				function()
 					if vim.fn.expand("%") == "" then

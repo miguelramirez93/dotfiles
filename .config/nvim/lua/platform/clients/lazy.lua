@@ -22,7 +22,11 @@ function M.get_lazy()
 end
 
 --- @param plugins_dir string
-function M.setup(plugins_dir)
+--- @param opts { lsp_enabled: boolean }?
+function M.setup(plugins_dir, opts)
+	opts = opts or {}
+	vim.g.lsp_enabled = opts.lsp_enabled ~= false
+
 	M.get_lazy()
 	require("lazy").setup({
 		spec = {

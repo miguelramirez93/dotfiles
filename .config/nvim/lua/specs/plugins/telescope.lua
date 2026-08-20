@@ -31,6 +31,14 @@ return {
 			desc = "Document Symbols",
 		},
 		{
+			"gr",
+			function()
+				require("telescope.builtin").lsp_references()
+			end,
+			mode = "n",
+			desc = "LSP References",
+		},
+		{
 			"<leader>fg",
 			function()
 				require("telescope.builtin").grep_string()
