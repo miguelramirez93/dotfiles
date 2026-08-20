@@ -1,12 +1,23 @@
-local ensure_installed = {
+-- Parsers not tied to a specific language config (editing this very nvim
+-- config, plus docs/markdown), merged with the per-language `treesitter`
+-- parser lists from specs.langs.
+local base_parsers = {
 	"lua",
 	"vim",
 	"vimdoc",
 	"query",
 	"markdown",
 	"markdown_inline",
-	"clojure",
 }
+
+local seen = {}
+local ensure_installed = {}
+for _, parser in ipairs(vim.list_extend(vim.deepcopy(base_parsers), require("specs.langs").treesitter_parsers())) do
+	if not seen[parser] then
+		seen[parser] = true
+		table.insert(ensure_installed, parser)
+	end
+end
 
 return {
 	"nvim-treesitter/nvim-treesitter",

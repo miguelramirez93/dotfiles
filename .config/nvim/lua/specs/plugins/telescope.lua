@@ -1,6 +1,15 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	dependencies = { "nvim-lua/plenary.nvim" },
+	-- JetBrains "Search Everywhere"-style popup: small, centered box with no
+	-- side preview pane, instead of telescope's default full-width split.
+	opts = function()
+		return {
+			defaults = require("telescope.themes").get_dropdown({
+				previewer = false,
+			}),
+		}
+	end,
 	keys = {
 		{
 			"<leader>ff",

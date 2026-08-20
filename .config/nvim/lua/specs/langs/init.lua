@@ -67,6 +67,18 @@ function M.setup_all()
 	end
 end
 
+--- List of treesitter parser names to eagerly install, for nvim-treesitter's
+--- `ensure_installed`.
+function M.treesitter_parsers()
+	local parsers = {}
+	for _, lang in ipairs(langs) do
+		if lang.treesitter then
+			vim.list_extend(parsers, lang.treesitter)
+		end
+	end
+	return parsers
+end
+
 --- Run the on_attach hook (if any) of the language matching this buffer's
 --- filetype, e.g. to set up custom keymaps for non-standard LSP commands.
 function M.on_attach(bufnr)

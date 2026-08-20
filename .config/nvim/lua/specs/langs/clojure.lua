@@ -74,4 +74,5 @@ return {
 		end, { buffer = bufnr, silent = true, desc = "Clean namespace (clojure-lsp)" })
 	end,
 	setup = setup_jar_uri_reader,
+	treesitter = { "clojure" },
 }

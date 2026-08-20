@@ -17,4 +17,5 @@ return {
 		},
 	},
 	formatters = { "stylua" },
+	treesitter = { "lua" },
 }
