@@ -36,7 +36,7 @@ function M.setup(plugins_dir, opts)
 			lazy = false,
 			version = false,
 		},
-		install = { colorscheme = { "tokyonight", "habamax" } },
+		install = { colorscheme = { "onedark", "habamax" } },
 		checker = {
 			enabled = true,
 			notify = false,
