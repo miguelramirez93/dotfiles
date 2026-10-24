@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.pairs",
-  event = "InsertEnter",
-  opts = {},
+	"nvim-mini/mini.pairs",
+	event = "InsertEnter",
+	opts = {},
 }

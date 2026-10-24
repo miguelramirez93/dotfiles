@@ -1,16 +1,4 @@
 return {
-  "zbirenbaum/copilot.lua",
-  cmd = "Copilot",
+  "github/copilot.vim",
   event = "InsertEnter",
-  opts = {
-    suggestion = {
-      enabled = true,
-      auto_trigger = true,
-    },
-    panel = { enabled = false },
-    filetypes = {
-      markdown = true,
-      help = true,
-    },
-  },
 }

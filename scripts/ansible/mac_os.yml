@@ -59,9 +59,21 @@
             community.general.homebrew:
               name: luarocks
               state: present
-          - name: Install ripgrep 
+          - name: Install ripgrep
             community.general.homebrew:
               name: ripgrep
+              state: present
+          - name: Install stylua (Lua formatter, used by lintercmd on save)
+            community.general.homebrew:
+              name: stylua
+              state: present
+          - name: Install cljfmt (Clojure formatter, used by lintercmd on save)
+            community.general.homebrew:
+              name: cljfmt
+              state: present
+          - name: Install tree-sitter-cli (required to build nvim-treesitter parsers)
+            community.general.homebrew:
+              name: tree-sitter-cli
               state: present
           - name: Install nvm 
             ansible.builtin.shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash      

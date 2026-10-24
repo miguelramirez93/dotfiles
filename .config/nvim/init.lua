@@ -1,8 +1,15 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-require("core.config.loader").load("specs.config")
-require("core.lsp.loader").load("specs.servers")
+config_loader = require("config.controllers.loader")
 
-local plugin_manager = "lazy"
-require("core.plg_manager.loader").load(plugin_manager, "specs.plugins")
+lazy_plg_cli = require("platform.clients.lazy")
+
+config_loader.plg_cli = lazy_plg_cli
+
+local cfg_modules_dir_path = "specs.config"
+local plgs_dir_path = "specs.plugins"
+
+local zenmode = vim.env.ZENMODE == "1"
+
+config_loader.load(plgs_dir_path, cfg_modules_dir_path, { lsp_enabled = not zenmode })

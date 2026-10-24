@@ -8,8 +8,8 @@ opt.confirm = true
 opt.cursorline = true
 opt.expandtab = true
 opt.fillchars = {
-  diff = "╱",
-  eob = " ",
+	diff = "╱",
+	eob = " ",
 }
 opt.foldlevel = 99
 opt.foldmethod = "indent"
@@ -21,6 +21,7 @@ opt.jumpoptions = "view"
 opt.laststatus = 3
 opt.linebreak = true
 opt.list = true
+opt.listchars = { tab = "  ", trail = "·", nbsp = "+" }
 opt.mouse = "a"
 opt.number = true
 opt.pumblend = 10
